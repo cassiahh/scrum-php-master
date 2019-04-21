@@ -14,7 +14,7 @@ class TarefaBuilder
             $array['idTarefa'],
             $array['tarefa'],
             $array['idSprint'],
-            $array['idPessoa'],
+            $array['ra'],
             $array['status'],
             $array['inicio'],
             $array['termino'],

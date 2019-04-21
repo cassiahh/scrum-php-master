@@ -6,7 +6,7 @@ class Tarefa
     private $tarefa;
     private $idSprint;
     private $idHistoria;
-    private $idPessoa;
+    private $ra;
     private $status;
     private $inicio;
     private $termino;
@@ -19,7 +19,7 @@ class Tarefa
         $tarefa,
         $idSprint,
         $idHistoria,
-        $idPessoa,
+        $ra,
         $status,
         $inicio,
         $termino,
@@ -31,7 +31,7 @@ class Tarefa
         $this->tarefa = $tarefa;
         $this->idSprint = $idSprint;
         $this->idHistoria = $idHistoria;
-        $this->idPessoa = $idPessoa;
+        $this->ra = $ra;
         $this->status = $status;
         $this->inicio = $inicio;
         $this->termino = $termino;
@@ -107,17 +107,17 @@ class Tarefa
     /**
      * @return mixed
      */
-    public function getIdPessoa()
+    public function getRa()
     {
-        return $this->idPessoa;
+        return $this->ra;
     }
 
     /**
-     * @param mixed $idPessoa
+     * @param mixed $ra
      */
-    public function setIdPessoa($idPessoa)
+    public function setRa($ra)
     {
-        $this->idPessoa = $idPessoa;
+        $this->ra = $ra;
     }
 
     /**

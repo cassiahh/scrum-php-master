@@ -1,6 +1,8 @@
 <?php
 
-class TarefaDao
+require_once (__DIR__."/../domain/Sprint.php");
+
+class SprintDao
 {
     private $conexao;
 

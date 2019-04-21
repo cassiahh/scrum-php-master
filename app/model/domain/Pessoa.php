@@ -6,6 +6,7 @@ class Pessoa
     private $ra;
     private $nome;
     private $papel;
+    private $senha;
 
     public function __construct(
         $ra,
@@ -35,9 +36,6 @@ class Pessoa
     }
 
     /**
-    
-
-    /**
      * @return mixed
      */
     public function getNome()
@@ -52,9 +50,7 @@ class Pessoa
     {
         $this->nome = $nome;
     }
-
     
-     
 
     /**
      * @return mixed
@@ -70,6 +66,24 @@ class Pessoa
     public function setPapel($papel)
     {
         $this->papel = $papel;
+    }
+
+
+
+    /**
+     * @return mixed
+     */
+    public function getSenha()
+    {
+        return $this->senha;
+    }
+
+    /**
+     * @param mixed $senha
+     */
+    public function setSenha($senha)
+    {
+        $this->senha = $senha;
     }
 
     
