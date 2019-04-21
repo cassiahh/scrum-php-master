@@ -13,16 +13,12 @@ class SprintDao
 
     public function listaSprints()
     {
-        $sprints = array();
+        $arrays = array();
         $resultado = mysqli_query($this->conexao, "select * from sprint");
         while ($array = mysqli_fetch_assoc($resultado)) {
-            array_push($sprints, new Sprint(
-            $array['idSprint'],
-            $array['sprint'],
-            $array['semana']
-            ));
+            array_push($arrays, $array);
         }
-        return $sprints;
+        return $arrays;
     }
 
     public function insereSprint(Sprint $sprint)

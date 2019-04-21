@@ -13,18 +13,39 @@ class TarefaDao
 
     function listaTarefas()
     {
-        $tarefas = array();
+        $arrays = array();
         $resultado = mysqli_query($this->conexao, "select t.*, p.nome, p.papel
-                from tarefa as t join pessoa as p on t.ra=p.ra ");
+                from Tarefa as t join Pessoa as p on t.ra=p.ra order by t.idHistoria, t.idSprint");
         while ($array = mysqli_fetch_assoc($resultado)) {
-            array_push($tarefas, new TarefaBuilder($array));
+            array_push($arrays, $array);
         }
-        return $tarefas;
+        return $arrays;
+    }
+    function countIdHistoria()
+    {
+        $arrays = array();
+        $resultado = mysqli_query($this->conexao, "select idHistoria, COUNT(*) as total
+                from Tarefa group by idHistoria");
+        while ($array = mysqli_fetch_assoc($resultado)) {
+            array_push($arrays, $array);
+        }
+        return $arrays;
+    }
+
+    function countIdHistoriaIdSprint()
+    {
+        $arrays = array();
+        $resultado = mysqli_query($this->conexao, "select concat(idHistoria, '-', idSprint),idHistoria,idSprint, COUNT(*) as total
+                from Tarefa group by concat(idHistoria, '-', idSprint)");
+        while ($array = mysqli_fetch_assoc($resultado)) {
+            array_push($arrays, $array);
+        }
+        return $arrays;
     }
 
     function insereTarefa(Tarefa $tarefa)
     {
-        $query = "insert into tarefas (idSprint, tarefa, ra, status,
+        $query = "insert into Tarefa (idSprint, tarefa, ra, status,
             inicio, termino, objetivo)
             values ('{$tarefa->getIdSprint()}', {$tarefa->getTarefa()},
             '{$tarefa->getPessoa()->getra()}',
@@ -36,7 +57,7 @@ class TarefaDao
 
     function alteraTarefa(Tarefa $tarefa)
     {
-        $query = "update tarefas set idSprint = '{$tarefa->getTarefa()}',
+        $query = "update Tarefa set idSprint = '{$tarefa->getTarefa()}',
             tarefa = {$tarefa->getTarefa()}, ra = '{$tarefa->getPessoa()->getra()}',
             status= {$tarefa->getStatus()}, inicio = {$tarefa->getInicio()}, termino = '{$tarefa->getTermino()}',
             objetivo = '{$tarefa->getObjetivo()}' where id = '{$tarefa->getId()}'";
@@ -45,7 +66,7 @@ class TarefaDao
 
     function buscaTarefa($id)
     {
-        $query = "select * from tarefas where id = {$id}";
+        $query = "select * from Tarefa where id = {$id}";
         $resultado = mysqli_query($this->conexao, $query);
         $array = mysqli_fetch_assoc($resultado);
         return  new TarefaBuilder($array);
@@ -53,7 +74,7 @@ class TarefaDao
 
     function removeTarefa($id)
     {
-        $query = "delete from tarefas where id = {$id}";
+        $query = "delete from Tarefa where id = {$id}";
         return mysqli_query($this->conexao, $query);
     }
 }

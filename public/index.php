@@ -5,7 +5,7 @@
  * Date: 20/04/19
  * Time: 21:56
  */
-require_once(__DIR__."/../app/view/Header.php");
+require_once(__DIR__ . "/header.php");
 require_once(__DIR__ . "/../app/security/Session.php"); ?>
     <div class="jumbotron">
         <h1>Bem vindo!</h1>
@@ -33,4 +33,4 @@ require_once(__DIR__ . "/../app/security/Session.php"); ?>
     </form>
 <?php } ?>
 
-<?php require_once(__DIR__."/../app/view/Footer.php"); ?>
+<?php require_once(__DIR__ . "/footer.php"); ?>

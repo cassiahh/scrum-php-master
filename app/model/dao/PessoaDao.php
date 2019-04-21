@@ -13,19 +13,12 @@ class PessoaDao
 
     function listaPessoa()
     {
-        $pessoas = array();
+        $arrays = array();
         $resultado = mysqli_query($this->conexao, "select * from Pessoa");
         while ($array = mysqli_fetch_assoc($resultado)) {
-            array_push(
-                $pessoas, 
-                new Pessoa(
-                    $array['ra'],
-                    $array['nome'],
-                    $array['papel']
-                )
-            );
+            array_push($arrays, $array);
         }
-        return $pessoas;
+        return $arrays;
     }
 
    

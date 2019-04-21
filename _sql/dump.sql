@@ -33,6 +33,7 @@ CREATE TABLE Tarefa (
         constraint FK_idSprintTarefa foreign key (idSprint) references Sprint(idSprint)
 );
 
+-- a senha está em md5, é 123456
 INSERT INTO Pessoa (ra,nome,papel,senha) VALUES ('111111', 'Maria', 'Scrum', 'e10adc3949ba59abbe56e057f20f883e');
 INSERT INTO Pessoa (ra,nome,papel,senha) VALUES ('222222', 'João', 'Membro1', 'e10adc3949ba59abbe56e057f20f883e');
 INSERT INTO Pessoa (ra,nome,papel,senha) VALUES ('333333', 'Paulo', 'Membro2', 'e10adc3949ba59abbe56e057f20f883e');
@@ -44,15 +45,25 @@ INSERT INTO Sprint (sprint, semana) VALUES ('Sprint 1', '2019-01-01 10:00:00');
 INSERT INTO Sprint (sprint, semana) VALUES ('Sprint 2', '2019-01-08 10:00:00');
 INSERT INTO Sprint (sprint, semana) VALUES ('Sprint 3', '2019-01-15 10:00:00');
 INSERT INTO Sprint (sprint, semana) VALUES ('Sprint 4', '2019-01-22 10:00:00');
+INSERT INTO Sprint (sprint, semana) VALUES ('Sprint 5', '2019-01-29 10:00:00');
 
 
 INSERT INTO Tarefa (tarefa, idSprint, idHistoria, ra, status, inicio, previsao, termino, objetivo, dependencia, prioridade)
 VALUES ('Fazer tarefa 1', 1, 1, '111111', 'status 1', '2019-01-01 20:00:00', '2019-01-01 21:00:00', '2019-01-01 22:00:00',
 'Conseguir objetivo 1', 'dependencia 1', 'prioridade 1');
 INSERT INTO Tarefa (tarefa, idSprint, idHistoria, ra, status, inicio, previsao, termino, objetivo, dependencia, prioridade)
-VALUES ('Fazer tarefa 2', 2, 2, '222222', 'status 2', '2019-01-02 20:00:00', '2019-01-02 21:00:00', '2019-01-02 22:00:00',
+VALUES ('Fazer tarefa 5', 4, 2, '222222', 'status 2', '2019-01-02 20:00:00', '2019-01-02 21:00:00', '2019-01-02 22:00:00',
 'Conseguir objetivo 2', 'dependencia 2', 'prioridade 2');
 INSERT INTO Tarefa (tarefa, idSprint, idHistoria, ra, status, inicio, previsao, termino, objetivo, dependencia, prioridade)
-VALUES ('Fazer tarefa 3', 1, 1, '333333', 'status 3', '2019-01-03 20:00:00', '2019-01-03 21:00:00', '2019-01-03 22:00:00',
+VALUES ('Fazer tarefa 4', 3, 1, '333333', 'status 3', '2019-01-03 20:00:00', '2019-01-03 21:00:00', '2019-01-03 22:00:00',
+'Conseguir objetivo 3', 'dependencia 3', 'prioridade 3');
+INSERT INTO Tarefa (tarefa, idSprint, idHistoria, ra, status, inicio, previsao, termino, objetivo, dependencia, prioridade)
+VALUES ('Fazer tarefa 3', 2, 1, '111111', 'status 1', '2019-01-01 20:00:00', '2019-01-01 21:00:00', '2019-01-01 22:00:00',
+'Conseguir objetivo 1', 'dependencia 1', 'prioridade 1');
+INSERT INTO Tarefa (tarefa, idSprint, idHistoria, ra, status, inicio, previsao, termino, objetivo, dependencia, prioridade)
+VALUES ('Fazer tarefa 6', 5, 2, '222222', 'status 2', '2019-01-02 20:00:00', '2019-01-02 21:00:00', '2019-01-02 22:00:00',
+'Conseguir objetivo 2', 'dependencia 2', 'prioridade 2');
+INSERT INTO Tarefa (tarefa, idSprint, idHistoria, ra, status, inicio, previsao, termino, objetivo, dependencia, prioridade)
+VALUES ('Fazer tarefa 2', 1, 1, '333333', 'status 3', '2019-01-03 20:00:00', '2019-01-03 21:00:00', '2019-01-03 22:00:00',
 'Conseguir objetivo 3', 'dependencia 3', 'prioridade 3');
 
