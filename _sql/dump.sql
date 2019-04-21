@@ -33,6 +33,14 @@ CREATE TABLE Tarefa (
         constraint FK_idSprintTarefa foreign key (idSprint) references Sprint(idSprint)
 );
 
+CREATE TABLE Epico (
+        idEpico int not null auto_increment primary key,
+        Epico varchar(255),
+        Ordem varchar(255),
+        Necessidade varchar(255),
+        idPessoa int not null
+);
+
 -- a senha está em md5, é 123456
 INSERT INTO Pessoa (ra,nome,papel,senha) VALUES ('111111', 'Maria', 'Scrum', 'e10adc3949ba59abbe56e057f20f883e');
 INSERT INTO Pessoa (ra,nome,papel,senha) VALUES ('222222', 'João', 'Membro1', 'e10adc3949ba59abbe56e057f20f883e');
