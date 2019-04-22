@@ -30,10 +30,10 @@ class EpicoDao
 	public function insereEpico(Epico $epico)
 	{
 		$query = "insert into Epico (epico, ordem, necessidade, ra)
-			values ('{$epico->getEpico()},
+			values ('{$epico->getEpico()}',
 					{$epico->getOrdem()},
-					{$epico->getNecessidade()},
-					{$epico->getRa()}";
+					'{$epico->getNecessidade()}',
+					'{$epico->getRa()}')";
 		return mysqli_query($this->conexao, $query);
 	}
 	public function alteraEpico(Epico $epico)
