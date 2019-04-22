@@ -2,23 +2,23 @@
 class Epico
 {
     private $idEpico;
-    private $Epico;
-    private $Ordem;
-    private $Necessidade;
-    private $idPessoa;
+    private $epico;
+    private $ordem;
+    private $necessidade;
+    private $ra;
 	
     public function __construct(
         $idEpico,
-        $Epico,
-        $Ordem,
-        $Necessidade,
-        $idPessoa)
+        $epico,
+        $ordem,
+        $necessidade,
+        $ra)
     {
         $this->idEpico = $idEpico;
-        $this->Epico = $Epico;
-        $this->Ordem = $Ordem;
-        $this->Necessidade = $Necessidade;
-        $this->idPessoa = $idPessoa;
+        $this->epico = $epico;
+        $this->ordem = $ordem;
+        $this->necessidade = $necessidade;
+        $this->ra = $ra;
         
     }
     /**
@@ -40,14 +40,14 @@ class Epico
      */
     public function getEpico()
     {
-        return $this->Epico;
+        return $this->epico;
     }
     /**
-     * @param mixed $Epico
+     * @param mixed $epico
      */
-    public function setEpico($Epico)
+    public function setEpico($epico)
     {
-        $this->Epico = $Epico;
+        $this->epico = $epico;
     }
     
      
@@ -56,42 +56,42 @@ class Epico
      */
     public function getOrdem()
     {
-        return $this->Ordem;
+        return $this->ordem;
     }
     /**
-     * @param mixed $Ordem
+     * @param mixed $ordem
      */
-    public function setOrdem($Ordem)
+    public function setOrdem($ordem)
     {
-        $this->Ordem = $Ordem;
+        $this->ordem = $ordem;
     }
     /**
      * @return mixed
      */
     public function getNecessidade()
     {
-        return $this->Necessidade;
+        return $this->necessidade;
     }
     /**
-     * @param mixed $Necessidade
+     * @param mixed $necessidade
      */
-    public function setNecessidade($Necessidade)
+    public function setNecessidade($necessidade)
     {
-        $this->Necessidade = $Necessidade;
+        $this->necessidade = $necessidade;
     }
     /**
      * @return mixed
      */
-    public function getIdPessoa()
+    public function getRa()
     {
-        return $this->idPessoa;
+        return $this->ra;
     }
     /**
-     * @param mixed $idPessoa
+     * @param mixed $ra
      */
-    public function setIdPessoa($idPessoa)
+    public function setRa($ra)
     {
-        $this->idPessoa = $idPessoa;
+        $this->ra = $ra;
     }
     
 }

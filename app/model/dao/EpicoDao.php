@@ -13,28 +13,28 @@ class EpicoDao
         while ($array = mysqli_fetch_assoc($resultado)) {
             array_push($epico, new Epico(
             $array['idEpico'],
-            $array['Epico'],
-            $array['Ordem'],
-            $array['Necessidade'],
-            $array['idPessoa']
+            $array['epico'],
+            $array['ordem'],
+            $array['necessidade'],
+            $array['ra']
             ));
         }
         return $epico;
     }
     public function insereEpico(Epico $epico)
     {
-        $query = "insert into Epico (Epico, Ordem, Necessidade, idPessoa)
+        $query = "insert into Epico (epico, ordem, necessidade, ra)
            values ('{$epico->getEpico()},
                     {$epico->getOrdem()},
                     {$epico->getNecessidade()},
-                    {$epico->getIdPessoa()}";
+                    {$epico->getRa()}";
         return mysqli_query($this->conexao, $query);
     }
     public function alteraEpico(Epico $epico)
     {
-        $query = "update Epico set Epico = '{$epico->getEpico()}',
-            Ordem = {$epico->getOrdem()}, Necessidade = '{$epico->getNecessidade()}',
-			idPessoa = '{$epico->getIdPessoa()}',
+        $query = "update Epico set epico = '{$epico->getEpico()}',
+            ordem = {$epico->getOrdem()}, necessidade = '{$epico->getNecessidade()}',
+			ra = '{$epico->getRa()}',
             where idEpico = '{$epico->getIdEpico()}'"; 
         return mysqli_query($this->conexao, $query);
     }
@@ -45,10 +45,10 @@ class EpicoDao
         $array = mysqli_fetch_assoc($resultado);
         return  new Epico(
             $array['idEpico'],
-            $array['Epico'],
-            $array['Ordem'],
-            $array['Necessidade'],
-            $array['idPessoa']
+            $array['epico'],
+            $array['ordem'],
+            $array['necessidade'],
+            $array['ra']
             );
     }
     function removeEpico($idEpico)
