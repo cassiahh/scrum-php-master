@@ -12,8 +12,7 @@ CREATE TABLE Pessoa(
 CREATE TABLE Sprint (
         idSprint bigint(20) not null auto_increment primary key,
         sprint varchar(191),
-        semana timestamp
-
+        semana timestamp 
 );
 
 CREATE TABLE Tarefa (
@@ -39,6 +38,14 @@ CREATE TABLE Epico (
         Ordem varchar(255),
         Necessidade varchar(255),
         idPessoa int not null
+);
+
+CREATE TABLE Historia (
+        idHistoria bigint(20) not null auto_increment primary key,
+        gostariaHistoria varchar(191),
+        idEpico bigint(20) not null,
+        objetivoHistoria varchar(191),
+        constraint FK_idSprintHistoria foreign key (idEpico) references idEpico(Epico)
 );
 
 -- a senha está em md5, é 123456
