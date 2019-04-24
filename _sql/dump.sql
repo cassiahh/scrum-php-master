@@ -36,14 +36,14 @@ CREATE TABLE Tarefa (
         constraint FK_idSprintTarefa foreign key (idSprint) references Sprint(idSprint)
 );
 
-CREATE TABLE Epico (
+/*CREATE TABLE Epico (
         idEpico bigint(20) not null auto_increment primary key,
         epico varchar(255),
         ordem bigint(20),
         necessidade varchar(255),
         ra varchar (191) not null,
         constraint FK_raEpico foreign key (ra) references Pessoa(ra)
-);
+);*/
 
 CREATE TABLE Historia (
         idHistoria bigint(20) not null auto_increment primary key,
@@ -53,6 +53,16 @@ CREATE TABLE Historia (
         constraint FK_idSprintHistoria foreign key (idEpico) references idEpico(Epico)
 );
 
+CREATE TABLE Funcionalidade (
+        codFunc decimal(20,3) not null primary key,
+        funcionalidade varchar(255),
+        idHistoria bigint(20),
+        oQue varchar(255),
+        ra varchar (191) not null,
+        constraint FK_raFuncionalidade foreign key (ra) references Pessoa(ra),
+        constraint FK_idHistoriaFuncionalidade foreign key (idHistoria) references Historia(idHistoria)
+);
+
 -- a senha está em md5, é 123456
 INSERT INTO Pessoa (ra,nome,papel,senha) VALUES ('111111', 'Maria', 'Scrum', 'e10adc3949ba59abbe56e057f20f883e');
 INSERT INTO Pessoa (ra,nome,papel,senha) VALUES ('222222', 'João', 'Membro1', 'e10adc3949ba59abbe56e057f20f883e');
@@ -60,6 +70,8 @@ INSERT INTO Pessoa (ra,nome,papel,senha) VALUES ('333333', 'Paulo', 'Membro2', '
 INSERT INTO Pessoa (ra,nome,papel,senha) VALUES ('444444', 'Marcia', 'Membro3', 'e10adc3949ba59abbe56e057f20f883e');
 INSERT INTO Pessoa (ra,nome,papel,senha) VALUES ('555555', 'Renato', 'Membro4', 'e10adc3949ba59abbe56e057f20f883e');
 INSERT INTO Pessoa (ra,nome,papel,senha) VALUES ('666666', 'Joana', 'Project Owner', 'e10adc3949ba59abbe56e057f20f883e');
+INSERT INTO Pessoa (ra,nome,papel,senha) VALUES ('123456', 'Clientes', 'stakeholders', 'e10adc3949ba59abbe56e057f20f883e');
+INSERT INTO Pessoa (ra,nome,papel,senha) VALUES ('654321', 'Consultores', 'stakeholders', 'e10adc3949ba59abbe56e057f20f883e');
 
 
 INSERT INTO Sprint (sprint, semana) VALUES ('Sprint 1', '2019-01-01 10:00:00');
@@ -88,13 +100,33 @@ INSERT INTO Tarefa (tarefa, idSprint, idHistoria, ra, status, inicio, previsao, 
 VALUES ('Fazer tarefa 2', 1, 1, '333333', 'status 3', '2019-01-03 20:00:00', '2019-01-03 21:00:00', '2019-01-03 22:00:00',
 'Conseguir objetivo 3', 'dependencia 3', 'prioridade 3');
 
-INSERT INTO Epico (Epico, Ordem, Necessidade, idPessoa)
-VALUES ('Joana quer melhorar a visão dos clientes sobre seu estabelecimento', 1, 'Falta de divulgação da sua marca', '666666');
-INSERT INTO Epico (Epico, Ordem, Necessidade, idPessoa)
-VALUES ('Joana quer melhorar a divulgação dos seus produtos', 2, 'Dificuldade de informar sobre os novos produtos', '666666');
-INSERT INTO Epico (Epico, Ordem, Necessidade, idPessoa)
-VALUES ('Joana que ampliar as vendas on-line dos produtos', 3, 'Aumento das vendas pela internet', '666666');
-INSERT INTO Epico (Epico, Ordem, Necessidade, idPessoa)
-VALUES ('Joana quer melhorar o controle sobre seus consultores', 4, 'Ingerência de seus consultores', '666666');
+INSERT INTO Funcionalidade (codFunc, funcionalidade, idHistoria, oQue, ra)
+VALUES (1.1, 'Elaborar uma página de apresentação da empresa', 1, 'melhorar a visão dos clientes sobre seu estabelecimento', '666666');
+INSERT INTO Funcionalidade (codFunc, funcionalidade, idHistoria, oQue, ra)
+VALUES (2.1, 'Cadastro de produtos', 2, 'melhorar a divulgação dos seus produtos', '123456');
+INSERT INTO Funcionalidade (codFunc, funcionalidade, idHistoria, oQue, ra)
+VALUES (2.2, 'Criar uma página de catalogo de todos os produtos da loja', 2, 'melhorar a divulgação dos seus produtos', '123456');
+INSERT INTO Funcionalidade (codFunc, funcionalidade, idHistoria, oQue, ra)
+VALUES (3.1, 'Criar uma página de vendas', 3, 'ampliar as vendas on-line dos produtos', '666666');
+INSERT INTO Funcionalidade (codFunc, funcionalidade, idHistoria, oQue, ra)
+VALUES (3.2, 'Criar o cadastro de clientes', 3, 'ampliar as vendas on-line dos produtos', '666666');
+INSERT INTO Funcionalidade (codFunc, funcionalidade, idHistoria, oQue, ra)
+VALUES (3.3, 'Criar carrinho de compras', 3, 'ampliar as vendas on-line dos produtos', '666666');
+INSERT INTO Funcionalidade (codFunc, funcionalidade, idHistoria, oQue, ra)
+VALUES (4.1, 'Gestão dos consultores', 4, 'ter controle sobre seus consultores', '666666');
+INSERT INTO Funcionalidade (codFunc, funcionalidade, idHistoria, oQue, ra)
+VALUES (5.1, 'Área de acesso dos consultores', 5, 'ter uma área para que os consultores observem suas vendas e total da comissão do periodo.', '654321');
+INSERT INTO Funcionalidade (codFunc, funcionalidade, idHistoria, oQue, ra)
+VALUES (6.1, 'Cadastro de Funcionarios', 6, 'precisa uma área restrita do sistema para gestão da loja', '666666');
+INSERT INTO Funcionalidade (codFunc, funcionalidade, idHistoria, oQue, ra)
+VALUES (6.2, 'Controle de estoque', 6, 'precisa uma área restrita do sistema para gestão da loja', '666666');
+INSERT INTO Funcionalidade (codFunc, funcionalidade, idHistoria, oQue, ra)
+VALUES (6.3, 'Categorias de usuário', 6, 'precisa uma área restrita do sistema para gestão da loja', '666666');
+INSERT INTO Funcionalidade (codFunc, funcionalidade, idHistoria, oQue, ra)
+VALUES (6.4, 'Terminal de atendimento (PDV)', 6, 'precisa uma área restrita do sistema para gestão da loja', '666666');
+INSERT INTO Funcionalidade (codFunc, funcionalidade, idHistoria, oQue, ra)
+VALUES (6.5, 'Controle das vendas', 6, 'precisa uma área restrita do sistema para gestão da loja', '666666');
+INSERT INTO Funcionalidade (codFunc, funcionalidade, idHistoria, oQue, ra)
+VALUES (6.6, 'Gestão das comissões', 6, 'precisa uma área restrita do sistema para gestão da loja', '666666');
 
 INSERT INTO Projeto (projeto, cliente, projectOwner) VALUES ('Scrum','Robson','Giovanni');
