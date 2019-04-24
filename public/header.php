@@ -24,6 +24,7 @@ require_once(__DIR__."/../app/view/SessionAlert.php"); ?>
             </div>
             <div>
                 <nav class="nav">
+                    <a class="nav-link" href="list-projeto.php">Projeto</a>
                     <a class="nav-link" href="#">Épicos</a>
                     <a class="nav-link" href="#">Histórias</a>
                     <a class="nav-link" href="#">Link</a>

@@ -1,7 +1,11 @@
 DROP DATABASE IF EXISTS scrum;
 CREATE DATABASE scrum;
 USE scrum;
-
+CREATE TABLE Projeto(
+    projeto varchar (191) not null,
+    cliente varchar (191),
+    projectOwner varchar (191)
+)
 CREATE TABLE Pessoa(
         ra varchar (191) not null primary key,
        	nome varchar(191),
@@ -93,3 +97,4 @@ VALUES ('Joana que ampliar as vendas on-line dos produtos', 3, 'Aumento das vend
 INSERT INTO Epico (Epico, Ordem, Necessidade, idPessoa)
 VALUES ('Joana quer melhorar o controle sobre seus consultores', 4, 'Ingerência de seus consultores', '666666');
 
+INSERT INTO Projeto (projeto, cliente, projectOwner) VALUES ('Scrum','Robson','Giovanni');

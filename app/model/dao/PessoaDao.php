@@ -11,7 +11,7 @@ class PessoaDao
         $this->conexao = $conexao;
     }
 
-    function listaPessoa()
+    function listaPessoas()
     {
         $arrays = array();
         $resultado = mysqli_query($this->conexao, "select * from Pessoa");
