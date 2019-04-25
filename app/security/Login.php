@@ -11,8 +11,8 @@ require_once("Session.php");
 require_once(__DIR__ . "/../model/database/Connection.php");
 
 $pessoaDao = new PessoaDao($connection);
-$usuario = $pessoaDao->buscaUsuario($_POST["ra"], $_POST["senha"]);
-//$usuario = $pessoaDao->buscaUsuario('111111','123456');
+//$usuario = $pessoaDao->buscaUsuario($_POST["ra"], $_POST["senha"]);
+$usuario = $pessoaDao->buscaUsuario('111111','123456');
 
 if($usuario == null) {
     $_SESSION["danger"] = "RA ou senha inválido.";

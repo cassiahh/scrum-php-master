@@ -60,7 +60,8 @@ class PessoaDao
     function buscaUsuario($ra, $senha) {
         $senhaMd5 = md5($senha);
         $ra = mysqli_real_escape_string($this->conexao, $ra);
-        $query = "select * from Pessoa where ra='{$ra}' and senha='{$senhaMd5}'";
+        $query = "select * from pessoa where ra='{$ra}' and senha='{$senhaMd5}'";
+        echo $query;
         $resultado = mysqli_query($this->conexao, $query);
         $pessoa = mysqli_fetch_assoc($resultado);
         return $pessoa;

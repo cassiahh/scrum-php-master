@@ -6,4 +6,4 @@
  * Time: 23:38
  */
 
-$connection = mysqli_connect('localhost', 'root', '', 'scrum');
+$connection = mysqli_connect('localhost', 'root', '12345', 'scrum');

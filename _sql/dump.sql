@@ -2,10 +2,10 @@ DROP DATABASE IF EXISTS scrum;
 CREATE DATABASE scrum;
 USE scrum;
 CREATE TABLE Projeto(
-    projeto varchar (191) not null,
+    projeto varchar (191) not null primary key,
     cliente varchar (191),
     projectOwner varchar (191)
-)
+);
 CREATE TABLE Pessoa(
         ra varchar (191) not null primary key,
        	nome varchar(191),
@@ -50,7 +50,7 @@ CREATE TABLE Historia (
         gostariaHistoria varchar(191),
         idEpico bigint(20) not null,
         objetivoHistoria varchar(191),
-        constraint FK_idSprintHistoria foreign key (idEpico) references idEpico(Epico)
+        /*constraint FK_idSprintHistoria foreign key (idEpico) references idEpico(Epico)*/
 );
 
 CREATE TABLE Funcionalidade (
