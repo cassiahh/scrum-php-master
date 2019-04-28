@@ -53,15 +53,14 @@ class PessoaDao
 
     function removePessoa($ra)
     {
-        $query = "delete from pessoa where ra = '{$ra}'";
+        $query = "delete from Pessoa where ra = '{$ra}'";
         return mysqli_query($this->conexao, $query);
     }
 
     function buscaUsuario($ra, $senha) {
         $senhaMd5 = md5($senha);
         $ra = mysqli_real_escape_string($this->conexao, $ra);
-        $query = "select * from pessoa where ra='{$ra}' and senha='{$senhaMd5}'";
-        echo $query;
+        $query = "select * from Pessoa where ra='{$ra}' and senha='{$senhaMd5}'";
         $resultado = mysqli_query($this->conexao, $query);
         $pessoa = mysqli_fetch_assoc($resultado);
         return $pessoa;

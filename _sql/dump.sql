@@ -49,15 +49,15 @@ CREATE TABLE Historia (
         idHistoria bigint(20) not null auto_increment primary key,
         gostariaHistoria varchar(191),
         idEpico bigint(20) not null,
-        objetivoHistoria varchar(191),
+        objetivoHistoria varchar(191)
         /*constraint FK_idSprintHistoria foreign key (idEpico) references idEpico(Epico)*/
 );
 
 CREATE TABLE Funcionalidade (
-        codFunc decimal(20,3) not null primary key,
+        codFunc varchar(191) not null primary key,
         funcionalidade varchar(255),
         idHistoria bigint(20),
-        oQue varchar(255),
+        oQue varchar(191),
         ra varchar (191) not null,
         constraint FK_raFuncionalidade foreign key (ra) references Pessoa(ra),
         constraint FK_idHistoriaFuncionalidade foreign key (idHistoria) references Historia(idHistoria)
@@ -100,33 +100,47 @@ INSERT INTO Tarefa (tarefa, idSprint, idHistoria, ra, status, inicio, previsao, 
 VALUES ('Fazer tarefa 2', 1, 1, '333333', 'status 3', '2019-01-03 20:00:00', '2019-01-03 21:00:00', '2019-01-03 22:00:00',
 'Conseguir objetivo 3', 'dependencia 3', 'prioridade 3');
 
+
+INSERT INTO Historia (gostariaHistoria, idEpico, objetivoHistoria)
+VALUES ('gostaria 1', 1, 'objetivo 1');
+INSERT INTO Historia (gostariaHistoria, idEpico, objetivoHistoria)
+VALUES ('gostaria 1', 2, 'objetivo 1');
+INSERT INTO Historia (gostariaHistoria, idEpico, objetivoHistoria)
+VALUES ('gostaria 1', 3, 'objetivo 1');
+INSERT INTO Historia (gostariaHistoria, idEpico, objetivoHistoria)
+VALUES ('gostaria 1', 4, 'objetivo 1');
+INSERT INTO Historia (gostariaHistoria, idEpico, objetivoHistoria)
+VALUES ('gostaria 1', 5, 'objetivo 1');
+INSERT INTO Historia (gostariaHistoria, idEpico, objetivoHistoria)
+VALUES ('gostaria 1', 6, 'objetivo 1');
+        
 INSERT INTO Funcionalidade (codFunc, funcionalidade, idHistoria, oQue, ra)
-VALUES (1.1, 'Elaborar uma página de apresentação da empresa', 1, 'melhorar a visão dos clientes sobre seu estabelecimento', '666666');
+VALUES ('1.1', 'Elaborar uma página de apresentação da empresa', 1, 'melhorar a visão dos clientes sobre seu estabelecimento', '666666');
 INSERT INTO Funcionalidade (codFunc, funcionalidade, idHistoria, oQue, ra)
-VALUES (2.1, 'Cadastro de produtos', 2, 'melhorar a divulgação dos seus produtos', '123456');
+VALUES ('2.1', 'Cadastro de produtos', 2, 'melhorar a divulgação dos seus produtos', '123456');
 INSERT INTO Funcionalidade (codFunc, funcionalidade, idHistoria, oQue, ra)
-VALUES (2.2, 'Criar uma página de catalogo de todos os produtos da loja', 2, 'melhorar a divulgação dos seus produtos', '123456');
+VALUES ('2.2', 'Criar uma página de catalogo de todos os produtos da loja', 2, 'melhorar a divulgação dos seus produtos', '123456');
 INSERT INTO Funcionalidade (codFunc, funcionalidade, idHistoria, oQue, ra)
-VALUES (3.1, 'Criar uma página de vendas', 3, 'ampliar as vendas on-line dos produtos', '666666');
+VALUES ('3.1', 'Criar uma página de vendas', 3, 'ampliar as vendas on-line dos produtos', '666666');
 INSERT INTO Funcionalidade (codFunc, funcionalidade, idHistoria, oQue, ra)
-VALUES (3.2, 'Criar o cadastro de clientes', 3, 'ampliar as vendas on-line dos produtos', '666666');
+VALUES ('3.2', 'Criar o cadastro de clientes', 3, 'ampliar as vendas on-line dos produtos', '666666');
 INSERT INTO Funcionalidade (codFunc, funcionalidade, idHistoria, oQue, ra)
-VALUES (3.3, 'Criar carrinho de compras', 3, 'ampliar as vendas on-line dos produtos', '666666');
+VALUES ('3.3', 'Criar carrinho de compras', 3, 'ampliar as vendas on-line dos produtos', '666666');
 INSERT INTO Funcionalidade (codFunc, funcionalidade, idHistoria, oQue, ra)
-VALUES (4.1, 'Gestão dos consultores', 4, 'ter controle sobre seus consultores', '666666');
+VALUES ('4.1', 'Gestão dos consultores', 4, 'ter controle sobre seus consultores', '666666');
 INSERT INTO Funcionalidade (codFunc, funcionalidade, idHistoria, oQue, ra)
-VALUES (5.1, 'Área de acesso dos consultores', 5, 'ter uma área para que os consultores observem suas vendas e total da comissão do periodo.', '654321');
+VALUES ('5.1', 'Área de acesso dos consultores', 5, 'ter uma área para que os consultores observem suas vendas e total da comissão do periodo.', '654321');
 INSERT INTO Funcionalidade (codFunc, funcionalidade, idHistoria, oQue, ra)
-VALUES (6.1, 'Cadastro de Funcionarios', 6, 'precisa uma área restrita do sistema para gestão da loja', '666666');
+VALUES ('6.1', 'Cadastro de Funcionarios', 6, 'precisa uma área restrita do sistema para gestão da loja', '666666');
 INSERT INTO Funcionalidade (codFunc, funcionalidade, idHistoria, oQue, ra)
-VALUES (6.2, 'Controle de estoque', 6, 'precisa uma área restrita do sistema para gestão da loja', '666666');
+VALUES ('6.2', 'Controle de estoque', 6, 'precisa uma área restrita do sistema para gestão da loja', '666666');
 INSERT INTO Funcionalidade (codFunc, funcionalidade, idHistoria, oQue, ra)
-VALUES (6.3, 'Categorias de usuário', 6, 'precisa uma área restrita do sistema para gestão da loja', '666666');
+VALUES ('6.3', 'Categorias de usuário', 6, 'precisa uma área restrita do sistema para gestão da loja', '666666');
 INSERT INTO Funcionalidade (codFunc, funcionalidade, idHistoria, oQue, ra)
-VALUES (6.4, 'Terminal de atendimento (PDV)', 6, 'precisa uma área restrita do sistema para gestão da loja', '666666');
+VALUES ('6.4', 'Terminal de atendimento (PDV)', 6, 'precisa uma área restrita do sistema para gestão da loja', '666666');
 INSERT INTO Funcionalidade (codFunc, funcionalidade, idHistoria, oQue, ra)
-VALUES (6.5, 'Controle das vendas', 6, 'precisa uma área restrita do sistema para gestão da loja', '666666');
+VALUES ('6.5', 'Controle das vendas', 6, 'precisa uma área restrita do sistema para gestão da loja', '666666');
 INSERT INTO Funcionalidade (codFunc, funcionalidade, idHistoria, oQue, ra)
-VALUES (6.6, 'Gestão das comissões', 6, 'precisa uma área restrita do sistema para gestão da loja', '666666');
+VALUES ('6.6', 'Gestão das comissões', 6, 'precisa uma área restrita do sistema para gestão da loja', '666666');
 
 INSERT INTO Projeto (projeto, cliente, projectOwner) VALUES ('Scrum','Robson','Giovanni');

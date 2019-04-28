@@ -1,13 +1,3 @@
-<?php
-
-require_once(__DIR__ . "/../model/database/Connection.php");
-require_once(__DIR__ . "/../model/dao/TarefaDao.php");
-
-$tarefaDao = new TarefaDao($connection);
-$tarefas = $tarefaDao->listaTarefas();
-
-?>
-
 <table class="table">
     <thead class="thead-light">
     <tr>
