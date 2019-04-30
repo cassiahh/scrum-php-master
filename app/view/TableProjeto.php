@@ -3,7 +3,7 @@
 require_once(__DIR__ . "/../model/database/Connection.php");
 require_once(__DIR__ . "/../model/dao/ProjetoDao.php");
 
-$projetoDao = new ProjetoDao($connection);
+$projetoDao = new ProjetoDao(Connection::getConnection());
 $projetos = $projetoDao->listaProjeto();
 
 ?>
