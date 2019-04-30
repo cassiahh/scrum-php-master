@@ -6,10 +6,10 @@
 $configs = include(__DIR__.'/../../config.php');
 if (Session::isLogged()) { ?>
     <p class="text-success">Você está logado como <?= Session::getSessionRa() ?>. <a
-            href="<?=$configs['url_base']?>/logout">Deslogar</a></p>
+            href="<?=$configs['document_root']?>/logout">Deslogar</a></p>
 <?php } else { ?>
     <h2>Login</h2>
-    <form action="<?=$configs['url_base']?>/login" method="post">
+    <form action="<?=$configs['document_root']?>/login" method="post">
         <table class="table">
             <tr>
                 <td>RA</td>

@@ -27,13 +27,11 @@ class IndexController
         include_once __DIR__.'/../../public/index.php';
     }
 
-    public function login($request)
+    public function login($ra, $senha)
     {
-        $param = $request->getBody();
-        $connection = require_once(__DIR__ . "/../model/database/Connection.php");
         $pessoaDao = new PessoaDao(Connection::getConnection());
-//        $this->usuario = $this->pessoaDao->buscaUsuario($param["ra"], $param["senha"]);
-        $usuario = $pessoaDao->buscaUsuario('111111','123456');
+        $usuario = $pessoaDao->buscaUsuario($ra, $senha);
+//        $usuario = $pessoaDao->buscaUsuario('111111','123456');
         (new Login($usuario))->login();
     }
 

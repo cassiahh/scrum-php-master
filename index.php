@@ -6,5 +6,4 @@
  * Time: 05:43
  */
 
-$configs = include(__DIR__.'/config.php');
 require("app/security/Routes.php");
