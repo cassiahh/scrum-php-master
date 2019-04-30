@@ -4,7 +4,7 @@ include_once 'Request.php';
 include_once 'Router.php';
 require_once (__DIR__.'/../controller/IndexController.php');
 require_once (__DIR__.'/../controller/ProductBacklogController.php');
-
+require_once (__DIR__.'/../controller/ProjetoController.php');
 
 $router = new Router(new Request);
 
@@ -26,7 +26,9 @@ $router->get('/logout', function(){
 $router->get('/product-backlog', function(){
     return (new ProductBacklogController())->list();
 });
-
+$router->get('/projeto',function(){
+    return (new ProjetoController())->list();
+});
 //Exemplos
 //$router->get('/profile', function($request) {
 //  return <<<HTML

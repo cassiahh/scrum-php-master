@@ -1,12 +1,4 @@
-<?php
 
-require_once(__DIR__ . "/../model/database/Connection.php");
-require_once(__DIR__ . "/../model/dao/PessoaDao.php");
-
-$pessoaDao = new PessoaDao($connection);
-$pessoas = $pessoaDao->listaPessoas();
-
-?>
 
 <table class="table">
     <thead class="thead-light">
