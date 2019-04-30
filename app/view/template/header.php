@@ -5,7 +5,7 @@
  * Date: 20/04/19
  * Time: 19:59
  */
-require_once(__DIR__."/../app/view/SessionAlert.php"); ?>
+require_once(__DIR__ . "/../component/SessionAlert.php"); ?>
 
 <html>
 <head>
@@ -19,7 +19,7 @@ require_once(__DIR__."/../app/view/SessionAlert.php"); ?>
     <div class="navbar navbar-inverse navbar-fixed-top bg-light">
         <div class="container">
             <div class="navbar-header">
-                <a href="index.php" class="navbar-brand">Scrum</a>
+                <a href="../page/index.php" class="navbar-brand"><img src="public/img/ifsp_icon.png" /> Scrum</a>
             </div>
             <div>
                 <nav class="nav">

@@ -6,4 +6,4 @@
  * Time: 05:43
  */
 
-require("app/security/Routes.php");
+require(__DIR__ . "/public/index.php");

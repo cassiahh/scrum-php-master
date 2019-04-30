@@ -13,7 +13,7 @@ class ProjetoDao
     function listaProjeto()
     {
         $projetos = array();
-        $resultado = mysqli_query($this->conexao, "select * from projeto");
+        $resultado = mysqli_query($this->conexao, "select * from Projeto");
         while ($array = mysqli_fetch_assoc($resultado)) {
             array_push(
                 $projetos, 
@@ -30,7 +30,7 @@ class ProjetoDao
    
     function insereProjeto(Projeto $projeto)
     {
-        $query = "insert into projeto (projeto, cliente, projectOwner)
+        $query = "insert into Projeto (projeto, cliente, projectOwner)
             values ('{$projeto->getProjeto()},
             {$projeto->getCliente()},
             {$projeto->getProjectOwner()}";
@@ -39,7 +39,7 @@ class ProjetoDao
 
     function alteraProjeto(Projeto $projeto)
     {
-        $query = "update projeto set projeto = '{$projeto->getProjeto()}',
+        $query = "update Projeto set projeto = '{$projeto->getProjeto()}',
             cliente = '{$projeto->getCliente()}', projectOwner= '{$projeto->getProjectOwner()}'
             where projeto = '{$projeto->getProjeto()}'";
         return mysqli_query($this->conexao, $query);
@@ -47,7 +47,7 @@ class ProjetoDao
 
     function buscaProjeto($projeto)
     {
-        $query = "select * from projeto where projeto = {$projeto}";
+        $query = "select * from Projeto where projeto = {$projeto}";
         $resultado = mysqli_query($this->conexao, $query);
         $array = mysqli_fetch_assoc($resultado);
         return  new Sprint(
@@ -59,7 +59,7 @@ class ProjetoDao
 
     function removeProjeto($projeto)
     {
-        $query = "delete from projeto where projeto = {$projeto}";
+        $query = "delete from Projeto where projeto = {$projeto}";
         return mysqli_query($this->conexao, $query);
     }
 }

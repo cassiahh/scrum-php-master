@@ -7,7 +7,7 @@ class Logout{
     {
         Session::logout();
         $_SESSION["success"] = "Deslogado com sucesso.";
-        $configs = include(__DIR__.'/../../config.php');
+        $configs = include(__DIR__ . '/../../config.php');
         header("Location: ".$configs['url_base']);
         die();
     }

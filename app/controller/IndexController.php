@@ -7,8 +7,8 @@
  */
 
 require_once(__DIR__ . "/../model/database/Connection.php");
-require_once (__DIR__.'/../security/Login.php');
-require_once (__DIR__.'/../security/Logout.php');
+require_once (__DIR__ . '/../security/session/Login.php');
+require_once (__DIR__ . '/../security/session/Logout.php');
 
 class IndexController
 {
@@ -24,7 +24,7 @@ class IndexController
 
     public function index()
     {
-        include_once __DIR__.'/../../public/index.php';
+        include_once __DIR__ . '/../view/page/index.php';
     }
 
     public function login($ra, $senha)

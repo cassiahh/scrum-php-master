@@ -25,6 +25,6 @@ class ProductBacklogController
     {
         $tarefaDao = new TarefaDao(Connection::getConnection());
         $tarefas = $tarefaDao->listaTarefas();
-        include __DIR__.'/../../public/list-product-backlog.php';
+        include __DIR__ . '/../view/page/list-product-backlog.php';
     }
 }

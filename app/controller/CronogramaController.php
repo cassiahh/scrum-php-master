@@ -25,6 +25,6 @@ class CronogramaController
     {
         $tarefaDao = new TarefaDao(Connection::getConnection());
         $tarefas = $tarefaDao->listaTarefas();
-        include __DIR__.'/../../public/list-cronograma.php';
+        include __DIR__ . '/../view/page/list-cronograma.php';
     }
 }
