@@ -1,0 +1,12 @@
+{
+    "name": "antonio/scrum-php",
+    "authors": [
+        {
+            "name": "Antonio Augusto D'Agostino",
+            "email": "antonio.etec.inf5@gmail.com"
+        }
+    ],
+    "require": {
+        "altorouter/altorouter": "1.1.0"
+    }
+}

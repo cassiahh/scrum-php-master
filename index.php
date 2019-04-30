@@ -7,4 +7,4 @@
  */
 
 $configs = include(__DIR__.'/config.php');
-require("app/routes/Routes.php");
+require("app/security/Routes.php");

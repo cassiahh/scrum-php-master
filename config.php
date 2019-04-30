@@ -7,9 +7,9 @@
  */
 
 return array(
-    'url_base' => '/scrum-php_v1',
+    'document_root' => '/scrum-php',
     'domain' => 'localhost',
     'bd_user' => 'root',
-    'bd_password'=> '',
+    'bd_password'=> 'admin',
     'bd_database' => 'scrum'
 );
