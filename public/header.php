@@ -28,7 +28,7 @@ require_once(__DIR__."/../app/view/SessionAlert.php"); ?>
                     <a class="nav-link" href="#">Histórias</a>
                     <a class="nav-link" href="#">Link</a>
                     <a class="nav-link" href="product-backlog">Product Backlog</a>
-                    <a class="nav-link" href="#">Cronograma</a>
+                    <a class="nav-link" href="cronograma">Cronograma</a>
                 </nav>
             </div>
         </div>

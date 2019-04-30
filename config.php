@@ -10,6 +10,6 @@ return array(
     'url_base' => '/scrum-php',
     'domain' => 'localhost',
     'bd_user' => 'root',
-    'bd_password'=> 'admin',
+    'bd_password'=> '',
     'bd_database' => 'scrum'
 );
