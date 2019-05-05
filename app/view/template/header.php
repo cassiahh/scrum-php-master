@@ -5,7 +5,7 @@
  * Date: 20/04/19
  * Time: 19:59
  */
-require_once(__DIR__ . "/../component/SessionAlert.php"); ?>
+require_once(__DIR__ . "/../component/alert/SessionAlert.php"); ?>
 
 <html>
 <head>

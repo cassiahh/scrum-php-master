@@ -26,6 +26,9 @@ $router->map('GET','/logout', function(){
 $router->map('GET','/product-backlog', function(){
     return (new ProductBacklogController())->list();
 });
+$router->map('GET','/product-backlog/edit', function(){
+    return (new ProductBacklogController())->edit();
+});
 $router->map('GET','/cronograma',function(){
     return(new CronogramaController())->list();
 });

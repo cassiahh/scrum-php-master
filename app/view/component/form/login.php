@@ -3,7 +3,7 @@
     <h1>Bem vindo!</h1>
 </div>
 <?php
-$configs = include(__DIR__ . '/../../config.php');
+$configs = include(__DIR__ . '/../../../config.php');
 if (Session::isLogged()) { ?>
     <p class="text-success">Você está logado como <?= Session::getSessionRa() ?>. <a
             href="<?=$configs['document_root']?>/logout">Deslogar</a></p>

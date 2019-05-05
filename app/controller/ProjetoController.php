@@ -30,6 +30,6 @@ class ProjetoController
         $pessoaDao = new PessoaDao(Connection::getConnection());
         $pessoas = $pessoaDao->listaPessoas();
 
-        include __DIR__ . '/../view/page/list-projeto.php';
+        include __DIR__ . '/../view/page/list/projeto.php';
     }
 }
