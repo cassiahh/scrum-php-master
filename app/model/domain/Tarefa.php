@@ -2,42 +2,83 @@
 
 class Tarefa
 {
+    private $idHistoria;
+    private $idFuncionalidade;
     private $idTarefa;
     private $tarefa;
     private $idSprint;
-    private $idHistoria;
     private $ra;
     private $status;
     private $inicio;
+    private $tempo;
     private $termino;
-    private $objetivo;
+    private $duracao;
     private $dependencia;
     private $prioridade;
 
-    public function __construct(
-        $idTarefa,
-        $tarefa,
-        $idSprint,
-        $idHistoria,
-        $ra,
-        $status,
-        $inicio,
-        $termino,
-        $objetivo,
-        $dependencia,
-        $prioridade)
+    /**
+     * Tarefa constructor.
+     * @param $idHistoria
+     * @param $idFuncionalidade
+     * @param $idTarefa
+     * @param $tarefa
+     * @param $idSprint
+     * @param $ra
+     * @param $status
+     * @param $inicio
+     * @param $tempo
+     * @param $termino
+     * @param $duracao
+     * @param $dependencia
+     * @param $prioridade
+     */
+    public function __construct($idHistoria, $idFuncionalidade, $idTarefa, $tarefa, $idSprint, $ra, $status, $inicio, $tempo, $termino, $duracao, $dependencia, $prioridade)
     {
+        $this->idHistoria = $idHistoria;
+        $this->idFuncionalidade = $idFuncionalidade;
         $this->idTarefa = $idTarefa;
         $this->tarefa = $tarefa;
         $this->idSprint = $idSprint;
-        $this->idHistoria = $idHistoria;
         $this->ra = $ra;
         $this->status = $status;
         $this->inicio = $inicio;
+        $this->tempo = $tempo;
         $this->termino = $termino;
-        $this->objetivo = $objetivo;
+        $this->duracao = $duracao;
         $this->dependencia = $dependencia;
         $this->prioridade = $prioridade;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIdHistoria()
+    {
+        return $this->idHistoria;
+    }
+
+    /**
+     * @param mixed $idHistoria
+     */
+    public function setIdHistoria($idHistoria)
+    {
+        $this->idHistoria = $idHistoria;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIdFuncionalidade()
+    {
+        return $this->idFuncionalidade;
+    }
+
+    /**
+     * @param mixed $idFuncionalidade
+     */
+    public function setIdFuncionalidade($idFuncionalidade)
+    {
+        $this->idFuncionalidade = $idFuncionalidade;
     }
 
     /**
@@ -91,22 +132,6 @@ class Tarefa
     /**
      * @return mixed
      */
-    public function getIdHistoria()
-    {
-        return $this->idHistoria;
-    }
-
-    /**
-     * @param mixed $idHistoria
-     */
-    public function setIdHistoria($idHistoria)
-    {
-        $this->idHistoria = $idHistoria;
-    }
-
-    /**
-     * @return mixed
-     */
     public function getRa()
     {
         return $this->ra;
@@ -155,6 +180,22 @@ class Tarefa
     /**
      * @return mixed
      */
+    public function getTempo()
+    {
+        return $this->tempo;
+    }
+
+    /**
+     * @param mixed $tempo
+     */
+    public function setTempo($tempo)
+    {
+        $this->tempo = $tempo;
+    }
+
+    /**
+     * @return mixed
+     */
     public function getTermino()
     {
         return $this->termino;
@@ -171,17 +212,17 @@ class Tarefa
     /**
      * @return mixed
      */
-    public function getObjetivo()
+    public function getDuracao()
     {
-        return $this->objetivo;
+        return $this->duracao;
     }
 
     /**
-     * @param mixed $objetivo
+     * @param mixed $duracao
      */
-    public function setObjetivo($objetivo)
+    public function setDuracao($duracao)
     {
-        $this->objetivo = $objetivo;
+        $this->duracao = $duracao;
     }
 
     /**

@@ -91,10 +91,10 @@ INSERT INTO Funcionalidade (idHistoria, idFuncionalidade, funcionalidade) VALUES
 (6,5, 'Controle das vendas'),
 (6,6, 'Gestão das comissões');
 INSERT INTO Tarefa (idHistoria, idFuncionalidade, idTarefa, tarefa, idSprint, ra, status, inicio, tempo, termino, duracao, dependencia, prioridade) VALUES
-(1, 1, 1, 'tarefa 1', 1, '111111', 'status 1', '2019-01-01 20:00:00', '2019-01-01 21:00:00', '2019-01-01 22:00:00', 1, 'dep 1', 'prioridade 1'),
-(2, 1, 1, 'tarefa 2', 2, '222222', 'status 2', '2019-01-02 20:00:00', '2019-01-02 21:00:00', '2019-01-02 22:00:00', 2, 'dep 2', 'prioridade 2'),
-(2, 2, 1, 'tarefa 3', 2, '222222', 'status 3', '2019-01-03 20:00:00', '2019-01-03 21:00:00', '2019-01-03 22:00:00', 3, 'dep 3', 'prioridade 3'),
-(2, 2, 2, 'tarefa 4', 3, '333333', 'status 1', '2019-01-01 20:00:00', '2019-01-01 21:00:00', '2019-01-01 22:00:00', 4, 'dep 1', 'prioridade 1'),
-(3, 1, 1, 'tarefa 5', 4, '444444', 'status 2', '2019-01-02 20:00:00', '2019-01-02 21:00:00', '2019-01-02 22:00:00', 4, 'dep 2', 'prioridade 2'),
-(3, 1, 2, 'tarefa 6', 5, '555555', 'status 3', '2019-01-03 20:00:00', '2019-01-03 21:00:00', '2019-01-03 22:00:00', 2, 'dep 3', 'prioridade 3');
+(1, 1, 1, 'Levantar histórico da empresa', 1, '111111', 'status 1', '2019-01-01 20:00:00', '2019-01-01 21:00:00', '2019-01-01 22:00:00', 1, 'dep 1', 'alta'),
+(2, 1, 1, 'Definir layout da página', 2, '222222', 'status 2', '2019-01-02 20:00:00', '2019-01-02 21:00:00', '2019-01-02 22:00:00', 2, 'dep 2', 'baixa'),
+(2, 2, 1, 'Tirar fotos', 2, '222222', 'status 3', '2019-01-03 20:00:00', '2019-01-03 21:00:00', '2019-01-03 22:00:00', 3, 'dep 3', 'média'),
+(2, 2, 2, 'Desenvolver a página', 3, '333333', 'status 1', '2019-01-01 20:00:00', '2019-01-01 21:00:00', '2019-01-01 22:00:00', 4, 'dep 1', 'baixa'),
+(3, 1, 1, 'Teste', 4, '444444', 'status 2', '2019-01-02 20:00:00', '2019-01-02 21:00:00', '2019-01-02 22:00:00', 4, 'dep 2', 'baixa'),
+(3, 1, 2, 'Criar base de dados de produtos', 5, '555555', 'status 3', '2019-01-03 20:00:00', '2019-01-03 21:00:00', '2019-01-03 22:00:00', 2, 'dep 3', 'média');
 
