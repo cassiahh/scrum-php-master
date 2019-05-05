@@ -1,3 +1,6 @@
+<?php
+$configs = include(__DIR__ . '/../../../../config.php');
+?>
 <table class="table">
     <thead class="thead-light">
     <tr>
@@ -41,13 +44,8 @@
 //                $total_2 += $countIdHistoria['total'];
 //            }?><!--</td>-->
 <!--            <td>--><?//=($total_1*$total_2)?><!--</td>-->
-            <td><a class="btn btn-primary" href="edit-tarefa.php?id=<?= $tarefa['idTarefa'] ?>"><i class="fas fa-edit"></i></a></td>
-            <td>
-                <form action="remove-tarefa.php" method="post">
-                    <input type="hidden" name="id" value="<?= $tarefa['idTarefa'] ?>"/>
-                    <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
-                </form>
-            </td>
+            <td><a class="btn btn-primary" href="<?=$configs['document_root']?>/product-backlog/editar/<?= $tarefa['idHistoria'] ?>/<?= $tarefa['idFuncionalidade'] ?>/<?= $tarefa['idTarefa'] ?>"><i class="fas fa-edit"></i></a></td>
+            <td><a class="btn btn-danger" href="<?=$configs['document_root']?>/product-backlog/remover/<?= $tarefa['idHistoria'] ?>/<?= $tarefa['idFuncionalidade'] ?>/<?= $tarefa['idTarefa'] ?>"><i class="fas fa-trash"></i></a></td>
         </tr>
         <?php
     endforeach

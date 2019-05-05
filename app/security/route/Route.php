@@ -1,5 +1,4 @@
 <?php
-
 require __DIR__ . '/vendor/AltoRouter.php';
 require_once(__DIR__ . '/../../controller/IndexController.php');
 require_once(__DIR__ . '/../../controller/ProductBacklogController.php');
@@ -26,8 +25,14 @@ $router->map('GET','/logout', function(){
 $router->map('GET','/product-backlog', function(){
     return (new ProductBacklogController())->list();
 });
-$router->map('GET','/product-backlog/edit', function(){
-    return (new ProductBacklogController())->edit();
+$router->map('GET','/product-backlog/editar/[i:idHistoria]/[i:idFuncionalidade]/[i:idTarefa]', function($idHistoria, $idFuncionalidade, $idTarefa){
+    return (new ProductBacklogController())->edit($idHistoria, $idFuncionalidade, $idTarefa, null);
+});
+$router->map('POST','/product-backlog/editar/[i:idHistoria]/[i:idFuncionalidade]/[i:idTarefa]', function($idHistoria, $idFuncionalidade, $idTarefa){
+    return (new ProductBacklogController())->update($idHistoria, $idFuncionalidade, $idTarefa, $_POST);
+});
+$router->map('GET','/product-backlog/remover/[i:idHistoria]/[i:idFuncionalidade]/[i:idTarefa]', function($idHistoria, $idFuncionalidade, $idTarefa){
+    return (new ProductBacklogController())->remove($idHistoria, $idFuncionalidade, $idTarefa);
 });
 $router->map('GET','/cronograma',function(){
     return(new CronogramaController())->list();

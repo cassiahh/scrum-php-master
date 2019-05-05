@@ -70,7 +70,7 @@ class TarefaDao
         return mysqli_query($this->conexao, $query);
     }
 
-    function alteraTarefa(Tarefa $tarefa)
+    function alteraTarefa($idHistoria, $idFuncionalidade, $idTarefa, Tarefa $tarefa)
     {
         $query = "update Tarefa set 
             idHistoria = '{$tarefa->getIdHistoria()}', 
@@ -87,30 +87,30 @@ class TarefaDao
             dependencia = '{$tarefa->getDependencia()}', 
             prioridade = '{$tarefa->getPrioridade()}' 
             where 
-            idHistoria = '{$tarefa->getIdHistoria()}' AND
-            idFuncionalidade = '{$tarefa->getIdFuncionalidade()}' AND
-            idTarefa = '{$tarefa->getIdTarefa()}'"
+            idHistoria = '{$idHistoria}' AND
+            idFuncionalidade = '{$idFuncionalidade}' AND
+            idTarefa = '{$idTarefa}'"
         ;
         return mysqli_query($this->conexao, $query);
     }
 
-    function buscaTarefa($tarefa)
+    function buscaTarefa($idHistoria, $idFuncionalidade, $idTarefa)
     {
         $query = "select * from Tarefa where 
-            idHistoria = '{$tarefa->getIdHistoria()}' AND
-            idFuncionalidade = '{$tarefa->getIdFuncionalidade()}' AND
-            idTarefa = '{$tarefa->getIdTarefa()}'";
+            idHistoria = '{$idHistoria}' AND
+            idFuncionalidade = '{$idFuncionalidade}' AND
+            idTarefa = '{$idTarefa}'";
         $resultado = mysqli_query($this->conexao, $query);
         $array = mysqli_fetch_assoc($resultado);
-        return  new TarefaBuilder($array);
+        return  $array;
     }
 
-    function removeTarefa($tarefa)
+    function removeTarefa($idHistoria, $idFuncionalidade, $idTarefa)
     {
         $query = "delete from Tarefa where 
-                    idHistoria = '{$tarefa->getIdHistoria()}' AND
-                    idFuncionalidade = '{$tarefa->getIdFuncionalidade()}' AND
-                    idTarefa = '{$tarefa->getIdTarefa()}'";
+                    idHistoria = '{$idHistoria}' AND
+                    idFuncionalidade = '{$idFuncionalidade}' AND
+                    idTarefa = '{$idTarefa}'";
         return mysqli_query($this->conexao, $query);
     }
 }

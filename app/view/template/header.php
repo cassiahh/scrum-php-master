@@ -5,8 +5,9 @@
  * Date: 20/04/19
  * Time: 19:59
  */
-require_once(__DIR__ . "/../component/alert/SessionAlert.php"); ?>
-
+require_once(__DIR__ . "/../component/alert/SessionAlert.php");
+$configs = include(__DIR__ . '/../../../config.php');
+?>
 <html>
 <head>
     <title>Scrum</title>
@@ -19,16 +20,16 @@ require_once(__DIR__ . "/../component/alert/SessionAlert.php"); ?>
     <div class="navbar navbar-inverse navbar-fixed-top bg-light">
         <div class="container">
             <div class="navbar-header">
-                <a href="../page/index.php" class="navbar-brand"><img src="public/img/ifsp_icon.png" /> Scrum</a>
+                <a href="../page/index.php" class="navbar-brand"><img src="<?=$configs['document_root']?>/public/img/ifsp_icon.png" /> Scrum</a>
             </div>
             <div>
                 <nav class="nav">
-                    <a class="nav-link" href="projeto">Projeto</a>
+                    <a class="nav-link" href="<?=$configs['document_root']?>/projeto">Projeto</a>
                     <a class="nav-link" href="#">Épicos</a>
                     <a class="nav-link" href="#">Histórias</a>
                     <a class="nav-link" href="#">Link</a>
-                    <a class="nav-link" href="product-backlog">Product Backlog</a>
-                    <a class="nav-link" href="cronograma">Cronograma</a>
+                    <a class="nav-link" href="<?=$configs['document_root']?>/product-backlog">Product Backlog</a>
+                    <a class="nav-link" href="<?=$configs['document_root']?>/cronograma">Cronograma</a>
                 </nav>
             </div>
         </div>
