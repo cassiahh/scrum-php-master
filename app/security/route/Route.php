@@ -4,7 +4,7 @@ require_once(__DIR__ . '/../../controller/IndexController.php');
 require_once(__DIR__ . '/../../controller/ProductBacklogController.php');
 require_once(__DIR__ . '/../../controller/CronogramaController.php');
 require_once(__DIR__ . '/../../controller/ProjetoController.php');
-
+require_once(__DIR__ . '/../../controller/SprintController.php');
 $router = new AltoRouter();
 
 $configs = include(__DIR__ . '/../../../config.php');
@@ -22,6 +22,15 @@ $router->map('POST','/login', function() {
 $router->map('GET','/logout', function(){
     return (new IndexController())->logout();
 });
+
+$router->map('GET','/projeto', function(){
+    return (new ProjetoController())->list();
+});
+
+$router->map('GET','/sprint', function(){
+    return (new SprintController())->list();
+});
+
 $router->map('GET','/product-backlog', function(){
     return (new ProductBacklogController())->list();
 });
@@ -39,9 +48,6 @@ $router->map('GET','/cronograma',function(){
 });
 $router->map('POST','/editar-cronograma', function() {
     return (new CronogramaController())->edit();
-});
-$router->map('GET','/projeto',function(){
-    return (new ProjetoController())->list();
 });
 
 
