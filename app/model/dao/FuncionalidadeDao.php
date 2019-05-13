@@ -13,20 +13,21 @@ class FuncionalidadeDao
 	
 	public function listaFuncionalidades()
 	{
-		$funcionalidade = array();
-		$resultado = mysqli_query($this->conexao, "select f.*, p.nome 
-		                                           from Funcionalidade as f join Pessoa as p on e.ra=p.ra");
+		$arrays = array();
+		$resultado = mysqli_query($this->conexao, 
+				"select concat(f.idHistoria,'.',f.idFuncionalidade) as codFunc,
+				 f.funcionalidade,
+				 f.idHistoria,
+				 h.objetivo as oQue, 
+				 h.ra, 
+				 p.nome 
+				 from funcionalidade as f 
+				 join historia as h on f.idHistoria=h.idHistoria
+				 join Pessoa as p on p.ra=h.ra");
 		while ($array = mysqli_fetch_assoc($resultado)) {
-			array_push($funcionalidade, new Funcionalidade(
-			$array['codFunc'],
-			$array['funcionalidade'],
-			$array['idHistoria'],
-			$array['oQue'],
-			$array['ra'],
-			$array['nome']
-			));
-		}
-		return $funcionalidade;
+			array_push($arrays, $array);
+        }
+        return $arrays;
 	}
 	public function insereFuncionalidade(Funcionalidade $funcionalidade)
 	{

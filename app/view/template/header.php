@@ -26,7 +26,7 @@ $configs = include(__DIR__ . '/../../../config.php');
                 <nav class="nav">
                     <a class="nav-link" href="<?=$configs['document_root']?>/projeto">Projeto</a>
                     <a class="nav-link" href="<?=$configs['document_root']?>/sprint">Sprint</a>
-                    <a class="nav-link" href="#">Épicos</a>
+                    <a class="nav-link" href="<?=$configs['document_root']?>/funcionalidade">Funcionalidades</a>
                     <a class="nav-link" href="#">Histórias</a>
                     <a class="nav-link" href="#">Link</a>
                     <a class="nav-link" href="<?=$configs['document_root']?>/product-backlog">Product Backlog</a>

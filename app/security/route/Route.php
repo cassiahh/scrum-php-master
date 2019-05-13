@@ -3,6 +3,7 @@ require __DIR__ . '/vendor/AltoRouter.php';
 require_once(__DIR__ . '/../../controller/IndexController.php');
 require_once(__DIR__ . '/../../controller/ProductBacklogController.php');
 require_once(__DIR__ . '/../../controller/CronogramaController.php');
+require_once(__DIR__ . '/../../controller/FuncionalidadeController.php');
 require_once(__DIR__ . '/../../controller/ProjetoController.php');
 require_once(__DIR__ . '/../../controller/SprintController.php');
 $router = new AltoRouter();
@@ -48,6 +49,12 @@ $router->map('GET','/cronograma',function(){
 });
 $router->map('POST','/editar-cronograma', function() {
     return (new CronogramaController())->edit();
+});
+$router->map('GET','/funcionalidade',function(){
+    return(new FuncionalidadeController())->listaFuncionalidades();
+});
+$router->map('POST','/editar-funcionalidade', function() {
+    return (new FuncionalidadeController())->edit();
 });
 
 
