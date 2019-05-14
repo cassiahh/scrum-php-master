@@ -24,10 +24,12 @@ $configs = include(__DIR__ . '/../../../../config.php');
 
 
     foreach ($funcionalidades as $funcionalidade) :	
-?>
-			
+ ?>	
         <tr>
+		    <?php if ($aux1 != $funcionalidade['idHistoria']){?> 
             <td><?= $funcionalidade['idHistoria'] ?></td>
+			<?php } else { ?><td style="border-top:0"></td> <?php };?>
+			
 			<td><?= $funcionalidade['nome'] ?></td>
 			<td><?= $funcionalidade['oQue'] ?></td>
 			<td><?= $funcionalidade['codFunc'] ?></td>
@@ -36,8 +38,7 @@ $configs = include(__DIR__ . '/../../../../config.php');
 			<td><a class="btn btn-primary" href="<?=$configs['document_root']?>/product-backlog/editar/<?= $funcionalidade['idHistoria'] ?>/<?= $funcionalidade['idFuncionalidade'] ?>/<?= $tarefa['idTarefa'] ?>"><i class="fas fa-edit"></i></a></td>
 			<td><a class="btn btn-danger" href="<?=$configs['document_root']?>/product-backlog/remover/<?= $funcionalidade['idHistoria'] ?>/<?= $funcionalidade['idFuncionalidade'] ?>/<?= $tarefa['idTarefa'] ?>"><i class="fas fa-trash"></i></a></td>
 		</tr>
-		
-        <?php		
+        <?php
         $aux1 = $funcionalidade['idHistoria'];
     endforeach
     ?>
