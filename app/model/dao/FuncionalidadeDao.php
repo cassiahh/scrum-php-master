@@ -20,15 +20,27 @@ class FuncionalidadeDao
 				 f.idHistoria,
 				 h.objetivo as oQue, 
 				 h.ra, 
-				 p.nome 
+				 p.nome,
+                 f.idFuncionalidade				 
 				 from funcionalidade as f 
 				 join historia as h on f.idHistoria=h.idHistoria
-				 join Pessoa as p on p.ra=h.ra");
+				 join Pessoa as p on p.ra=h.ra
+				 order by codFunc");
 		while ($array = mysqli_fetch_assoc($resultado)) {
 			array_push($arrays, $array);
         }
         return $arrays;
 	}
+
+	public function countFunc()
+	{
+		$arrays = array();
+		$resultado = mysqli_query($this->conexao, 
+				"select MAX(idHistoria) from funcionalidade");
+		$countFunc = mysqli_fetch_assoc($resultado);
+        return $countFunc;
+	}	
+
 	public function insereFuncionalidade(Funcionalidade $funcionalidade)
 	{
 		$query = "insert into Funcionalidade (codFunc, funcionalidade, idHistoria, oQue, ra)
@@ -39,30 +51,25 @@ class FuncionalidadeDao
 					'{$funcionalidade->getRa()}')";
 		return mysqli_query($this->conexao, $query);
 	}
-	public function alteraFuncionalidade(Funcionalidade $funcionalidade)
+	public function alteraFuncionalidade($idHistoria, $idFuncionalidade,Funcionalidade $funcionalidade)
 	{
 		$query = "update Funcionalidade set funcionalidade = '{$funcionalidade->getFuncionalidade()}',
 				  idHistoria = {$funcionalidade->getIdHistoria()}, 
-				  oQue = '{$funcionalidade->getOQue()}',
-				  ra = '{$funcionalidade->getRa()}',
-				  where codFunc = '{$funcionalidade->getCodFunc()}'"; 
+				  idFuncionalidade = '{$funcionalidade->getIdFuncionalidade()}'
+				  where idHistoria = '{$idHistoria}'
+				  and idFuncionalidade = '{$idFuncionalidade}'"; 
 		return mysqli_query($this->conexao, $query);
 	}
-	public function buscaFuncionalidade($codFunc)
+	public function buscaFuncionalidade($idHistoria, $codFunc)
 	{
-		$query = "select f.*, p.nome
-				  from Funcionalidade as f join Pessoa as p on e.ra=p.ra
-				  where codFunc = {$codFunc}";
+		$array = array();
+		$query = "select *
+				  from Funcionalidade
+                  where idHistoria = {$idHistoria}
+                    and idFuncionalidade = {$codFunc}";
 		$resultado = mysqli_query($this->conexao, $query);
 		$array = mysqli_fetch_assoc($resultado);
-		return  new Funcionalidade(
-			$array['codFunc'],
-			$array['funcionalidade'],
-			$array['idHistoria'],
-			$array['oQue'],
-			$array['ra'],
-			$array['nome']
-			);
+		return $array;
 	}
 	function removeFuncionalidade($codFunc)
 	{

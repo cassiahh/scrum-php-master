@@ -35,8 +35,8 @@ $configs = include(__DIR__ . '/../../../../config.php');
 			<td><?= $funcionalidade['codFunc'] ?></td>
 			<td><?= $funcionalidade['funcionalidade'] ?></td>
 			<td></td>
-			<td><a class="btn btn-primary" href="<?=$configs['document_root']?>/product-backlog/editar/<?= $funcionalidade['idHistoria'] ?>/<?= $funcionalidade['idFuncionalidade'] ?>/<?= $tarefa['idTarefa'] ?>"><i class="fas fa-edit"></i></a></td>
-			<td><a class="btn btn-danger" href="<?=$configs['document_root']?>/product-backlog/remover/<?= $funcionalidade['idHistoria'] ?>/<?= $funcionalidade['idFuncionalidade'] ?>/<?= $tarefa['idTarefa'] ?>"><i class="fas fa-trash"></i></a></td>
+			<td><a class="btn btn-primary" href="<?=$configs['document_root']?>/funcionalidade/editar/<?= $funcionalidade['idHistoria'] ?>/<?= $funcionalidade['idFuncionalidade'] ?>"><i class="fas fa-edit"></i></a></td>
+			<td><a class="btn btn-danger" href="<?=$configs['document_root']?>/funcionalidade/remover/<?= $funcionalidade['idHistoria'] ?>/<?= $funcionalidade['idFuncionalidade'] ?>"><i class="fas fa-trash"></i></a></td>
 		</tr>
         <?php
         $aux1 = $funcionalidade['idHistoria'];

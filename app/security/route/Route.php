@@ -53,8 +53,11 @@ $router->map('POST','/editar-cronograma', function() {
 $router->map('GET','/funcionalidade',function(){
     return(new FuncionalidadeController())->listaFuncionalidades();
 });
-$router->map('POST','/editar-funcionalidade', function() {
-    return (new FuncionalidadeController())->edit();
+$router->map('GET','/funcionalidade/editar/[i:idHistoria]/[i:idFuncionalidade]', function($idHistoria, $idFuncionalidade){
+    return (new FuncionalidadeController())->edit($idHistoria, $idFuncionalidade, null);
+});
+$router->map('POST','/funcionalidade/editar/[i:idHistoria]/[i:idFuncionalidade]', function($idHistoria, $idFuncionalidade){
+    return (new FuncionalidadeController())->update($idHistoria, $idFuncionalidade, $_POST);
 });
 
 
