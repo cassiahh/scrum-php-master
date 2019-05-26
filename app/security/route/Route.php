@@ -6,6 +6,7 @@ require_once(__DIR__ . '/../../controller/CronogramaController.php');
 require_once(__DIR__ . '/../../controller/FuncionalidadeController.php');
 require_once(__DIR__ . '/../../controller/ProjetoController.php');
 require_once(__DIR__ . '/../../controller/SprintController.php');
+require_once(__DIR__ . '/../../controller/HistoriaController.php');
 $router = new AltoRouter();
 
 $configs = include(__DIR__ . '/../../../config.php');
@@ -63,10 +64,10 @@ $router->map('GET','/historia',function(){
     return(new HistoriaController())->listaHistoria();
 });
 $router->map('GET','/historia/editar/[i:idHistoria]', function($idHistoria){
-    return (new HistoriaController())->edit($idHistoria, $idHistoria, null);
+    return (new HistoriaController())->edit($idHistoria, null);
 });
 $router->map('POST','/historia/editar/[i:idHistoria]', function($idHistoria){
-    return (new HistoriaController())->update($idHistoria, $idHistoria, $_POST);
+    return (new HistoriaController())->update($idHistoria, $_POST);
 });
 
 

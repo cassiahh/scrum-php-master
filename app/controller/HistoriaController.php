@@ -30,7 +30,7 @@ class HistoriaController
     {
         $historiaDao = new HistoriaDao(Connection::getConnection());
         $historias = $historiaDao->listaHistoria();
-		$countFunc = $historiaDao->countFunc();
+		$countHistoria = $historiaDao->countHistoria();
         include __DIR__ . '/../view/page/list/Historia.php'; 
     }
    public function edit($idHistoria, $post)
@@ -50,7 +50,7 @@ class HistoriaController
         $historiaModel->setIdEpico($post['idEpico']);
         $historiaModel->setObjetivoHistoria($post['objetivoHistoria']);
 		
-        $updated = $historiaDao->alteraHistoria($idHistoria, $funcionalidadeModel);
+        $updated = $historiaDao->alteraHistoria($idHistoria, $historiaModel);
         $historia = $historiaDao->buscaHistoria($idHistoria);
 
         include __DIR__ . '/../view/page/edit/historia.php';

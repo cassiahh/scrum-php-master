@@ -16,7 +16,7 @@ if($removed) { ?>
 <?php } else {
     $msg = mysqli_error($conexao);
     ?>
-    <p class="alert alert-danger" role="alert">Historia não foi removida: <?= $msg ?></p>
+    <p class="alert alert-danger" role="alert">Historia não foi removida. <?= $msg ?></p>
     <?php
 }
 

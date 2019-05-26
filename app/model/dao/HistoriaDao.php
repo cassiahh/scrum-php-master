@@ -20,11 +20,11 @@ class HistoriaDao
         }
         return $arrays;
     }
-    function countIdHistoria()
+    function countHistoria()
     {
         $arrays = array();
         $resultado = mysqli_query($this->conexao, "select idHistoria, COUNT(*) as total
-                from Tarefa group by idHistoria");
+                from Historia group by idHistoria");
         while ($array = mysqli_fetch_assoc($resultado)) {
             array_push($arrays, $array);
         }
@@ -40,19 +40,19 @@ class HistoriaDao
         return mysqli_query($this->conexao, $query);
     }
 
-    function alteraHistoria(Historia $historia)
+    function alteraHistoria($idHistoria, $historia)
     {
         $query = "update Historia set idHistoria = '{$historia->getIdHistoria()}', {$historia->getgostariaHistoria()},
-            '{$historia->idEpico()}'";
+            '{$historia->getIdEpico()}'";
         return mysqli_query($this->conexao, $query);
     }
 
     function buscaHistoria($id)
     {
-        $query = "select * from Historia where id = {$id}";
+        $query = "select * from Historia where idHistoria = {$id}";
         $resultado = mysqli_query($this->conexao, $query);
         $array = mysqli_fetch_assoc($resultado);
-        return  new TarefaBuilder($array);
+        return  $array;
     }
 
     function removeHistoria($id)

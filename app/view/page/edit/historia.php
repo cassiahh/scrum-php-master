@@ -17,7 +17,7 @@ if($post != null) {
     <?php } else {
         $msg = mysqli_error($conexao);
         ?>
-        <p class="alert alert-danger" role="alert">Historia não foi editada: <?= $msg ?></p>
+        <p class="alert alert-danger" role="alert">Historia não foi editada. <?= $msg ?></p>
         <?php
         require_once(__DIR__ . "/../../component/form/historia.php");
     }

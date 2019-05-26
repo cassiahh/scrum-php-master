@@ -1,6 +1,6 @@
 <?php
 
-class Tarefa
+class Historia
 {
     private $idHistoria;
     private $gostariaHistoria;
@@ -70,9 +70,9 @@ class Tarefa
     /**
      * @return mixed
      */
-    public function getIdHistoria()
+    public function getIdEpico()
     {
-        return $this->idHistoria;
+        return $this->idEpico;
     }
 
     /**

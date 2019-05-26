@@ -13,11 +13,11 @@ class historiaBuilder
     private $historia;
     public function __construct($array)
     {
-        $this->historia =  new Funcionalidade(
+        $this->historia =  new Historia(
             $array['idHistoria'],
-            $array['gostariaHistoria'],
-            $array['idEpico'],
-            $array['objetivoHistoria']
+            $array['gostaria'],
+            $array['ra'],
+            $array['objetivo']
 
         );
         return $this;
