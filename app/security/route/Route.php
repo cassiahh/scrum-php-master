@@ -59,6 +59,15 @@ $router->map('GET','/funcionalidade/editar/[i:idHistoria]/[i:idFuncionalidade]',
 $router->map('POST','/funcionalidade/editar/[i:idHistoria]/[i:idFuncionalidade]', function($idHistoria, $idFuncionalidade){
     return (new FuncionalidadeController())->update($idHistoria, $idFuncionalidade, $_POST);
 });
+$router->map('GET','/historia',function(){
+    return(new HistoriaController())->listaHistoria();
+});
+$router->map('GET','/historia/editar/[i:idHistoria]', function($idHistoria){
+    return (new HistoriaController())->edit($idHistoria, $idHistoria, null);
+});
+$router->map('POST','/historia/editar/[i:idHistoria]', function($idHistoria){
+    return (new HistoriaController())->update($idHistoria, $idHistoria, $_POST);
+});
 
 
 // match current request url
