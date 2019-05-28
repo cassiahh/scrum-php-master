@@ -71,7 +71,7 @@ class TarefaDao
     }
 
     function alteraTarefa($idHistoria, $idFuncionalidade, $idTarefa, Tarefa $tarefa)
-    {
+    { 
         $query = "update Tarefa set 
             idHistoria = '{$tarefa->getIdHistoria()}', 
             idFuncionalidade = '{$tarefa->getIdFuncionalidade()}', 
@@ -95,7 +95,7 @@ class TarefaDao
     }
 
     function buscaTarefa($idHistoria, $idFuncionalidade, $idTarefa)
-    {
+    {  
         $query = "select * from Tarefa where 
             idHistoria = '{$idHistoria}' AND
             idFuncionalidade = '{$idFuncionalidade}' AND

@@ -28,8 +28,23 @@ $router->map('GET','/projeto', function(){
     return (new ProjetoController())->list();
 });
 
+$router->map('GET','/projeto/editar/[i:projeto]/[i:cliente]/[i:productOwner]', function($projeto){
+    return (new ProjetoController())->edit($projeto);
+});
+
 $router->map('GET','/sprint', function(){
     return (new SprintController())->list();
+});
+
+$router->map('GET','/sprint/remover/[i:idHistoria]/[i:idFuncionalidade]/[i:idTarefa]', function($idHistoria, $idFuncionalidade, $idTarefa){
+    return (new SprintController())->remove($idHistoria, $idFuncionalidade, $idTarefa);
+});
+
+$router->map('GET','/sprint/editar/[i:idHistoria]/[i:idFuncionalidade]/[i:idTarefa]', function($idHistoria, $idFuncionalidade, $idTarefa){
+    return (new SprintController())->edit($idHistoria, $idFuncionalidade, $idTarefa, null);
+});
+$router->map('POST','/sprint/editar/[i:idHistoria]/[i:idFuncionalidade]/[i:idTarefa]', function($idHistoria, $idFuncionalidade, $idTarefa){
+    return (new SprintController())->update($idHistoria, $idFuncionalidade, $idTarefa, $_POST);
 });
 
 $router->map('GET','/product-backlog', function(){
@@ -53,8 +68,11 @@ $router->map('POST','/editar-cronograma', function() {
 $router->map('GET','/funcionalidade',function(){
     return(new FuncionalidadeController())->listaFuncionalidades();
 });
-$router->map('POST','/editar-funcionalidade', function() {
-    return (new FuncionalidadeController())->edit();
+$router->map('GET','/funcionalidade/editar/[i:idHistoria]/[i:idFuncionalidade]', function($idHistoria, $idFuncionalidade){
+    return (new FuncionalidadeController())->edit($idHistoria, $idFuncionalidade, null);
+});
+$router->map('POST','/funcionalidade/editar/[i:idHistoria]/[i:idFuncionalidade]', function($idHistoria, $idFuncionalidade){
+    return (new FuncionalidadeController())->update($idHistoria, $idFuncionalidade, $_POST);
 });
 
 
