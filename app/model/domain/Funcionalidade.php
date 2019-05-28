@@ -7,21 +7,16 @@ class Funcionalidade
     private $oQue;
     private $ra;
     private $nome;
+    private $idFuncionalidade;
 	
     public function __construct(
-        $codFunc,
         $funcionalidade,
         $idHistoria,
-        $oQue,
-        $ra,
-        $nome)
+		$idFuncionalidade)
     { 
-        $this->codFunc = $codFunc;
         $this->funcionalidade = $funcionalidade;
         $this->idHistoria = $idHistoria;
-        $this->oQue = $oQue;
-        $this->ra = $ra;
-        $this->nome = $nome;
+		$this->idFuncionalidade = $idFuncionalidade;
         
     }
     /**
@@ -109,6 +104,20 @@ class Funcionalidade
     public function setNome($nome)
     {
         $this->nome = $nome;
+    }
+    /**
+     * @return mixed
+     */
+    public function getIdFuncionalidade()
+    {
+        return $this->idFuncionalidade;
+    }
+    /**
+     * @param mixed $idFuncionalidade
+     */
+    public function setIdFuncionalidade($idFuncionalidade)
+    {
+        $this->idFuncionalidade = $idFuncionalidade;
     }
     
 }

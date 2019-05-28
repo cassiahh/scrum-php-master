@@ -1,14 +1,14 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: antonio
- * Date: 28/04/19
+ * User: Camilli
+ * Date: 23/05/19
  * Time: 06:30
  */
 
 require_once(__DIR__ . "/../model/database/Connection.php");
 //require_once(__DIR__ . "/../model/dao/TarefaDao.php");
-//require_once(__DIR__ . "/../model/builder/TarefaBuilder.php");
+require_once(__DIR__ . "/../model/builder/funcionalidadeBuilder.php");
 //require_once(__DIR__ . "/../model/dao/HistoriaDao.php");
 //require_once(__DIR__ . "/../model/builder/HistoriaBuilder.php");
 require_once(__DIR__ . "/../model/dao/FuncionalidadeDao.php");
@@ -29,33 +29,31 @@ class FuncionalidadeController
     {
         $funcionalidadeDao = new FuncionalidadeDao(Connection::getConnection());
         $funcionalidades = $funcionalidadeDao->listaFuncionalidades();
+		$countFunc = $funcionalidadeDao->countFunc();
         include __DIR__ . '/../view/page/list/Funcionalidade.php'; 
     }
- /*   public function edit($idHistoria, $idFuncionalidade, $idTarefa, $post)
+   public function edit($idHistoria, $idFuncionalidade, $post)
     {
-        $tarefaDao = new TarefaDao(Connection::getConnection());
-        $tarefa = $tarefaDao->buscaTarefa($idHistoria, $idFuncionalidade, $idTarefa);
-        include __DIR__ . '/../view/page/edit/product-backlog.php';
+        $funcionalidadeDao = new FuncionalidadeDao(Connection::getConnection());
+        $funcionalidade = $funcionalidadeDao->buscaFuncionalidade($idHistoria, $idFuncionalidade);
+        include __DIR__ . '/../view/page/edit/funcionalidade.php';
     }
-    public function update($idHistoria, $idFuncionalidade, $idTarefa, $post)
+   public function update($idHistoria, $idFuncionalidade, $post)
     {
         $conexao = Connection::getConnection();
-        $tarefaDao = new TarefaDao($conexao);
-        $tarefa = $tarefaDao->buscaTarefa($idHistoria, $idFuncionalidade, $idTarefa);
-        $tarefaModel = (new TarefaBuilder($tarefa))->build();
-        $tarefaModel->setIdHistoria($post['idHistoria']);
-        $tarefaModel->setIdFuncionalidade($post['idFuncionalidade']);
-        $tarefaModel->setIdTarefa($post['idTarefa']);
-        $tarefaModel->setTarefa($post['tarefa']);
-        $tarefaModel->setDependencia($post['dependencia']);
-        $tarefaModel->setDuracao($post['duracao']);
+        $funcionalidadeDao = new FuncionalidadeDao($conexao);
+        $funcionalidade = $funcionalidadeDao->buscaFuncionalidade($idHistoria, $idFuncionalidade);
+        $funcionalidadeModel = (new funcionalidadeBuilder($funcionalidade))->build();
+        $funcionalidadeModel->setIdHistoria($post['idHistoria']);
+        $funcionalidadeModel->setIdFuncionalidade($post['idFuncionalidade']);
+        $funcionalidadeModel->setFuncionalidade($post['Funcionalidade']);
+		
+        $updated = $funcionalidadeDao->alteraFuncionalidade($idHistoria, $idFuncionalidade, $funcionalidadeModel);
+        $funcionalidade = $funcionalidadeDao->buscaFuncionalidade($idHistoria, $idFuncionalidade);
 
-        $updated = $tarefaDao->alteraTarefa($idHistoria, $idFuncionalidade, $idTarefa, $tarefaModel);
-        $tarefa = $tarefaDao->buscaTarefa($idHistoria, $idFuncionalidade, $idTarefa);
-
-        include __DIR__ . '/../view/page/edit/product-backlog.php';
+        include __DIR__ . '/../view/page/edit/funcionalidade.php';
     }
-    public function remove($idHistoria, $idFuncionalidade, $idTarefa)
+  /*    public function remove($idHistoria, $idFuncionalidade, $idTarefa)
     {
         $tarefaDao = new TarefaDao(Connection::getConnection());
         $removed = $tarefaDao->removeTarefa($idHistoria, $idFuncionalidade, $idTarefa);
