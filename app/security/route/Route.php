@@ -72,9 +72,17 @@ $router->map('GET','/funcionalidade',function(){
 $router->map('GET','/funcionalidade/editar/[i:idHistoria]/[i:idFuncionalidade]', function($idHistoria, $idFuncionalidade){
     return (new FuncionalidadeController())->edit($idHistoria, $idFuncionalidade, null);
 });
+$router->map('GET','/funcionalidade/adicionar/[i:idHistoria]', function($idHistoria){
+    return (new FuncionalidadeController())->insere($idHistoria, null);
+});
+$router->map('POST','/funcionalidade/adicionar/[i:idHistoria]/[i:idFuncionalidade]', function($idHistoria, $idFuncionalidade){
+    return (new FuncionalidadeController())->adicionar($idHistoria, $idFuncionalidade, $_POST);
+});
 $router->map('POST','/funcionalidade/editar/[i:idHistoria]/[i:idFuncionalidade]', function($idHistoria, $idFuncionalidade){
     return (new FuncionalidadeController())->update($idHistoria, $idFuncionalidade, $_POST);
-
+});
+$router->map('GET','/funcionalidade/remover/[i:idHistoria]/[i:idFuncionalidade]', function($idHistoria, $idFuncionalidade){
+    return (new FuncionalidadeController())->remove($idHistoria, $idFuncionalidade);
 });
 $router->map('GET','/historia',function(){
     return(new HistoriaController())->listaHistoria();

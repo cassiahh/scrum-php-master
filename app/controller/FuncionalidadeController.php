@@ -47,16 +47,43 @@ class FuncionalidadeController
         $funcionalidadeModel->setIdHistoria($post['idHistoria']);
         $funcionalidadeModel->setIdFuncionalidade($post['idFuncionalidade']);
         $funcionalidadeModel->setFuncionalidade($post['Funcionalidade']);
+		var_dump($funcionalidadeModel);
 		
         $updated = $funcionalidadeDao->alteraFuncionalidade($idHistoria, $idFuncionalidade, $funcionalidadeModel);
         $funcionalidade = $funcionalidadeDao->buscaFuncionalidade($idHistoria, $idFuncionalidade);
 
         include __DIR__ . '/../view/page/edit/funcionalidade.php';
     }
-  /*    public function remove($idHistoria, $idFuncionalidade, $idTarefa)
+    public function remove($idHistoria, $idFuncionalidade)
     {
-        $tarefaDao = new TarefaDao(Connection::getConnection());
-        $removed = $tarefaDao->removeTarefa($idHistoria, $idFuncionalidade, $idTarefa);
-        include __DIR__ . '/../view/page/remove/product-backlog.php';
-    }*/
+        $funcionalidadeDao = new FuncionalidadeDao(Connection::getConnection());
+        $removed = $funcionalidadeDao->removeFuncionalidade($idHistoria, $idFuncionalidade);
+		//if ($removed){
+		//	$funcionalidade = $funcionalidadeDao->buscaIdFuncionalidade($idHistoria);
+		//	while ($idFuncionalidade < $funcionalidade['idFuncionalidade']){				
+		//	}
+		//}
+        include __DIR__ . '/../view/page/remove/funcionalidade.php';
+    }
+	public function insere($idHistoria, $post)
+    {
+        $funcionalidadeDao = new FuncionalidadeDao(Connection::getConnection());
+        $funcionalidade = $funcionalidadeDao->buscaIdFuncionalidade($idHistoria);
+        include __DIR__ . '/../view/page/insere/funcionalidade.php';
+    }
+	public function adicionar($idHistoria, $idFuncionalidade, $post)
+    {
+        $conexao = Connection::getConnection();
+        $funcionalidadeDao = new FuncionalidadeDao($conexao);
+        $funcionalidade = $funcionalidadeDao->buscaIdFuncionalidade($idHistoria);
+        $funcionalidadeModel = (new funcionalidadeBuilder($funcionalidade))->build();
+        $funcionalidadeModel->setIdHistoria($post['idHistoria']);
+        $funcionalidadeModel->setIdFuncionalidade($post['idFuncionalidade']);
+        $funcionalidadeModel->setFuncionalidade($post['Funcionalidade']);
+		
+        $updated = $funcionalidadeDao->insereFuncionalidade($idHistoria, $idFuncionalidade, $funcionalidadeModel);
+        $funcionalidade = $funcionalidadeDao->buscaFuncionalidade($idHistoria, $idFuncionalidade);
+
+        include __DIR__ . '/../view/page/insere/funcionalidade.php';
+    }
 }
