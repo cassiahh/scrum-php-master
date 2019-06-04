@@ -48,8 +48,14 @@ $router->map('GET','/product-backlog/remover/[i:idHistoria]/[i:idFuncionalidade]
 $router->map('GET','/cronograma',function(){
     return(new CronogramaController())->list();
 });
-$router->map('POST','/editar-cronograma', function() {
-    return (new CronogramaController())->edit();
+$router->map('GET','/cronograma/remover/[i:idHistoria]/[i:idFuncionalidade]/[i:idTarefa]', function($idHistoria, $idFuncionalidade, $idTarefa){
+    return (new CronogramaController())->remove($idHistoria, $idFuncionalidade, $idTarefa, null);
+});
+$router->map('POST','/cronograma/editar/[i:idHistoria]/[i:idFuncionalidade]/[i:idTarefa]', function($idHistoria, $idFuncionalidade, $idTarefa){
+    return (new CronogramaController())->update($idHistoria, $idFuncionalidade, $idTarefa, $_POST);
+});
+$router->map('GET','/cronograma/editar/[i:idHistoria]/[i:idFuncionalidade]/[i:idTarefa]', function($idHistoria, $idFuncionalidade, $idTarefa){
+    return (new CronogramaController())->edit($idHistoria, $idFuncionalidade, $idTarefa, null);
 });
 $router->map('GET','/funcionalidade',function(){
     return(new FuncionalidadeController())->listaFuncionalidades();
