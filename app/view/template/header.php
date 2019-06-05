@@ -5,15 +5,15 @@
  * Date: 20/04/19
  * Time: 19:59
  */
+header("Content-type: text/html; charset=utf-8");
 require_once(__DIR__ . "/../component/alert/SessionAlert.php");
 $configs = include(__DIR__ . '/../../../config.php');
 ?>
 <html>
 <head>
     <title>Scrum</title>
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link rel="stylesheet" href="<?=$configs['document_root']?>/public/css/bootstrap.min.css">
-<!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>-->
     <link rel="stylesheet" href="<?=$configs['document_root']?>/public/css/all.min.css">
     <link rel="stylesheet" href="<?=$configs['document_root']?>/public/css/style.css">
 </head>
@@ -26,11 +26,10 @@ $configs = include(__DIR__ . '/../../../config.php');
             <div>
                 <nav class="nav">
                     <a class="nav-link" href="<?=$configs['document_root']?>/projeto">Projeto</a>
-                    <a class="nav-link" href="<?=$configs['document_root']?>/sprint">Sprint</a>
-                    <a class="nav-link" href="<?=$configs['document_root']?>/funcionalidade">Funcionalidades</a>
                     <a class="nav-link" href="<?=$configs['document_root']?>/historia">Histórias</a>
-                    <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link" href="<?=$configs['document_root']?>/funcionalidade">Funcionalidades</a>
                     <a class="nav-link" href="<?=$configs['document_root']?>/product-backlog">Product Backlog</a>
+                    <a class="nav-link" href="<?=$configs['document_root']?>/sprint">Sprint</a>
                     <a class="nav-link" href="<?=$configs['document_root']?>/cronograma">Cronograma</a>
                 </nav>
             </div>
