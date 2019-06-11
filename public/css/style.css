@@ -1,3 +1,8 @@
-#projeto tr{
-    height: 10px;
+.login{
+    width: 400px;
+    height: 4000px;
+    text-align: center;
+    margin: 5% 0 0 35%;
+    background-color: lightgreen;
+    border-radius: 10px;
 }

@@ -12,12 +12,15 @@ $configs = include(__DIR__ . '/../../../config.php');
 <html>
 <head>
     <title>Scrum</title>
+
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link rel="stylesheet" href="<?=$configs['document_root']?>/public/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?=$configs['document_root']?>/public/css/all.min.css">
     <link rel="stylesheet" href="<?=$configs['document_root']?>/public/css/style.css">
+
 </head>
 <body>
+
     <div class="navbar navbar-inverse navbar-fixed-top bg-light">
         <div class="container">
             <div class="navbar-header">
@@ -35,6 +38,7 @@ $configs = include(__DIR__ . '/../../../config.php');
             </div>
         </div>
     </div>
+    
 <br>
     <div class="container">
 

@@ -1,4 +1,5 @@
 
+<link rel="stylesheet" type="text/css" href="css/style.css">
 <div class="jumbotron">
     <h1>Bem vindo!</h1>
 </div>
@@ -8,6 +9,7 @@ if (Session::isLogged()) { ?>
     <p class="text-success">Você está logado como <?= Session::getSessionRa() ?>. <a
             href="<?=$configs['document_root']?>/logout">Deslogar</a></p>
 <?php } else { ?>
+    <div class="login">
     <h2>Login</h2>
     <form action="<?=$configs['document_root']?>/login" method="post">
         <table class="table">
@@ -26,4 +28,5 @@ if (Session::isLogged()) { ?>
             </tr>
         </table>
     </form>
+</div>
 <?php } ?>
