@@ -11,8 +11,8 @@ $configs = include(__DIR__ . '/../../../../config.php');
         <th scope="col">Prioridade</th>
         <th scope="col">Duração</th>
         <th scope="col">Qtd Sprints</th>
-        <th scope="col"></th>
-        <th scope="col"></th>
+        <th scope="col" class="d-print-none"></th>
+        <th scope="col" class="d-print-none"></th>
     </tr>
     </thead>
     <tbody>
@@ -44,8 +44,8 @@ $configs = include(__DIR__ . '/../../../../config.php');
 //                $total_2 += $countIdHistoria['total'];
 //            }?><!--</td>-->
 <!--            <td>--><?//=($total_1*$total_2)?><!--</td>-->
-            <td><a class="btn btn-primary" href="<?=$configs['document_root']?>/product-backlog/editar/<?= $tarefa['idHistoria'] ?>/<?= $tarefa['idFuncionalidade'] ?>/<?= $tarefa['idTarefa'] ?>"><i class="fas fa-edit"></i></a></td>
-            <td><a class="btn btn-danger" href="<?=$configs['document_root']?>/product-backlog/remover/<?= $tarefa['idHistoria'] ?>/<?= $tarefa['idFuncionalidade'] ?>/<?= $tarefa['idTarefa'] ?>"><i class="fas fa-trash"></i></a></td>
+            <td class="d-print-none"><a class="btn btn-primary" href="<?=$configs['document_root']?>/product-backlog/editar/<?= $tarefa['idHistoria'] ?>/<?= $tarefa['idFuncionalidade'] ?>/<?= $tarefa['idTarefa'] ?>"><i class="fas fa-edit"></i></a></td>
+            <td class="d-print-none"><a class="btn btn-danger" href="<?=$configs['document_root']?>/product-backlog/remover/<?= $tarefa['idHistoria'] ?>/<?= $tarefa['idFuncionalidade'] ?>/<?= $tarefa['idTarefa'] ?>"><i class="fas fa-trash"></i></a></td>
         </tr>
         <?php
     endforeach
