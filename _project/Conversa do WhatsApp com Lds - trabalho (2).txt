@@ -1,0 +1,244 @@
+25/02/19 21:52 - As mensagens enviadas a este grupo agora estão protegidas com criptografia de ponta a ponta. Toque para obter mais informações.
+25/02/19 21:52 - ‎Camilli criou o grupo "Lds - trabalho"
+25/02/19 21:52 - ‎Camilli adicionou você
+25/02/19 21:53 - Lucas Vileto: Oi linda
+25/02/19 21:54 - ‎Camilli adicionou +55 11 96911-0001 e +55 11 97033-4197
+25/02/19 21:55 - ‎+55 11 96911-0001 adicionou Marina IFSP
+25/02/19 21:56 - Marina IFSP: Oi gente!
+25/02/19 21:56 - Marina IFSP: Boa noite!
+25/02/19 21:57 - +55 11 97033-4197: Esta mensagem foi apagada
+25/02/19 21:58 - +55 11 97033-4197: Boa
+04/03/19 17:12 - +55 11 96911-0001: Oi pessoal o trabalho do boliche vai ser em PHP?
+10/03/19 13:47 - +55 11 96911-0001: Oi tem alguém aí? O trabalho é pra manhã não é?
+10/03/19 17:35 - +55 11 97033-4197: Opa, acho que não.
+14/03/19 22:18 - +55 11 96911-0001: https://github.com/antonio24073/boliche
+14/03/19 22:19 - +55 11 96911-0001: tai o boliche, falta colocar testes igual o professor falou, se alguem quiser contribuir, ta meio feio tambem, se alguem quiser embelezar
+14/03/19 22:20 - +55 11 97033-4197: 👍🏻
+14/03/19 23:05 - Marina IFSP: 😉
+15/03/19 21:14 - +55 11 96911-0001: Tem alguém conseguindo fazer a refatoração?
+15/03/19 21:16 - +55 11 97033-4197: Eu estou vendo te2 agora
+15/03/19 21:17 - +55 11 96911-0001: Quem da tópicos especiais 2?
+15/03/19 21:28 - Lucas Vileto: Giovanni
+18/03/19 19:30 - Marina IFSP: Pessoal boa noite o prof Giovanni postou os tipos de projetos que ele vai querer um dos temas mais simples que eu vi, é o sistema para controle de agendamento de espaços escolares. Aí ele explica o que ele quer e tem o nome do PO. Só não tem restrições tecnologicas
+18/03/19 19:31 - Marina IFSP: E o sistema para controle de reposição de aulas que parece ser mais simples também
+18/03/19 19:33 - +55 11 96911-0001: Tô no trânsito. Já tô chegando daí a gente se fala.
+18/03/19 19:33 - Marina IFSP: Blz. Mas pra o pessoal já ir pensando, de repente...
+18/03/19 19:59 - Marina IFSP: ‎IMG-20190318-WA0045.jpg (arquivo anexado)
+Eu achei que éramos nós que escolhiamos
+18/03/19 19:59 - Marina IFSP: O prof já tinha escolhido
+18/03/19 19:59 - Marina IFSP: Rsrsrsr
+18/03/19 19:59 - Marina IFSP: Os temas de cada grupo
+18/03/19 20:15 - Marina IFSP: Primeira reunião de Sprint vai começa a partir da semana que vem e na semana que vem já começamos a desenvolver.
+O PO vai dar a nota, o Scrum Master vai dar a nota, vai ter que ter ao final dos sprints programa funcionando e documentação, mas ele não vai ficar em cima da documentação, mas em cima do programa funcionando. Se o grupo não estiver alinhado ou com problemas, ele vai querer saber pq, se chegar no final e não apresentar ou faltar alguma coisa, e não tiver uma explicação ele não vai poder dar nota!
+De tempos em tempos vamos precisar ter reunião com o po e com ele tb!
+Ao final Al de cada Sprint vai precisar ter um executável
+18/03/19 20:15 - Marina IFSP: Eu acho que é isso que ele acabou de falar na sala
+18/03/19 20:15 - Marina IFSP: E hoje ele vai conversar com o grupo, sobre os temas.
+18/03/19 21:04 - +55 11 97033-4197: Essa semana infelizmente não poderei ir a faculdade, mas vou ver no Moodle.
+25/03/19 19:23 - Marina IFSP: Primeira reunião de Sprint vai começa a partir da semana que vem e na semana que vem já começamos a desenvolver.
+O PO vai dar a nota, o Scrum Master vai dar a nota, vai ter que ter ao final dos sprints programa funcionando e documentação, mas ele não vai ficar em cima da documentação, mas em cima do programa funcionando. Se o grupo não estiver alinhado ou com problemas, ele vai querer saber pq, se chegar no final e não apresentar ou faltar alguma coisa, e não tiver uma explicação ele não vai poder dar nota!
+De tempos em tempos vamos precisar ter reunião com o po e com ele tb!
+Ao final Al de cada Sprint vai precisar ter um executável
+25/03/19 19:23 - Marina IFSP: Isso é o q conversamos semana passada com o prof
+25/03/19 21:45 - Lucas Vileto: Novo projeto
+25/03/19 21:45 - Lucas Vileto: Todos os elementos do Scrum:
+25/03/19 21:46 - Lucas Vileto: Project BackLog, Sprint BackLog, cadastro de usuários, professor, projetos, sprints, product owner e scrum master por projetos,
+25/03/19 21:46 - Lucas Vileto: cada um dos integrantes deve ter seu papel no time, cadastro de revisão
+25/03/19 21:47 - Lucas Vileto: Basicamente um JIRA, porém de forma mais simplificado... Projeto grande, mas consiste em MUITOS CRUD's
+25/03/19 21:47 - Lucas Vileto: Procurar o professor Robson amanhã no Campus, para termos mais detalhes
+25/03/19 21:49 - Marina IFSP: Cerimônias papeis e artefatos productos back log Sprint back log
+Gestão do processo Scrum
+Através de Crud
+Usuário
+Professor
+Projetos Scrum Master
+Usuário projeto papel
+Sprint projeto back log
+Reunião de revisão de Sprint
+Vários cadastros
+26/03/19 20:47 - +55 11 96911-0001: Oi gente tamo indo no robson
+26/03/19 20:48 - Camilli: Sabem a sala?
+26/03/19 20:48 - +55 11 96911-0001: Perto da Sala f09
+26/03/19 20:53 - Camilli: Só tem o rogerio homem lá
+26/03/19 20:53 - Marina IFSP: Não
+26/03/19 20:54 - Marina IFSP: O Homem tá dando aula pra pós
+26/03/19 20:54 - Marina IFSP: E o Robson vai atender a gente
+26/03/19 20:54 - Marina IFSP: É na frente da sala da coordenação
+26/03/19 20:54 - Marina IFSP: No corredor da F09 como disse o Antônio
+26/03/19 20:55 - Camilli: Aah na sala da coordenação
+31/03/19 20:42 - +55 11 96911-0001: Parece que o professor esqueceu de passar a planilha e não temos nada pro primeiro Sprint.
+31/03/19 20:44 - Camilli: Ele disse que ia melhorar a planilha e ficou por isso mesmo...
+31/03/19 20:45 - +55 11 96911-0001: Mas até lá a gente tá de mãos vazias no primeiro sprint
+31/03/19 20:45 - +55 11 96911-0001: Tem o e-mail dele?
+31/03/19 20:45 - Camilli: Sim
+31/03/19 20:45 - Marina IFSP: Não tenho
+31/03/19 20:45 - Camilli: Não
+31/03/19 20:46 - Marina IFSP: Mas dá pra falar no zap, posso? Tenho ele pv
+31/03/19 20:46 - +55 11 96911-0001: Sim
+31/03/19 20:46 - +55 11 96911-0001: Não sei se ele vai atender fds
+31/03/19 20:47 - +55 11 96911-0001: Fala aí. Foi ele que esqueceu
+31/03/19 20:47 - +55 11 97033-4197: Agora está muito em cima, melhor esperar para amanhã.
+31/03/19 20:47 - +55 11 96911-0001: Amanhã eu trabalho
+31/03/19 20:48 - Marina IFSP: Eu já mandei o zap
+31/03/19 20:48 - Marina IFSP: Ele respondeu ok
+31/03/19 20:48 - Marina IFSP: Rs
+31/03/19 20:49 - +55 11 96911-0001: Vai mandar agora?
+31/03/19 20:49 - Marina IFSP: Não sei
+31/03/19 20:50 - +55 11 96911-0001: Hum blz então. Se alguém manjar de Scrum e quiser esquematizar pro grupo entender seria uma boa.
+31/03/19 20:50 - Marina IFSP: ‎IMG-20190331-WA0031.jpg (arquivo anexado)
+Olha ai
+31/03/19 20:50 - +55 11 96911-0001: Vixi esse ok foi tipo to dormindo
+31/03/19 20:50 - +55 11 97033-4197: Kkk
+31/03/19 20:50 - Marina IFSP: Rs
+31/03/19 20:51 - Marina IFSP: Ah hoje é domingo né?
+31/03/19 20:51 - Marina IFSP: Amanhã ele vai lembrar gente!
+31/03/19 20:53 - +55 11 96911-0001: Resultado do primeiro Sprint : o cliente atrasou
+31/03/19 20:53 - +55 11 96911-0001: Kkkk
+31/03/19 20:53 - Marina IFSP: A gente pode tentar lembrar o que ele disse e explicar!... 🤔🤔🤔
+31/03/19 20:54 - +55 11 96911-0001: Eu não lembro, se alguém lembra é uma boa.
+01/04/19 19:07 - Marina IFSP: <Arquivo de mídia oculto>
+01/04/19 19:08 - Marina IFSP: Pessoal, escrevi, beeeeemmmm resumidamente o que entendi que o Robson pediu, acho que para falar melhor, é vendo a planilha dele do excel.
+01/04/19 19:08 - Marina IFSP: Acabei de mandar mais um pedido pra ele da planilha.
+01/04/19 19:08 - Marina IFSP: Até já!
+01/04/19 20:29 - Camilli: Estou completamente enrolada no trabalho hj.. não vou conseguir ir...
+01/04/19 20:34 - Marina IFSP: Td bem!
+01/04/19 20:34 - Marina IFSP: Eu aviso aqui
+01/04/19 22:12 - Lucas Vileto: GitKraken
+01/04/19 22:12 - Lucas Vileto: IDE para gerenciamento dos arquivos do GIT
+01/04/19 22:14 - Marina IFSP: Blz
+01/04/19 23:46 - +55 11 96911-0001: <Arquivo de mídia oculto>
+01/04/19 23:48 - +55 11 96911-0001: Oi gente, então aqui tem um arquivo com as tabelas do banco e com exemplo de model e dao para fazer
+01/04/19 23:51 - +55 11 97033-4197: 👍🏻
+01/04/19 23:56 - +55 11 96911-0001: <Arquivo de mídia oculto>
+01/04/19 23:56 - +55 11 96911-0001: fiz uma alteracao, considerar esse
+01/04/19 23:56 - +55 11 96911-0001: Lucas faz Tarefa
+Marina faz Pessoa
+Polvora faz Sprint
+Camilli faz Epico
+01/04/19 23:56 - +55 11 96911-0001: Esse é o sprint dessa semana boa noite
+02/04/19 00:00 - Marina IFSP: Ok
+02/04/19 00:04 - +55 11 96911-0001: Já ia esquecendo Camel Case e tem que fazer o create table para MySQL tambem
+02/04/19 00:22 - +55 11 96911-0001: Eu faço tarefas e o Lucas histórias.
+02/04/19 00:22 - +55 11 96911-0001: Desculpa incomoda. Boa noite.
+04/04/19 09:17 - +55 11 96911-0001: <Arquivo de mídia oculto>
+04/04/19 09:18 - +55 11 96911-0001: O lucas estava certo, product backlog era uma view, atualizei no arquivo. e coloquei mais ou menos como é pra fazer, o sql e o dao nãso precisa ser perfeito pq ainda nao tem as classes dos outros
+08/04/19 20:49 - +55 11 96911-0001: Não vou poder ir hoje. Depois eu vou criar um repositório no Git e cada um posta sua parte.
+15/04/19 19:38 - Marina IFSP: Oi boa noite, hoje é entrega do primeiro Sprint, reunião de revisão/ retrospectiva
+Sprint planning Sprint 2
+15/04/19 21:43 - +55 11 96911-0001: antonio24073/scrum-php
+15/04/19 22:09 - +55 11 96911-0001: https://github.com/antonio24073/scrum-php/invitations
+16/04/19 21:04 - +55 11 96911-0001: Camilli vc precisa passar seu nome no Github para eu te adicionar.
+16/04/19 22:38 - Camilli: Oi, é @cnjraad
+17/04/19 16:58 - +55 11 96911-0001: Já adicionei
+21/04/19 12:08 - +55 11 96911-0001: Oi Lucas blz? Ia ser bom se vc entregasse o conteúdo de histórias da semana passada pq vai atrasar o pessoal que vai fazer o cronograma amanhã na aula.
+21/04/19 12:11 - +55 11 96911-0001: 1 sprint- SQL, getter e setter, classe dao
+2 Sprint (amanhã)- listar as tabelas
+21/04/19 12:12 - +55 11 96911-0001: Marina e pólvora podem fazer comigo na aula amanhã se não souberem mas já tem a minha parte pronta como exemplo
+21/04/19 12:13 - +55 11 96911-0001: As tabelas ficaram divididas 
+Lucas histórias de novo
+Camilli épico de novo
+Marina sprints e capa
+Pólvora cronograma
+Eu product backlog
+21/04/19 12:31 - +55 11 97033-4197: 👍🏻
+21/04/19 17:23 - Lucas Vileto: Opa... cheguei em casa agora, já tô fazendo e ainda hoje eu já disponibilizo no GitHub
+21/04/19 17:25 - Lucas Vileto: @5511969110001, pode me mandar de novo? Tô tentando baixar mas tá dando erro
+21/04/19 17:25 - Lucas Vileto: Melhor..  isso é o que já está no Git?
+21/04/19 18:20 - Camilli: Epico adicionado no GIT
+21/04/19 18:58 - +55 11 96911-0001: Oi camilli blz? Então faltou vc popular o banco e no lugar de id pessoa é ra q é uma chave estrangeira. No getter e setter a primeira letra é minúscula e a continuação é maiuscula
+21/04/19 18:58 - +55 11 96911-0001: Lucas agora é só direto no Git o trabalho.
+21/04/19 18:59 - +55 11 96911-0001: Antonio24073/scrum-php
+21/04/19 19:00 - Lucas Vileto: Ahhhh beleza
+21/04/19 19:00 - Lucas Vileto: era só para ter certeza
+21/04/19 19:10 - +55 11 96911-0001: É.. só que não esquece de dar um git pulo pq vc e a camilli tão mexendo junto
+21/04/19 19:11 - +55 11 96911-0001: Git pulo não Git pull
+22/04/19 20:38 - Camilli: <Arquivo de mídia oculto>
+28/04/19 10:41 - +55 11 96911-0001: Oi gente. Fiz uma mudanças no projeto pra aceitar controller. Tive que colocar rotas. A organizacao Tá ficando bem próximo de um framework profissional . Só que algo aconteceu e não consigo fazer o login. Portanto se alguém for mexer no projeto é só comentar a linha redirectifnotlogged igual eu fiz na minha classe list product backlog. Mas dá pra continuar o trabalho sem problemas fazendo isso.
+28/04/19 10:46 - +55 11 96911-0001: E agora os dados de configuração do banco são feitos no arquivo config
+28/04/19 12:18 - +55 11 97033-4197: 👍🏻
+30/04/19 13:14 - +55 11 96911-0001: Fiz o router novo lá. Já dá pra mexer.
+30/04/19 19:20 - +55 11 97033-4197: 👍🏻
+30/04/19 22:28 - +55 11 96911-0001: Gente postei a documentação na tarefa do Moodle. Deu pra colocar q o primeiro Sprint era só um teste de uma das views. Porém o próximo Sprint não tem desculpa, tem que fazer a listagem cada um com a sua parte q nos deparamos. Acrescentei a documentação q foi pro professor na pasta _project
+04/05/19 21:08 - +55 11 96911-0001: Pessoal tem umas coisas que estão erradas no projeto. Cód_func na verdade é a junção de idhistoria e idfuncionalidade. Cod_tar é idhistoria, idfuncionalidade e idtarefa. Esse é meu entendimento.
+04/05/19 21:08 - +55 11 96911-0001: Outra coisa a coluna oque é na verdade o objetivo de histórias.
+04/05/19 21:10 - +55 11 96911-0001: Vou subir o projeto do brmodelo atualizado.
+04/05/19 22:24 - +55 11 96911-0001: Importante: eu subi as tabelas SQL da V3 do professor. Provavelmente terá muitas funcionalidades q vão parar de funcionar, cada um tem que verificar se a sua parte está funcionando com o novo banco
+04/05/19 23:00 - +55 11 97033-4197: Esta mensagem foi apagada
+04/05/19 23:00 - +55 11 97033-4197: 👍🏻
+06/05/19 19:07 - +55 11 97033-4197: Pessoal boa noite, hoje não vai ser possível eu ir.
+06/05/19 19:15 - Marina IFSP: Imaginei
+13/05/19 19:53 - Camilli: Boa noite pessoal, tinha esquecido mas agora a listagem das funcionalidades está comitada no Git
+13/05/19 19:55 - +55 11 96911-0001: Blz. Vou chegar atrasado hj.
+13/05/19 21:05 - +55 11 96911-0001: Não tá passando meu ônibus não avisa aí o professor por favor
+20/05/19 22:36 - Marina IFSP: Projeto: insere o nome do projeto o cliente o product owner contato quem conversa quem é o Scrum e os membros da equipe
+Informações do status
+Prioridades
+Sprints
+Datas que vão acontecer os sprints
+
+Histórias
+Histórias do usuário
+Código
+Quem pede a história
+O que gostaria que tivesse
+E o que a pessoa quer
+
+Imprime o fórmulario das histórias em PDF
+
+Funcionalidades
+
+Pontos da história
+Quem é a pessoa
+O que a pessoa queria
+Qual funcionalidade faz para entender ou fazer funcionar o que a pessoa queria(colocar a informática aqui)
+Para um pt de história possa ter 1 ou várias funcionalidades
+
+Product backlog
+Histórias
+Cid funcionalidade
+Funcionalidades
+Tarefas a serem feitas
+Qd as tarefas estiver feita
+A funcionalidade tá pronta
+
+Tarefa: Teste, homologação(faz com o cliente) e deploy(por no ar).
+
+Imprime o product back log
+
+Dois documentos: 1 - cronograma:(Scrum só atualiza) kanbam -
+Sprint, início e término e status. atualizar o cronograma tarefas duração e status( select a fazer feito e fazendo).
+Início e término vem do Sprint
+Semanalmente envia pro prof imprime em PDF.
+
+2 - sprint back log
+Planejando o que ele vai fazer última planilha
+
+Fórmulario: tudo o que tem no product backlog tarefa duração 
+O período do Sprint aparece quando eu trocar o número do Sprint
+20/05/19 22:37 - Marina IFSP: Pessoal o q consegui anotar do que conversamos sobre o projeto hoje com o Robson
+20/05/19 22:38 - +55 11 96911-0001: Blz. Valeu Marina
+26/05/19 15:26 - +55 11 96911-0001: Lucas, melhor vc fazer a sua parte pq tenho q entregar a nota dos sprints e só falta vc. Já era pra ter entregado na sexta, mas vou esperar até amanhã.
+26/05/19 15:34 - Lucas Vileto: Pode deixar Antonio..  hoje ainda subo no GIT
+26/05/19 18:01 - Lucas Vileto: @5511969110001 , tudo bem? Eu subi as coisas agora, todos os elementos que estavam faltando e tal, porém estou com um problema nas rotas
+26/05/19 18:05 - Lucas Vileto: quando eu tento criar a rota de listar as historias ele tá dando erro referente ao controller, como se não existisse.....
+26/05/19 18:05 - Lucas Vileto: porém para as rotas de edit e update, está dando problema...
+26/05/19 18:05 - Lucas Vileto: acha que amanhã a gente consegue ver isso na aula, antes de mostrar para o Giovanni
+26/05/19 18:07 - Lucas Vileto: ?
+26/05/19 18:30 - +55 11 96911-0001: Vou dar uma olhada na sua rota e já te falo o problema
+26/05/19 18:32 - Lucas Vileto: Valeu!
+26/05/19 18:36 - +55 11 96911-0001: ‎IMG-20190526-WA0019.jpg (arquivo anexado)
+Vc tá passando id história 2 vezes no routes
+26/05/19 18:40 - Lucas Vileto: verdadeeee
+26/05/19 18:40 - Lucas Vileto: agora eu corrigi isso e tá dando o mesmo erro... parece que o routes não consegue achar o controller da Historia
+26/05/19 18:44 - +55 11 96911-0001: Require once controller historia
+26/05/19 18:44 - +55 11 96911-0001: Lá encima tem q importar
+26/05/19 18:45 - Lucas Vileto: Ahhhhhhhhh
+26/05/19 18:45 - Lucas Vileto: boaaaaa
+26/05/19 18:49 - +55 11 96911-0001: Funcionou?
+26/05/19 19:04 - Lucas Vileto: Sim, agora foi... fui corrigindo os errinhos e já tá exibindo
+26/05/19 19:04 - Lucas Vileto: só tô corrigindo o de editar
+26/05/19 19:04 - Lucas Vileto: que ele tá dando um erro de bolleano
+26/05/19 20:01 - Lucas Vileto: Subi corrigindo lá, porém ainda vou verificar um errinho que tá acontecendo.
+26/05/19 20:02 - Lucas Vileto: Não consigo efetuar a edição, porém sem erro na tela.. Só aparece aquela mensagem que a gente configurou de "A historia não foi editada", porém não tem erro a mais na tela e nem no Network do Browser....
+26/05/19 20:16 - +55 11 96911-0001: Perai vou ver
+26/05/19 23:03 - +55 11 96911-0001: Sei lá. Vamos ter que ver isso amanhã.

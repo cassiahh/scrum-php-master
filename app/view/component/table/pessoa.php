@@ -1,5 +1,4 @@
 
-
 <table class="table">
     <thead class="thead-light">
     <tr>
@@ -32,3 +31,4 @@
     ?>
     </tbody>
 </table>
+</div>
