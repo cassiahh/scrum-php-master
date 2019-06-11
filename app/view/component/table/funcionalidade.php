@@ -27,7 +27,9 @@ $configs = include(__DIR__ . '/../../../../config.php');
  ?>	
         <tr>
 		    <?php if ($aux1 != $funcionalidade['idHistoria']){?> 
-            <td><?= $funcionalidade['idHistoria'] ?></td>
+            <td><?= $funcionalidade['idHistoria'] ?>
+			<a class="btn btn-danger" href="<?=$configs['document_root']?>/funcionalidade/adicionar/<?= $funcionalidade['idHistoria'] ?>"><i class="fas fa-plus"></i></a>
+			</td>
 			<?php } else { ?><td style="border-top:0"></td> <?php };?>
 			
 			<td><?= $funcionalidade['nome'] ?></td>

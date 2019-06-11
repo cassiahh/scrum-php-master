@@ -20,16 +20,17 @@ $configs = include(__DIR__ . '/../../../../config.php');
     <?php
     
     foreach ($tarefas as $sprint) :
-        ?>
+        $aux = explode(".",$sprint['cod_tar']);        ?>
         <tr>
             <td><?= $sprint['cod_tar'] ?></td>
             <td><?= $sprint['tarefa'] ?></td>
             <td><?= $sprint['duracao'] ?></td>
             <td><?= $sprint['idSprint'] ?></td>
-            <td><?= $sprint['nome'] ?></td>
+            <td><?= $sprint['ra'] ?></td>
             <td><?= $sprint['status'] ?></td>
-            <td><a class="btn btn-primary" href="<?=$configs['document_root']?>/sprint/editar/<?= $sprint['cod_tar'] ?>/<?= $sprint['tarefa'] ?>/<?= $sprint['duracao'] ?>/<?= $sprint['num_sprints'] ?>/<?= $sprint['respons'] ?>/<?= $sprint['status'] ?>"><i class="fas fa-edit"></i></a></td>
-            <td><a class="btn btn-danger" href="<?=$configs['document_root']?>/sprint/remover/<?= $sprint['cod_tar'] ?>/<?= $sprint['tarefa'] ?>/<?= $sprint['duracao'] ?>/<?= $sprint['num_Sprints'] ?>/<?= $sprint['respons'] ?>/<?= $sprint['status'] ?>"><i class="fas fa-trash"></i></a></td>
+            <td><a class="btn btn-primary" href="<?=$configs['document_root']?>/sprint/editar/<?= $aux[0] ?>/<?= $aux[1] ?>/<?= $aux[2] ?>"><i class="fas fa-edit"></i></a></td>
+            
+            <td><a class="btn btn-danger" href="<?=$configs['document_root']?>/sprint/remover/<?= $aux[0] ?>/<?= $aux[1] ?>/<?= $aux[2] ?>"><i class="fas fa-trash"></i></a></td>
         </tr>
         <?php
     endforeach

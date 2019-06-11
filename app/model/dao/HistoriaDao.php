@@ -42,8 +42,11 @@ class HistoriaDao
 
     function alteraHistoria($idHistoria, $historia)
     {
-        $query = "update Historia set idHistoria = '{$historia->getIdHistoria()}', {$historia->getgostariaHistoria()},
-            '{$historia->getIdEpico()}'";
+        $query = "update Historia set idHistoria = '{$historia->getIdHistoria()}',
+                  gostaria = '{$historia->getgostariaHistoria()}',
+                  ra = '{$historia->getIdEpico()}', 
+                  objetivo = '{$historia->getobjetivoHistoria()}'
+                  where idHistoria = '{$idHistoria}'";
         return mysqli_query($this->conexao, $query);
     }
 
@@ -57,7 +60,7 @@ class HistoriaDao
 
     function removeHistoria($id)
     {
-        $query = "delete from Historia where id = {$id}";
+        $query = "delete from Historia where idHistoria = {$id}";
         return mysqli_query($this->conexao, $query);
     }
 }

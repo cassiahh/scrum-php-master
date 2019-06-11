@@ -8,7 +8,7 @@
 
 require_once(__DIR__.'/../domain/Historia.php');
 
-class historiaBuilder
+class HistoriaBuilder
 {
     private $historia;
     public function __construct($array)

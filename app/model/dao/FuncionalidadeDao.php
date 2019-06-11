@@ -41,14 +41,12 @@ class FuncionalidadeDao
         return $countFunc;
 	}	
 
-	public function insereFuncionalidade(Funcionalidade $funcionalidade)
+	public function insereFuncionalidade($idHistoria, $idFuncionalidade,Funcionalidade $funcionalidade)
 	{
-		$query = "insert into Funcionalidade (codFunc, funcionalidade, idHistoria, oQue, ra)
-			values ({$funcionalidade->getCodFunc()},
-					'{$funcionalidade->getFuncionalidade()}',
-					{$funcionalidade->getIdHistoria()},					
-					'{$funcionalidade->getOQue()}',
-					'{$funcionalidade->getRa()}')";
+		$query = "insert into Funcionalidade (idHistoria, idFuncionalidade, funcionalidade)
+			values ({$funcionalidade->getIdHistoria()},
+					'{$funcionalidade->getIdFuncionalidade()}',
+					'{$funcionalidade->getFuncionalidade()}')";
 		return mysqli_query($this->conexao, $query);
 	}
 	public function alteraFuncionalidade($idHistoria, $idFuncionalidade,Funcionalidade $funcionalidade)
@@ -66,14 +64,24 @@ class FuncionalidadeDao
 		$query = "select *
 				  from Funcionalidade
                   where idHistoria = {$idHistoria}
-                    and idFuncionalidade = {$codFunc}";
+                  and idFuncionalidade = {$codFunc}";
 		$resultado = mysqli_query($this->conexao, $query);
 		$array = mysqli_fetch_assoc($resultado);
 		return $array;
 	}
-	function removeFuncionalidade($codFunc)
+	public function buscaIdFuncionalidade($idHistoria)
 	{
-		$query = "delete from Funcionalidade where codFunc = {$codFunc}";
+		$array = array();
+		$query = "select MAX(idFuncionalidade) + 1 as idFuncionalidade, idHistoria, '' as funcionalidade
+		          from Funcionalidade
+                  where idHistoria = {$idHistoria}";
+		$resultado = mysqli_query($this->conexao, $query);
+		$array = mysqli_fetch_assoc($resultado);
+		return $array;
+	}
+	function removeFuncionalidade($idHistoria, $idFuncionalidade)
+	{
+		$query = "delete from Funcionalidade where idHistoria = {$idHistoria} and idFuncionalidade = {$idFuncionalidade}";
 		return mysqli_query($this->conexao, $query);
 	}
 }

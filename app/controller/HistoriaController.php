@@ -7,14 +7,8 @@
  */
 
 require_once(__DIR__ . "/../model/database/Connection.php");
-//require_once(__DIR__ . "/../model/dao/TarefaDao.php");
-// require_once(__DIR__ . "/../model/builder/historiaBuilder.php");
 require_once(__DIR__ . "/../model/builder/HistoriaBuilder.php");
 require_once(__DIR__ . "/../model/dao/HistoriaDao.php");
-// require_once(__DIR__ . "/../model/builder/HistoriaBuilder.php");
-// require_once(__DIR__ . "/../model/dao/HistoriaDao.php");
-// require_once(__DIR__ . "/../model/domain/Funcionalidade.php");
-
 
 class HistoriaController
 {
@@ -44,7 +38,7 @@ class HistoriaController
         $conexao = Connection::getConnection();
         $historiaDao = new HistoriaDao($conexao);
         $historia = $historiaDao->buscaHistoria($idHistoria);
-        $historiaModel = (new historiaBuilder($historia))->build();
+        $historiaModel = (new HistoriaBuilder($historia))->build();
         $historiaModel->setIdHistoria($post['idHistoria']);
         $historiaModel->setGostariaHistoria($post['gostariaHistoria']);
         $historiaModel->setIdEpico($post['idEpico']);
@@ -55,10 +49,11 @@ class HistoriaController
 
         include __DIR__ . '/../view/page/edit/historia.php';
     }
-  /*    public function remove($idHistoria, $idFuncionalidade, $idTarefa)
+      public function remove($idHistoria)
     {
-        $tarefaDao = new TarefaDao(Connection::getConnection());
-        $removed = $tarefaDao->removeTarefa($idHistoria, $idFuncionalidade, $idTarefa);
-        include __DIR__ . '/../view/page/remove/product-backlog.php';
-    }*/
+        $conexao = Connection::getConnection();
+        $historiaDao = new HistoriaDao($conexao);
+        $removed = $historiaDao->removeHistoria($idHistoria);
+        include __DIR__ . '/../view/page/remove/historia.php';
+    }
 }

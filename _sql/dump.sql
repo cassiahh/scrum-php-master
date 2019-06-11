@@ -18,22 +18,22 @@ CREATE TABLE Sprint (
         semana timestamp 
 );
 CREATE TABLE Historia (
-        idHistoria bigint(20) not null auto_increment primary key,
+        idHistoria int(20) not null auto_increment primary key,
         gostaria varchar(191),
         ra varchar (191),
         objetivo varchar(191),
         constraint FK_raHistoria foreign key (ra) references Pessoa(ra)
 );
 CREATE TABLE Funcionalidade (
-        idHistoria bigint(20) not null,
+        idHistoria int(20) not null,
         idFuncionalidade bigint(20) not null,
 
         funcionalidade varchar(191),
         primary key (idHistoria, idFuncionalidade),
-        constraint FK_idHistoriaFuncionalidade foreign key (idHistoria) references Historia(idHistoria)
+        constraint FK_idHistoriaFuncionalidade foreign key (idHistoria) references Historia(idHistoria) ON DELETE CASCADE
 );
 CREATE TABLE Tarefa (
-        idHistoria bigint(20) not null,
+        idHistoria int(20) not null,
         idFuncionalidade bigint(20) not null,
         idTarefa bigint(20) not null,
 
