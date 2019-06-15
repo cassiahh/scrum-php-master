@@ -9,10 +9,10 @@ $configs = include(__DIR__ . '/../../../../config.php');
         <th scope="col">O que</th>
         <th scope="col">cod_func</th>
         <th scope="col">Funcionalidades</th>
-        <th scope="col"></th>
-        <th scope="col"></th>
-        <th scope="col"></th>
-        <th scope="col"></th>
+        <th scope="col" class="d-print-none"></th>
+        <th scope="col" class="d-print-none"></th>
+        <th scope="col" class="d-print-none"></th>
+        <th scope="col" class="d-print-none"></th>
     </tr>
     </thead>
     <tbody>
@@ -28,7 +28,7 @@ $configs = include(__DIR__ . '/../../../../config.php');
         <tr>
 		    <?php if ($aux1 != $funcionalidade['idHistoria']){?> 
             <td><?= $funcionalidade['idHistoria'] ?>
-			<a class="btn btn-danger" href="<?=$configs['document_root']?>/funcionalidade/adicionar/<?= $funcionalidade['idHistoria'] ?>"><i class="fas fa-plus"></i></a>
+			<a class="btn btn-danger d-print-none" href="<?=$configs['document_root']?>/funcionalidade/adicionar/<?= $funcionalidade['idHistoria'] ?>"><i class="fas fa-plus"></i></a>
 			</td>
 			<?php } else { ?><td style="border-top:0"></td> <?php };?>
 			
@@ -37,8 +37,8 @@ $configs = include(__DIR__ . '/../../../../config.php');
 			<td><?= $funcionalidade['codFunc'] ?></td>
 			<td><?= $funcionalidade['funcionalidade'] ?></td>
 			<td></td>
-			<td><a class="btn btn-primary" href="<?=$configs['document_root']?>/funcionalidade/editar/<?= $funcionalidade['idHistoria'] ?>/<?= $funcionalidade['idFuncionalidade'] ?>"><i class="fas fa-edit"></i></a></td>
-			<td><a class="btn btn-danger" href="<?=$configs['document_root']?>/funcionalidade/remover/<?= $funcionalidade['idHistoria'] ?>/<?= $funcionalidade['idFuncionalidade'] ?>"><i class="fas fa-trash"></i></a></td>
+			<td class="d-print-none"><a class="btn btn-primary" href="<?=$configs['document_root']?>/funcionalidade/editar/<?= $funcionalidade['idHistoria'] ?>/<?= $funcionalidade['idFuncionalidade'] ?>"><i class="fas fa-edit"></i></a></td>
+			<td class="d-print-none"><a class="btn btn-danger" href="<?=$configs['document_root']?>/funcionalidade/remover/<?= $funcionalidade['idHistoria'] ?>/<?= $funcionalidade['idFuncionalidade'] ?>"><i class="fas fa-trash"></i></a></td>
 		</tr>
         <?php
         $aux1 = $funcionalidade['idHistoria'];

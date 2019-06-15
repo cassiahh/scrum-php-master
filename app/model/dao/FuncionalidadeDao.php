@@ -16,16 +16,29 @@ class FuncionalidadeDao
 		$arrays = array();
 		$resultado = mysqli_query($this->conexao, 
 				"select concat(f.idHistoria,'.',f.idFuncionalidade) as codFunc,
-				 f.funcionalidade,
-				 f.idHistoria,
-				 h.objetivo as oQue, 
-				 h.ra, 
-				 p.nome,
-                 f.idFuncionalidade				 
+				        f.funcionalidade,
+				        f.idHistoria,
+				        h.objetivo as oQue, 
+				        h.ra, 
+				        p.nome,
+                        f.idFuncionalidade				 
 				 from funcionalidade as f 
 				 join historia as h on f.idHistoria=h.idHistoria
 				 join Pessoa as p on p.ra=h.ra
-				 order by codFunc");
+                 UNION
+                 Select s.idHistoria  as codFunc,
+                        null as funcionalidade,
+                 	    s.idHistoria,
+                 	    s.objetivo as oQue,  
+                 	    s.ra, 
+                 	    p.nome,
+                        null as idFuncionalidade	
+                 from historia as s
+                      join Pessoa as p on p.ra=s.ra
+                 where not EXISTS (SELECT 1
+                                   from funcionalidade as f 
+                 				   where f.idHistoria=s.idHistoria)
+                 order by codFunc");
 		while ($array = mysqli_fetch_assoc($resultado)) {
 			array_push($arrays, $array);
         }
@@ -77,6 +90,17 @@ class FuncionalidadeDao
                   where idHistoria = {$idHistoria}";
 		$resultado = mysqli_query($this->conexao, $query);
 		$array = mysqli_fetch_assoc($resultado);
+		return $array;
+	}
+	public function buscaIdFuncionalidadeHist($idHistoria)
+	{
+		$array = array();
+		$query = "select 1 as idFuncionalidade, idHistoria, '' as funcionalidade
+		          from historia
+                  where idHistoria = {$idHistoria}";
+		$resultado = mysqli_query($this->conexao, $query);
+		$array = mysqli_fetch_assoc($resultado);
+		var_dump($array);
 		return $array;
 	}
 	function removeFuncionalidade($idHistoria, $idFuncionalidade)
