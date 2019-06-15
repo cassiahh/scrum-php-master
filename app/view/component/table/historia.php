@@ -12,7 +12,7 @@ $configs = include(__DIR__ . '/../../../../config.php');
         <th scope="col"></th>
         <th scope="col"></th>
         <th scope="col"></th>
-        <th scope="col"></th>
+        <th scope="col"><a class="btn btn-danger" href="<?=$configs['document_root']?>/historia/adicionar/">Adicionar Nova História <i class="fas fa-plus"></i></a></th>
     </tr>
     </thead>
     <tbody>

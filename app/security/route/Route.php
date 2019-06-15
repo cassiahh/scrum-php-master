@@ -102,8 +102,12 @@ $router->map('POST','/historia/editar/[i:idHistoria]', function($idHistoria){
 $router->map('GET','/historia/remover/[i:idHistoria]', function($idHistoria){
     return (new HistoriaController())->remove($idHistoria);
 });
-
-
+$router->map('POST','/historia/adicionar/', function(){
+    return (new HistoriaController())->insere(null);
+});
+$router->map('POST','/historia/adicionarhistoria/', function(){
+    return (new historiaController())->adicionar($_POST);
+});
 // match current request url
 $match = $router->match();
 
