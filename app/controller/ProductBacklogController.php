@@ -8,6 +8,8 @@
 
 require_once(__DIR__ . "/../model/database/Connection.php");
 require_once(__DIR__ . "/../model/dao/TarefaDao.php");
+require_once(__DIR__ . "/../model/dao/ProjetoDao.php");
+require_once(__DIR__ . "/../model/dao/PessoaDao.php");
 require_once(__DIR__ . "/../model/builder/TarefaBuilder.php");
 
 
@@ -26,33 +28,38 @@ class ProductBacklogController
     {
         $projetoDao = new ProjetoDao(Connection::getConnection());
         $projetos = $projetoDao->listaProjeto();
-        $pessoaDao = new PessoaDao(Connection::getConnection());
-        $pessoas = $pessoaDao->listaPessoas();
         $tarefaDao = new TarefaDao(Connection::getConnection());
         $tarefas = $tarefaDao->listaTarefas();
         include __DIR__ . '/../view/page/list/product-backlog.php';
     }
-    public function edit($idHistoria, $idFuncionalidade, $idTarefa, $post)
+    public function edit($idHistoria, $idFuncionalidade, $idTarefa, $post=null)
     {
-        $tarefaDao = new TarefaDao(Connection::getConnection());
+        $conexao = Connection::getConnection();
+        $pessoaDao = new PessoaDao($conexao);
+        $pessoas = $pessoaDao->listaPessoas();
+        $tarefaDao = new TarefaDao($conexao);
         $tarefa = $tarefaDao->buscaTarefa($idHistoria, $idFuncionalidade, $idTarefa);
         include __DIR__ . '/../view/page/edit/product-backlog.php';
     }
-    public function update($idHistoria, $idFuncionalidade, $idTarefa, $post)
+    public function update($post)
     {
         $conexao = Connection::getConnection();
         $tarefaDao = new TarefaDao($conexao);
-        $tarefa = $tarefaDao->buscaTarefa($idHistoria, $idFuncionalidade, $idTarefa);
+        $tarefa = $tarefaDao->buscaTarefa($post['idHistoria'], $post['idFuncionalidade'], $post['idTarefa']);
         $tarefaModel = (new TarefaBuilder($tarefa))->build();
-        $tarefaModel->setIdHistoria($post['idHistoria']);
-        $tarefaModel->setIdFuncionalidade($post['idFuncionalidade']);
-        $tarefaModel->setIdTarefa($post['idTarefa']);
         $tarefaModel->setTarefa($post['tarefa']);
-        $tarefaModel->setDependencia($post['dependencia']);
+        $tarefaModel->setIdSprint($post['idSprint']);
+        $tarefaModel->setRa($post['ra']);
+        $tarefaModel->setStatus($post['status']);
+        $tarefaModel->setInicio($post['inicio']);
+        $tarefaModel->setTempo($post['tempo']);
+        $tarefaModel->setTermino($post['termino']);
         $tarefaModel->setDuracao($post['duracao']);
+        $tarefaModel->setDependencia($post['dependencia']);
+        $tarefaModel->setPrioridade($post['prioridade']);
 
-        $updated = $tarefaDao->alteraTarefa($idHistoria, $idFuncionalidade, $idTarefa, $tarefaModel);
-        $tarefa = $tarefaDao->buscaTarefa($idHistoria, $idFuncionalidade, $idTarefa);
+        $updated = $tarefaDao->alteraTarefa($post['idHistoria'], $post['idFuncionalidade'], $post['idTarefa'], $tarefaModel);
+        $tarefa = $tarefaModel;
 
         include __DIR__ . '/../view/page/edit/product-backlog.php';
     }
@@ -61,5 +68,21 @@ class ProductBacklogController
         $tarefaDao = new TarefaDao(Connection::getConnection());
         $removed = $tarefaDao->removeTarefa($idHistoria, $idFuncionalidade, $idTarefa);
         include __DIR__ . '/../view/page/remove/product-backlog.php';
+    }
+    public function insere($idHistoria, $idFuncionalidade)
+    {
+        include __DIR__ . '/../view/page/insere/product-backlog.php';
+    }
+    public function adicionar($post)
+    {
+        $conexao = Connection::getConnection();
+        $tarefaDao = new TarefaDao($conexao);
+        $tarefaModel = (new tarefaBuilder($post))->build();
+        var_dump($tarefaModel);
+        $updated = $tarefaDao->insereTarefa($tarefaModel);
+        echo mysqli_insert_id();
+//        $tarefa = $tarefaDao->buscaTarefa($idHistoria, $idTarefa);
+
+//        include __DIR__ . '/../view/page/insere/product-backlog.php';
     }
 }

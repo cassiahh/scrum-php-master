@@ -52,11 +52,8 @@ class TarefaDao
 
     function insereTarefa(Tarefa $tarefa)
     {
-        $query = "insert into Tarefa (idHistoria, idFuncionalidade, idTarefa, tarefa, idSprint, ra, status, inicio, tempo, termino, duracao, dependencia, prioridade)
+        $query = "insert into Tarefa (tarefa, idSprint, ra, status, inicio, tempo, termino, duracao, dependencia, prioridade)
             values (
-            '{$tarefa->getIdHistoria()}',
-            '{$tarefa->getIdFuncionalidade()}',
-            '{$tarefa->getIdTarefa()}',
             '{$tarefa->getTarefa()}',
             '{$tarefa->getIdSprint()}',
             '{$tarefa->getRa()}', 

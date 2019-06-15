@@ -18,14 +18,14 @@ CREATE TABLE Sprint (
         semana timestamp 
 );
 CREATE TABLE Historia (
-        idHistoria int(20) not null auto_increment primary key,
+        idHistoria bigint(20) not null auto_increment primary key,
         gostaria varchar(191),
         ra varchar (191),
         objetivo varchar(191),
         constraint FK_raHistoria foreign key (ra) references Pessoa(ra)
 );
 CREATE TABLE Funcionalidade (
-        idHistoria int(20) not null,
+        idHistoria bigint(20) not null,
         idFuncionalidade bigint(20) not null,
 
         funcionalidade varchar(191),
@@ -33,7 +33,7 @@ CREATE TABLE Funcionalidade (
         constraint FK_idHistoriaFuncionalidade foreign key (idHistoria) references Historia(idHistoria) ON DELETE CASCADE
 );
 CREATE TABLE Tarefa (
-        idHistoria int(20) not null,
+        idHistoria bigint(20) not null,
         idFuncionalidade bigint(20) not null,
         idTarefa bigint(20) not null,
 
@@ -91,10 +91,11 @@ INSERT INTO Funcionalidade (idHistoria, idFuncionalidade, funcionalidade) VALUES
 (6,5, 'Controle das vendas'),
 (6,6, 'Gestão das comissões');
 INSERT INTO Tarefa (idHistoria, idFuncionalidade, idTarefa, tarefa, idSprint, ra, status, inicio, tempo, termino, duracao, dependencia, prioridade) VALUES
-(1, 1, 1, 'Levantar histórico da empresa', 1, '111111', 'status 1', '2019-01-01 20:00:00', '2019-01-01 21:00:00', '2019-01-01 22:00:00', 1, 'dep 1', 'alta'),
-(2, 1, 1, 'Definir layout da página', 2, '222222', 'status 2', '2019-01-02 20:00:00', '2019-01-02 21:00:00', '2019-01-02 22:00:00', 2, 'dep 2', 'baixa'),
-(2, 2, 1, 'Tirar fotos', 2, '222222', 'status 3', '2019-01-03 20:00:00', '2019-01-03 21:00:00', '2019-01-03 22:00:00', 3, 'dep 3', 'média'),
-(2, 2, 2, 'Desenvolver a página', 3, '333333', 'status 1', '2019-01-01 20:00:00', '2019-01-01 21:00:00', '2019-01-01 22:00:00', 4, 'dep 1', 'baixa'),
-(3, 1, 1, 'Teste', 4, '444444', 'status 2', '2019-01-02 20:00:00', '2019-01-02 21:00:00', '2019-01-02 22:00:00', 4, 'dep 2', 'baixa'),
-(3, 1, 2, 'Criar base de dados de produtos', 5, '555555', 'status 3', '2019-01-03 20:00:00', '2019-01-03 21:00:00', '2019-01-03 22:00:00', 2, 'dep 3', 'média');
+(1, 1, 1, 'Levantar histórico da empresa', 1, '111111', 'A fazer', '2019-01-01 20:00:00', '2019-01-01 21:00:00', '2019-01-01 22:00:00', 1, 'dep 1', 'alta'),
+(1, 1, 2, 'Levantar outro histórico da empresa', 1, '555555', 'A fazer', '2019-01-01 20:00:00', '2019-01-01 21:00:00', '2019-01-01 22:00:00', 1, 'dep 1', 'alta'),
+(2, 1, 1, 'Definir layout da página', 2, '222222', 'Fazendo', '2019-01-02 20:00:00', '2019-01-02 21:00:00', '2019-01-02 22:00:00', 2, 'dep 2', 'baixa'),
+(2, 2, 1, 'Tirar fotos', 2, '222222', 'Feito', '2019-01-03 20:00:00', '2019-01-03 21:00:00', '2019-01-03 22:00:00', 3, 'dep 3', 'média'),
+(2, 2, 2, 'Desenvolver a página', 3, '333333', 'Aguardando', '2019-01-01 20:00:00', '2019-01-01 21:00:00', '2019-01-01 22:00:00', 4, 'dep 1', 'baixa'),
+(3, 1, 1, 'Teste', 4, '444444', 'Fazendo', '2019-01-02 20:00:00', '2019-01-02 21:00:00', '2019-01-02 22:00:00', 4, 'dep 2', 'baixa'),
+(3, 1, 2, 'Criar base de dados de produtos', 5, '555555', 'Feito', '2019-01-03 20:00:00', '2019-01-03 21:00:00', '2019-01-03 22:00:00', 2, 'dep 3', 'média');
 
