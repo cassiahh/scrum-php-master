@@ -61,7 +61,7 @@ class HistoriaController
     {
         $conexao = Connection::getConnection();
         $historiaDao = new HistoriaDao($conexao);
-        include __DIR__ . '/../view/component/form/historiaAdd.php';
+        include __DIR__ . '/../view/page/insere/historia.php';
     }
     public function adicionar($idHistoria, $post)
     {
