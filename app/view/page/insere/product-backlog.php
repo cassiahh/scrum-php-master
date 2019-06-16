@@ -13,7 +13,7 @@ require_once(__DIR__ . "/../../../security/session/Session.php");
 
 if($post != null) {
     if($updated) { ?>
-        <p class="alert alert-success" role="alert">Tarefa adicionada com sucesso!</p>
+        <p class="alert alert-success d-print-none" role="alert">Tarefa adicionada com sucesso!</p>
         <div class="row" >
             <?php
             require_once(__DIR__ . "/../../component/table/cabecalho.php");
