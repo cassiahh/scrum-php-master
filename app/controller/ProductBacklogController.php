@@ -77,7 +77,7 @@ class ProductBacklogController
         $removed = $tarefaDao->removeTarefa($idHistoria, $idFuncionalidade, $idTarefa);
         include __DIR__ . '/../view/page/remove/product-backlog.php';
     }
-    public function insere($idHistoria, $idFuncionalidade, $idTarefa)
+    public function insere($idHistoria, $idFuncionalidade, $idTarefa, $post=null)
     {
         $tarefa = [
             'idHistoria'=>$idHistoria,
@@ -95,6 +95,13 @@ class ProductBacklogController
         $tarefaModel = (new tarefaBuilder($post))->build();
         $updated = $tarefaDao->insereTarefa($tarefaModel);
         $tarefa = (new TarefaHelper($tarefaModel))->convertToArray();
+        $tarefaDao = new TarefaDao($conexao);
+        $tarefas = $tarefaDao->listaProductBacklog();
+        $funcionalidadeAttributes = $tarefaDao->funcionalidadeAttributes();
+        $projetoDao = new ProjetoDao($conexao);
+        $projetos = $projetoDao->listaProjeto();
+        $pessoaDao = new PessoaDao($conexao);
+        $pessoas = $pessoaDao->listaPessoas();
 
         include __DIR__ . '/../view/page/insere/product-backlog.php';
     }
