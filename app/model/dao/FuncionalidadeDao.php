@@ -22,8 +22,8 @@ class FuncionalidadeDao
 				        h.ra, 
 				        p.nome,
                         f.idFuncionalidade				 
-				 from funcionalidade as f 
-				 join historia as h on f.idHistoria=h.idHistoria
+				 from Funcionalidade as f 
+				 join Historia as h on f.idHistoria=h.idHistoria
 				 join Pessoa as p on p.ra=h.ra
                  UNION
                  Select s.idHistoria  as codFunc,
@@ -33,10 +33,10 @@ class FuncionalidadeDao
                  	    s.ra, 
                  	    p.nome,
                         null as idFuncionalidade	
-                 from historia as s
+                 from Historia as s
                       join Pessoa as p on p.ra=s.ra
                  where not EXISTS (SELECT 1
-                                   from funcionalidade as f 
+                                   from Funcionalidade as f 
                  				   where f.idHistoria=s.idHistoria)
                  order by codFunc");
 		while ($array = mysqli_fetch_assoc($resultado)) {
@@ -49,7 +49,7 @@ class FuncionalidadeDao
 	{
 		$arrays = array();
 		$resultado = mysqli_query($this->conexao, 
-				"select MAX(idHistoria) from funcionalidade");
+				"select MAX(idHistoria) from Funcionalidade");
 		$countFunc = mysqli_fetch_assoc($resultado);
         return $countFunc;
 	}	
@@ -96,7 +96,7 @@ class FuncionalidadeDao
 	{
 		$array = array();
 		$query = "select 1 as idFuncionalidade, idHistoria, '' as funcionalidade
-		          from historia
+		          from Historia
                   where idHistoria = {$idHistoria}";
 		$resultado = mysqli_query($this->conexao, $query);
 		$array = mysqli_fetch_assoc($resultado);

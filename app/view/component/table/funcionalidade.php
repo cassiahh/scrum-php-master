@@ -4,10 +4,10 @@ $configs = include(__DIR__ . '/../../../../config.php');
 <table class="table">
     <thead class="thead-light">
     <tr>
-        <th scope="col">pts_story</th>
+        <th scope="col">hist</th>
         <th scope="col">Quem</th>
         <th scope="col">O que</th>
-        <th scope="col">cod_func</th>
+        <th scope="col">func</th>
         <th scope="col">Funcionalidades</th>
         <th scope="col" class="d-print-none"></th>
         <th scope="col" class="d-print-none"></th>
@@ -31,9 +31,15 @@ $configs = include(__DIR__ . '/../../../../config.php');
 			<a class="btn btn-danger d-print-none" href="<?=$configs['document_root']?>/funcionalidade/adicionar/<?= $funcionalidade['idHistoria'] ?>"><i class="fas fa-plus"></i></a>
 			</td>
 			<?php } else { ?><td style="border-top:0"></td> <?php };?>
-			
-			<td><?= $funcionalidade['nome'] ?></td>
-			<td><?= $funcionalidade['oQue'] ?></td>
+
+            <?php if ($aux1 != $funcionalidade['idHistoria']){?>
+                <td><?= $funcionalidade['nome'] ?></td>
+            <?php } else { ?><td style="border-top:0"></td> <?php };?>
+
+            <?php if ($aux1 != $funcionalidade['idHistoria']){?>
+                <td><?= $funcionalidade['oQue'] ?></td>
+            <?php } else { ?><td style="border-top:0"></td> <?php };?>
+
 			<td><?= $funcionalidade['codFunc'] ?></td>
 			<td><?= $funcionalidade['funcionalidade'] ?></td>
 			<td></td>

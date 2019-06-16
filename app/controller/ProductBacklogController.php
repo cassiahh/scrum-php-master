@@ -29,7 +29,7 @@ class ProductBacklogController
         $projetoDao = new ProjetoDao(Connection::getConnection());
         $projetos = $projetoDao->listaProjeto();
         $tarefaDao = new TarefaDao(Connection::getConnection());
-        $tarefas = $tarefaDao->listaTarefas();
+        $tarefas = $tarefaDao->listaProductBacklog();
         include __DIR__ . '/../view/page/list/product-backlog.php';
     }
     public function edit($idHistoria, $idFuncionalidade, $idTarefa, $post=null)
@@ -61,6 +61,10 @@ class ProductBacklogController
         $updated = $tarefaDao->alteraTarefa($post['idHistoria'], $post['idFuncionalidade'], $post['idTarefa'], $tarefaModel);
         $tarefa = $tarefaModel;
 
+        $projetoDao = new ProjetoDao($conexao);
+        $projetos = $projetoDao->listaProjeto();
+        $tarefaDao = new TarefaDao($conexao);
+        $tarefas = $tarefaDao->listaProductBacklog();
         include __DIR__ . '/../view/page/edit/product-backlog.php';
     }
     public function remove($idHistoria, $idFuncionalidade, $idTarefa)
