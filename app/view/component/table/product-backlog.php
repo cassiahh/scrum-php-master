@@ -32,7 +32,20 @@ $configs = include(__DIR__ . '/../../../../config.php');
             <?php } else { ?><td style="border-top:0"></td> <?php };?>
             <?php if ($ultimoIdHistoriaIdFuncionalidade != (float)($tarefa['idHistoria'].'.'.$tarefa['idFuncionalidade'])){?>
                 <td><?= $tarefa['idHistoria'] ?>.<?= $tarefa['idFuncionalidade'] ?>
-                    <a class="btn btn-danger d-print-none" href="<?=$configs['document_root']?>/product-backlog/adicionar/<?= $tarefa['idHistoria'].'/'.$tarefa['idFuncionalidade'] ?>"><i class="fas fa-plus"></i></a>
+                    <a class="btn btn-danger d-print-none" href="<?=$configs['document_root']?>/product-backlog/adicionar/<?php
+                    echo $tarefa['idHistoria'].'/'.$tarefa['idFuncionalidade'].'/';
+                    $qtdDeFuncionalidadesValidadas =0;
+                    foreach ($funcionalidadeAttributes as $funcionalidadeAttribute) {
+                        if ($funcionalidadeAttribute['cod_func'] == ($tarefa['idHistoria'] . '.' . $tarefa['idFuncionalidade'])) {
+                            echo ($funcionalidadeAttribute['maxIdTarefa']+1);
+                        }else{
+                            $qtdDeFuncionalidadesValidadas+=1;
+                        }
+                    }
+                    if($qtdDeFuncionalidadesValidadas==sizeof($funcionalidadeAttributes)){
+                        echo 1;
+                    }
+                    ?>"><i class="fas fa-plus"></i></a>
                 </td>
             <?php } else { ?><td style="border-top:0"></td> <?php };?>
             <?php if ($ultimoIdHistoriaIdFuncionalidade != (float)($tarefa['idHistoria'].'.'.$tarefa['idFuncionalidade'])){?>
@@ -45,18 +58,18 @@ $configs = include(__DIR__ . '/../../../../config.php');
             <td><?= $tarefa['duracao'] ?></td>
             <?php if ($ultimoIdHistoriaIdFuncionalidade != (float)($tarefa['idHistoria'].'.'.$tarefa['idFuncionalidade'])){?>
                 <td><?php
-                    foreach ($qtdSprintsESomaDuracaos as $qtdSprintsESomaDuracao) {
-                        if ($qtdSprintsESomaDuracao['cod_func'] == ($tarefa['idHistoria'] . '.' . $tarefa['idFuncionalidade'])) {
-                            echo $qtdSprintsESomaDuracao['qtdSprints'];
+                    foreach ($funcionalidadeAttributes as $funcionalidadeAttribute) {
+                        if ($funcionalidadeAttribute['cod_func'] == ($tarefa['idHistoria'] . '.' . $tarefa['idFuncionalidade'])) {
+                            echo $funcionalidadeAttribute['qtdSprints'];
                         }
                     }
                     ?></td>
             <?php } else { ?><td style="border-top:0"></td> <?php };?>
             <?php if ($ultimoIdHistoriaIdFuncionalidade != (float)($tarefa['idHistoria'].'.'.$tarefa['idFuncionalidade'])){?>
                 <td><?php
-                    foreach ($qtdSprintsESomaDuracaos as $qtdSprintsESomaDuracao) {
-                        if ($qtdSprintsESomaDuracao['cod_func'] == ($tarefa['idHistoria'] . '.' . $tarefa['idFuncionalidade'])) {
-                            echo $qtdSprintsESomaDuracao['somaDuracao'];
+                    foreach ($funcionalidadeAttributes as $funcionalidadeAttribute) {
+                        if ($funcionalidadeAttribute['cod_func'] == ($tarefa['idHistoria'] . '.' . $tarefa['idFuncionalidade'])) {
+                            echo $funcionalidadeAttribute['somaDuracao'];
                         }
                     }
                     ?></td>
@@ -67,7 +80,7 @@ $configs = include(__DIR__ . '/../../../../config.php');
         <?php
         $ultimoIdHistoria = $tarefa['idHistoria'];
         $ultimoIdHistoriaIdFuncionalidade = (float)($tarefa['idHistoria'].'.'.$tarefa['idFuncionalidade']);
-    endforeach
+    endforeach;
     ?>
     </tbody>
 </table>

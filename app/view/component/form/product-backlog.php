@@ -53,12 +53,12 @@ $configs = include(__DIR__ . '/../../../../config.php');
                     <label class="input-group-text" for="inputGroupSelect02">Status</label>
                 </div>
                 <select class="custom-select" id="inputGroupSelect02" name="status">
-                    <option value="A fazer" <?= ($tarefa['status'] == "A fazer") ? "A fazer" : '' ?>>A fazer</option>
-                    <option value="Fazendo" <?= ($tarefa['status'] == "Fazendo") ? "Fazendo" : '' ?>>Fazendo</option>
-                    <option value="Aguardando" <?= ($tarefa['status'] == "Aguardando") ? "Aguardando" : '' ?>>
+                    <option value="A fazer" <?= ($tarefa['status'] == "A fazer") ? "selected" : '' ?>>A fazer</option>
+                    <option value="Fazendo" <?= ($tarefa['status'] == "Fazendo") ? "selected" : '' ?>>Fazendo</option>
+                    <option value="Aguardando" <?= ($tarefa['status'] == "Aguardando") ? "selected" : '' ?>>
                         Aguardando
                     </option>
-                    <option value="Feito" <?= ($tarefa['status'] == "Feito") ? "Feito" : '' ?>>Feito</option>
+                    <option value="Feito" <?= ($tarefa['status'] == "Feito") ? "selected" : '' ?>>Feito</option>
                 </select>
             </div>
         </div>

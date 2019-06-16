@@ -58,8 +58,8 @@ $router->map('GET','/product-backlog', function(){
 $router->map('GET','/product-backlog/editar/[i:idHistoria]/[i:idFuncionalidade]/[i:idTarefa]', function($idHistoria, $idFuncionalidade, $idTarefa){
     return (new ProductBacklogController())->edit($idHistoria, $idFuncionalidade, $idTarefa);
 });
-$router->map('GET','/product-backlog/adicionar/[i:idHistoria]/[i:idFuncionalidade]', function($idHistoria,$idFuncionalidade){
-    return (new ProductBacklogController())->insere($idHistoria, $idFuncionalidade);
+$router->map('GET','/product-backlog/adicionar/[i:idHistoria]/[i:idFuncionalidade]/[i:idTarefa]', function($idHistoria,$idFuncionalidade, $idTarefa){
+    return (new ProductBacklogController())->insere($idHistoria, $idFuncionalidade, $idTarefa);
 });
 $router->map('POST','/product-backlog/adicionar', function(){
     return (new ProductBacklogController())->adicionar($_POST);

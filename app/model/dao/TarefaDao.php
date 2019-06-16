@@ -71,13 +71,14 @@ class TarefaDao
         return $arrays;
     }
 
-    function qtdSprintsESomaDuracao()
+    function funcionalidadeAttributes()
     {
         $arrays = array();
         $resultado = mysqli_query($this->conexao,
             "select concat(idHistoria, '.', idFuncionalidade) as cod_func,
                     COUNT(distinct idSprint) as qtdSprints,
-                    SUM(duracao) as somaDuracao
+                    SUM(duracao) as somaDuracao, 
+                    MAX(idTarefa) as maxIdTarefa
                     from Tarefa group by cod_func");
         while ($array = mysqli_fetch_assoc($resultado)) {
             array_push($arrays, $array);
