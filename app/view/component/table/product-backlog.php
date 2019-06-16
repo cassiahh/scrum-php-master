@@ -4,15 +4,16 @@ $configs = include(__DIR__ . '/../../../../config.php');
 <table class="table">
     <thead class="thead-light">
     <tr>
-        <th scope="col">hist</th>
+        <th scope="col">h</th>
         <th scope="col">func</th>
         <th scope="col">Funcionalidade</th>
         <th scope="col">tar</th>
         <th scope="col">Tarefa</th>
         <th scope="col">Dependência</th>
         <th scope="col">Prioridade</th>
-        <th scope="col">Duração</th>
-        <th scope="col">Qtd Sprints</th>
+        <th scope="col">d</th>
+        <th scope="col">q/s</th>
+        <th scope="col">t/h</th>
         <th scope="col" class="d-print-none"></th>
         <th scope="col" class="d-print-none"></th>
     </tr>
@@ -42,6 +43,24 @@ $configs = include(__DIR__ . '/../../../../config.php');
             <td><?= $tarefa['dependencia'] ?></td>
             <td><?= $tarefa['prioridade'] ?></td>
             <td><?= $tarefa['duracao'] ?></td>
+            <?php if ($ultimoIdHistoriaIdFuncionalidade != (float)($tarefa['idHistoria'].'.'.$tarefa['idFuncionalidade'])){?>
+                <td><?php
+                    foreach ($qtdSprintsESomaDuracaos as $qtdSprintsESomaDuracao) {
+                        if ($qtdSprintsESomaDuracao['cod_func'] == ($tarefa['idHistoria'] . '.' . $tarefa['idFuncionalidade'])) {
+                            echo $qtdSprintsESomaDuracao['qtdSprints'];
+                        }
+                    }
+                    ?></td>
+            <?php } else { ?><td style="border-top:0"></td> <?php };?>
+            <?php if ($ultimoIdHistoriaIdFuncionalidade != (float)($tarefa['idHistoria'].'.'.$tarefa['idFuncionalidade'])){?>
+                <td><?php
+                    foreach ($qtdSprintsESomaDuracaos as $qtdSprintsESomaDuracao) {
+                        if ($qtdSprintsESomaDuracao['cod_func'] == ($tarefa['idHistoria'] . '.' . $tarefa['idFuncionalidade'])) {
+                            echo $qtdSprintsESomaDuracao['somaDuracao'];
+                        }
+                    }
+                    ?></td>
+            <?php } else { ?><td style="border-top:0"></td> <?php };?>
             <td class="d-print-none"><a class="btn btn-primary" href="<?=$configs['document_root']?>/product-backlog/editar/<?= $tarefa['idHistoria'] ?>/<?= $tarefa['idFuncionalidade'] ?>/<?= $tarefa['idTarefa'] ?>"><i class="fas fa-edit"></i></a></td>
             <td class="d-print-none"><a class="btn btn-danger" href="<?=$configs['document_root']?>/product-backlog/remover/<?= $tarefa['idHistoria'] ?>/<?= $tarefa['idFuncionalidade'] ?>/<?= $tarefa['idTarefa'] ?>"><i class="fas fa-trash"></i></a></td>
         </tr>

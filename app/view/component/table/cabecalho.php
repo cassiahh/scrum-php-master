@@ -1,6 +1,6 @@
 
 
-<table id="projeto" class="table table-sm col-4">
+<table id="projeto" class="table table-sm col-md-4">
     <thead class="thead-light">
     <tr>
         <th scope="col">Projeto</th>
