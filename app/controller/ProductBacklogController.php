@@ -66,6 +66,7 @@ class ProductBacklogController
         $projetos = $projetoDao->listaProjeto();
         $tarefaDao = new TarefaDao($conexao);
         $tarefas = $tarefaDao->listaProductBacklog();
+        $qtdSprintsESomaDuracaos = $tarefaDao->qtdSprintsESomaDuracao();
         include __DIR__ . '/../view/page/edit/product-backlog.php';
     }
     public function remove($idHistoria, $idFuncionalidade, $idTarefa)
