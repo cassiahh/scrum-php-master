@@ -1,7 +1,9 @@
 
+
 <?php
 $configs = include(__DIR__ . '/../../../../config.php');
 ?>
+
 
 <table class="table">
     <thead class="thead-light">
@@ -25,13 +27,16 @@ $configs = include(__DIR__ . '/../../../../config.php');
             <td a class="d-print-none"><a class="btn btn-primary" href="<?=$configs['document_root']?>/pessoa/editar/<?= $pessoa['ra']?>"><i class="fas fa-edit"></i></a></td>
             <td>
           
-                    <input type="hidden" name="ra" href="<?= $pessoa['ra'] ?>"/>
+                    <input type="hidden" name="ra" href="<?= $pessoa['ra'] ?>">
                    <td a class="d-print-none"><a class="btn btn-danger" href="<?=$configs['document_root']?>/pessoa/remove/<?= $pessoa['ra']?>"><i class="fas fa-trash"></i></a></td>
-                
-            </td>
+        
+        
         </tr>
         <?php
     endforeach
     ?>
+
     </body>
 </table>
+
+

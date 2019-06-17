@@ -9,6 +9,10 @@
         <th scope="col">Término</th>
         <th scope="col">Tempo</th>
         <th scope="col">Status</th>
+        <th scope="col" class="d-print-none"></th>
+        <th scope="col" class="d-print-none"></th>
+        
+        
     </tr>
     </thead>
     <tbody>
@@ -16,6 +20,7 @@
     
 
     foreach ($tarefas as $tarefa) :
+        //var_dump($tarefa);
         ?>
         <tr>
             <td><?= $tarefa['idSprint'] ?></td>
@@ -27,13 +32,16 @@
             <td><?= $tarefa['tempo'] ?></td>
             <td><?= $tarefa['status'] ?></td>
 
-            <td><a class="btn btn-primary" href="edit-cronograma.php?id=<?= cronograma['idTarefa'] ?>"><i class="fas fa-edit"></i></a></td>
-            <td>
+            <td class="d-print-none"><a class="btn btn-primary" href="<?=$configs['document_root']?>/cronograma/editar/<?= $tarefa['idHistoria'] ?>/<?= $tarefa['idFuncionalidade'] ?>/<?= $tarefa['idTarefa'] ?>"><i class="fas fa-edit"></i></a></td>
+            <td class="d-print-none"><a class="btn btn-danger" href="<?=$configs['document_root']?>/cronograma/remover/<?= $tarefa['idHistoria'] ?>/<?= $tarefa['idFuncionalidade'] ?>/<?= $tarefa['idTarefa'] ?>"><i class="fas fa-trash"></i></a></td>
+        
+            <!--<td>
                 <form action="remove-cronograma.php" method="post">
                     <input type="hidden" name="id" value="<?= cronograma['idTarefa'] ?>"/>
                     <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
                 </form>
-            </td>
+            </td>-->
+            
         </tr>
         <?php
     endforeach

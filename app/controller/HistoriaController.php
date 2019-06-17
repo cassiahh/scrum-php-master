@@ -56,4 +56,24 @@ class HistoriaController
         $removed = $historiaDao->removeHistoria($idHistoria);
         include __DIR__ . '/../view/page/remove/historia.php';
     }
+
+    public function insere()
+    {
+        $conexao = Connection::getConnection();
+        $historiaDao = new HistoriaDao($conexao);
+        include __DIR__ . '/../view/page/insere/historia.php';
+    }
+    public function adicionar($idHistoria, $post)
+    {
+        $conexao = Connection::getConnection();
+        $historiaModel = (new historiaBuilder($historia))->build();
+        $historiaModel->setIdHistoria($post['idHistoria']);
+        $historiaModel->setIdFuncionalidade($post['idFuncionalidade']);
+        $historiaModel->setFuncionalidade($post['Funcionalidade']);
+        
+        $updated = $historiaDao->insereHistoria($idHistoria, $idFuncionalidade, $funcionalidadeModel);
+        $historia = $historiaDao->buscaHistoria($idHistoria, $idFuncionalidade);
+
+        include __DIR__ . '/../view/page/insere/historia.php';
+    }
 }

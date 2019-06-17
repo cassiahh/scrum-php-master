@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: antonio
- * Date: 05/05/19
- * Time: 01:00
+ * Date: 15/06/19
+ * Time: 13:04
  */
 
 require_once(__DIR__ . "/../../template/header.php");
@@ -13,7 +13,7 @@ require_once(__DIR__ . "/../../../security/session/Session.php");
 
 if($post != null) {
     if($updated) { ?>
-        <p class="alert alert-success d-print-none" role="alert">Product-backlog adicionado com sucesso!</p>
+        <p class="alert alert-success d-print-none" role="alert">Tarefa adicionada com sucesso!</p>
         <div class="row" >
             <?php
             require_once(__DIR__ . "/../../component/table/cabecalho.php");
@@ -29,16 +29,17 @@ if($post != null) {
         </div >
         <?php
         require_once(__DIR__ . "/../../component/table/product-backlog.php");
-    } else {
+     } else {
         $msg = mysqli_error($conexao);
         ?>
-        <p class="alert alert-danger" role="alert">Product-backlog não foi adicionado: <?= $msg ?></p>
+        <p class="alert alert-danger" role="alert">Tarefa não foi adicionada: <?= $msg ?></p>
         <?php
-        require_once(__DIR__ . "/../../component/form/product-backlog.php");
+        require_once(__DIR__ . "/../../component/form/product-backlogAdd.php");
     }
 }else{
-    require_once(__DIR__ . "/../../component/form/product-backlog.php");
+    require_once(__DIR__ . "/../../component/form/product-backlogAdd.php");
 }
+
 
 
 require_once(__DIR__ . "/../../template/footer.php");

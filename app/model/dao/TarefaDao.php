@@ -26,24 +26,60 @@ class TarefaDao
         }
         return $arrays;
     }
-    function countIdHistoria()
+    function listaProductBacklog()
     {
         $arrays = array();
         $resultado = mysqli_query($this->conexao,
-            "select idHistoria, COUNT(*) as total
-                       from Tarefa group by idHistoria");
+            "select distinct concat(t.idHistoria,'.',t.idFuncionalidade,'.',t.idTarefa) as cod_tar, 
+                        t.idHistoria as idHistoria,
+                        t.idFuncionalidade as idFuncionalidade,
+                        t.idTarefa as idTarefa,
+                        t.idSprint as idSprint,
+                        f.funcionalidade as funcionalidade,
+                        t.tarefa as tarefa,
+                        t.dependencia as dependencia,
+                        t.prioridade as prioridade,
+                        t.duracao as duracao,
+                        p.nome as nome, 
+                        p.papel as papel
+                        from Tarefa as t 
+                        join Pessoa as p on t.ra=p.ra 
+                        join Funcionalidade as f on t.idFuncionalidade=f.idFuncionalidade 
+                        group by cod_tar
+                        UNION
+                        select 
+                        distinct concat(u.idHistoria,'.',u.idFuncionalidade) as cod_tar, 
+                        u.idHistoria as idHistoria,
+                        u.idFuncionalidade as idFuncionalidade,
+                        null as idTarefa,
+                        null as idSprint,
+                        u.funcionalidade as funcionalidade,
+                        null as tarefa,
+                        null as dependencia,
+                        null as prioridade,
+                        null as duracao,
+                        null as nome, 
+                        null as papel
+                        from Funcionalidade as u
+                        where not EXISTS (
+                            select a.* from Tarefa as a
+                            where a.idFuncionalidade=u.idFuncionalidade)
+                        order by idHistoria, idFuncionalidade, idTarefa;");
         while ($array = mysqli_fetch_assoc($resultado)) {
             array_push($arrays, $array);
         }
         return $arrays;
     }
 
-    function countIdHistoriaIdSprint()
+    function funcionalidadeAttributes()
     {
         $arrays = array();
         $resultado = mysqli_query($this->conexao,
-            "select concat(idHistoria, '-', idSprint),idHistoria,idSprint, COUNT(*) as total
-                        from Tarefa group by concat(idHistoria, '-', idSprint)");
+            "select concat(idHistoria, '.', idFuncionalidade) as cod_func,
+                    COUNT(distinct idSprint) as qtdSprints,
+                    SUM(duracao) as somaDuracao, 
+                    MAX(idTarefa) as maxIdTarefa
+                    from Tarefa group by cod_func");
         while ($array = mysqli_fetch_assoc($resultado)) {
             array_push($arrays, $array);
         }
@@ -54,14 +90,14 @@ class TarefaDao
     {
         $query = "insert into Tarefa (idHistoria, idFuncionalidade, idTarefa, tarefa, idSprint, ra, status, inicio, tempo, termino, duracao, dependencia, prioridade)
             values (
-            '{$tarefa->getIdHistoria()}',
-            '{$tarefa->getIdFuncionalidade()}',
-            '{$tarefa->getIdTarefa()}',
+            {$tarefa->getIdHistoria()},
+            {$tarefa->getIdFuncionalidade()},
+            {$tarefa->getIdTarefa()},
             '{$tarefa->getTarefa()}',
-            '{$tarefa->getIdSprint()}',
+            {$tarefa->getIdSprint()},
             '{$tarefa->getRa()}', 
-            {$tarefa->getStatus()},
-            {$tarefa->getInicio()}, 
+            '{$tarefa->getStatus()}',
+            '{$tarefa->getInicio()}', 
             '{$tarefa->getTempo()}', 
             '{$tarefa->getTermino()}', 
             '{$tarefa->getDuracao()}', 

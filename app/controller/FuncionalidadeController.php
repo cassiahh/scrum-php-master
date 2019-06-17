@@ -47,7 +47,6 @@ class FuncionalidadeController
         $funcionalidadeModel->setIdHistoria($post['idHistoria']);
         $funcionalidadeModel->setIdFuncionalidade($post['idFuncionalidade']);
         $funcionalidadeModel->setFuncionalidade($post['Funcionalidade']);
-		var_dump($funcionalidadeModel);
 		
         $updated = $funcionalidadeDao->alteraFuncionalidade($idHistoria, $idFuncionalidade, $funcionalidadeModel);
         $funcionalidade = $funcionalidadeDao->buscaFuncionalidade($idHistoria, $idFuncionalidade);
@@ -69,6 +68,9 @@ class FuncionalidadeController
     {
         $funcionalidadeDao = new FuncionalidadeDao(Connection::getConnection());
         $funcionalidade = $funcionalidadeDao->buscaIdFuncionalidade($idHistoria);
+		if($funcionalidade['idFuncionalidade'] == null){
+			$funcionalidade = $funcionalidadeDao->buscaIdFuncionalidadeHist($idHistoria);
+		}
         include __DIR__ . '/../view/page/insere/funcionalidade.php';
     }
 	public function adicionar($idHistoria, $idFuncionalidade, $post)
@@ -76,6 +78,9 @@ class FuncionalidadeController
         $conexao = Connection::getConnection();
         $funcionalidadeDao = new FuncionalidadeDao($conexao);
         $funcionalidade = $funcionalidadeDao->buscaIdFuncionalidade($idHistoria);
+		if($funcionalidade['idFuncionalidade'] == null){
+			$funcionalidade = $funcionalidadeDao->buscaIdFuncionalidadeHist($idHistoria);
+		}
         $funcionalidadeModel = (new funcionalidadeBuilder($funcionalidade))->build();
         $funcionalidadeModel->setIdHistoria($post['idHistoria']);
         $funcionalidadeModel->setIdFuncionalidade($post['idFuncionalidade']);

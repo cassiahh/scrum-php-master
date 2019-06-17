@@ -18,12 +18,15 @@ $router->map('GET','/', function(){
 $router->map('GET','/index', function(){
     return (new IndexController())->index();
 });
+
+
 $router->map('POST','/login', function() {
     return (new IndexController())->login($_POST['ra'],$_POST['senha']);
 });
 $router->map('GET','/logout', function(){
     return (new IndexController())->logout();
 });
+
 
 $router->map('GET','/projeto', function(){
     return (new ProjetoController())->list();
@@ -50,10 +53,10 @@ $router->map('GET','/pessoa/remove/[i:ra]',
     return (new ProjetoController())->removePessoas($ra);
 });
 
+
 $router->map('GET','/sprint', function(){
     return (new SprintController())->list();
 });
-
 $router->map('GET','/sprint/remover/[i:idHistoria]/[i:idFuncionalidade]/[i:idTarefa]', function($idHistoria, $idFuncionalidade, $idTarefa){
     return (new SprintController())->remove($idHistoria, $idFuncionalidade, $idTarefa);
 });
@@ -65,24 +68,41 @@ $router->map('POST','/sprint/editar/[i:idHistoria]/[i:idFuncionalidade]/[i:idTar
     return (new SprintController())->update($idHistoria, $idFuncionalidade, $idTarefa, $_POST);
 });
 
+
 $router->map('GET','/product-backlog', function(){
     return (new ProductBacklogController())->list();
 });
 $router->map('GET','/product-backlog/editar/[i:idHistoria]/[i:idFuncionalidade]/[i:idTarefa]', function($idHistoria, $idFuncionalidade, $idTarefa){
-    return (new ProductBacklogController())->edit($idHistoria, $idFuncionalidade, $idTarefa, null);
+    return (new ProductBacklogController())->edit($idHistoria, $idFuncionalidade, $idTarefa);
 });
-$router->map('POST','/product-backlog/editar/[i:idHistoria]/[i:idFuncionalidade]/[i:idTarefa]', function($idHistoria, $idFuncionalidade, $idTarefa){
-    return (new ProductBacklogController())->update($idHistoria, $idFuncionalidade, $idTarefa, $_POST);
+$router->map('GET','/product-backlog/adicionar/[i:idHistoria]/[i:idFuncionalidade]/[i:idTarefa]', function($idHistoria,$idFuncionalidade, $idTarefa){
+    return (new ProductBacklogController())->insere($idHistoria, $idFuncionalidade, $idTarefa);
+});
+$router->map('POST','/product-backlog/adicionar', function(){
+    return (new ProductBacklogController())->adicionar($_POST);
+});
+$router->map('POST','/product-backlog/editar', function(){
+    return (new ProductBacklogController())->update($_POST);
 });
 $router->map('GET','/product-backlog/remover/[i:idHistoria]/[i:idFuncionalidade]/[i:idTarefa]', function($idHistoria, $idFuncionalidade, $idTarefa){
     return (new ProductBacklogController())->remove($idHistoria, $idFuncionalidade, $idTarefa);
 });
+
+
 $router->map('GET','/cronograma',function(){
     return(new CronogramaController())->list();
 });
-$router->map('POST','/editar-cronograma', function() {
-    return (new CronogramaController())->edit();
+$router->map('GET','/cronograma/remover/[i:idHistoria]/[i:idFuncionalidade]/[i:idTarefa]', function($idHistoria, $idFuncionalidade, $idTarefa){
+    return (new CronogramaController())->remove($idHistoria, $idFuncionalidade, $idTarefa, null);
 });
+$router->map('POST','/cronograma/editar/[i:idHistoria]/[i:idFuncionalidade]/[i:idTarefa]', function($idHistoria, $idFuncionalidade, $idTarefa){
+    return (new CronogramaController())->update($idHistoria, $idFuncionalidade, $idTarefa, $_POST);
+});
+$router->map('GET','/cronograma/editar/[i:idHistoria]/[i:idFuncionalidade]/[i:idTarefa]', function($idHistoria, $idFuncionalidade, $idTarefa){
+    return (new CronogramaController())->edit($idHistoria, $idFuncionalidade, $idTarefa, null);
+});
+
+
 $router->map('GET','/funcionalidade',function(){
     return(new FuncionalidadeController())->listaFuncionalidades();
 });
@@ -101,6 +121,8 @@ $router->map('POST','/funcionalidade/editar/[i:idHistoria]/[i:idFuncionalidade]'
 $router->map('GET','/funcionalidade/remover/[i:idHistoria]/[i:idFuncionalidade]', function($idHistoria, $idFuncionalidade){
     return (new FuncionalidadeController())->remove($idHistoria, $idFuncionalidade);
 });
+
+
 $router->map('GET','/historia',function(){
     return(new HistoriaController())->listaHistoria();
 });
@@ -112,6 +134,12 @@ $router->map('POST','/historia/editar/[i:idHistoria]', function($idHistoria){
 });
 $router->map('GET','/historia/remover/[i:idHistoria]', function($idHistoria){
     return (new HistoriaController())->remove($idHistoria);
+});
+$router->map('GET','/historia/adicionar', function(){
+    return (new HistoriaController())->insere();
+});
+$router->map('POST','/historia/adicionarhistoria/', function(){
+    return (new historiaController())->adicionar($_POST);
 });
 
 
