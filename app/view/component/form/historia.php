@@ -6,8 +6,7 @@ $configs = include(__DIR__ . '/../../../../config.php');
     <div class="form-row">
         <div class="form-group col-md-2">
             <label for="inputIdHistoria">Código da Historia: </label>
-            <input type="text" class="form-control" id="inputIdHistoria" aria-describedby="inputIdHistoria"
-                   placeholder="idHistoria" name="idHistoria" value="<?=$historia['idHistoria']?>">
+            <input type="text" class="form-control" id="inputIdHistoria" aria-describedby="inputIdHistoria" placeholder="idHistoria" name="idHistoria" value="<?=$historia['idHistoria']?>" readonly>
         </div>
         <div class="form-group col-md-3">
             <label for="inputgostariaHistoria">Gostaria: </label>

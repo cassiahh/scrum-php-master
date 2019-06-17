@@ -140,9 +140,10 @@ $router->map('GET','/historia/adicionar', function(){
 });
 $router->map('POST','/historia/adicionarhistoria/', function(){
     return (new historiaController())->adicionar($_POST);
-});
-
-
+});  
+// $router->map('POST','/historia/adicionarhistoria/[i:idHistoria]/[i:gostariaHistoria]/[i:idEpico]/[i:objetivoHistoria]', function($idHistoria, $gostariaHistoria, $idEpico, $objetivoHistoria){
+//     return (new HistoriaController())->adicionar($idHistoria, $gostariaHistoria, $idEpico, $objetivoHistoria, $_POST);
+// });
 // match current request url
 $match = $router->match();
 

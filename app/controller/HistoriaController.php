@@ -61,19 +61,19 @@ class HistoriaController
     {
         $conexao = Connection::getConnection();
         $historiaDao = new HistoriaDao($conexao);
-        include __DIR__ . '/../view/page/insere/historia.php';
+        include __DIR__ . '/../view/page/insere/historiaForm.php';
     }
-    public function adicionar($idHistoria, $post)
+    public function adicionar($post)
     {
         $conexao = Connection::getConnection();
-        $historiaModel = (new historiaBuilder($historia))->build();
-        $historiaModel->setIdHistoria($post['idHistoria']);
-        $historiaModel->setIdFuncionalidade($post['idFuncionalidade']);
-        $historiaModel->setFuncionalidade($post['Funcionalidade']);
-        
-        $updated = $historiaDao->insereHistoria($idHistoria, $idFuncionalidade, $funcionalidadeModel);
-        $historia = $historiaDao->buscaHistoria($idHistoria, $idFuncionalidade);
+        $historiaDao = new HistoriaDao($conexao);
+        $historia = $post;
+        $historiaModel = (new HistoriaBuilder($historia))->build();
+        $historiaModel->setgostariaHistoria($post['gostaria']);
+        $historiaModel->setidEpico($post['ra']);
+        $historiaModel->setObjetivoHistoria($post['objetivo']);
 
+        $updated = $historiaDao->insereHistoria($historiaModel);
         include __DIR__ . '/../view/page/insere/historia.php';
     }
 }
