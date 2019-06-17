@@ -31,11 +31,11 @@ class PessoaDao
         return mysqli_query($this->conexao, $query);
     }
 
-    function alteraPessoa(Pessoa $pessoa)
+    function alteraPessoa(Pessoa $pessoa, $ra)
     {
         $query = "update Pessoa set ra = '{$pessoa->getRa()}',
-            nome = '{$pessoa->getNome()}', papel= '{$pessoa->getPapel()}',
-            where ra = '{$pessoa->getRa()}'";
+            nome = '{$pessoa->getNome()}', papel= '{$pessoa->getPapel()}'
+            where ra = '{$ra}'";
         return mysqli_query($this->conexao, $query);
     }
 
@@ -44,14 +44,10 @@ class PessoaDao
         $query = "select * from Pessoa where ra = '{$ra}'";
         $resultado = mysqli_query($this->conexao, $query);
         $array = mysqli_fetch_assoc($resultado);
-        return  new Pessoa(
-                    $array['ra'],
-                    $array['nome'],
-                    $array['papel']
-                );
+        return $array;
     }
 
-    function removePessoa($ra)
+    function removePessoas($ra)
     {
         $query = "delete from Pessoa where ra = '{$ra}'";
         return mysqli_query($this->conexao, $query);

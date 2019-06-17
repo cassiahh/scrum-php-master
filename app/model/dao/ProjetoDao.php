@@ -47,14 +47,12 @@ class ProjetoDao
 
     function buscaProjeto($projeto)
     {
+        $array=array();
         $query = "select * from Projeto where projeto = {$projeto}";
         $resultado = mysqli_query($this->conexao, $query);
         $array = mysqli_fetch_assoc($resultado);
-        return  new Sprint(
-                    $array['projeto'],
-                    $array['cliente'],
-                    $array['projectOwner']
-                );
+        return $array;
+        
     }
 
     function removeProjeto($projeto)

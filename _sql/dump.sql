@@ -22,7 +22,7 @@ CREATE TABLE Historia (
         gostaria varchar(191),
         ra varchar (191),
         objetivo varchar(191),
-        constraint FK_raHistoria foreign key (ra) references Pessoa(ra)
+        constraint FK_raHistoria foreign key (ra) references Pessoa(ra) ON UPDATE CASCADE ON DELETE SET NULL
 );
 CREATE TABLE Funcionalidade (
         idHistoria int(20) not null,
@@ -49,7 +49,7 @@ CREATE TABLE Tarefa (
         prioridade varchar(191),
         primary key (idHistoria, idFuncionalidade, idTarefa),
         constraint FK_idFuncionalidadeTarefa foreign key (idHistoria, idFuncionalidade) references Funcionalidade(idHistoria, idFuncionalidade),
-        constraint FK_raTarefa foreign key (ra) references Pessoa(ra),
+        constraint FK_raTarefa foreign key (ra) references Pessoa(ra) ON UPDATE CASCADE ON DELETE SET NULL,
         constraint FK_idSprintTarefa foreign key (idSprint) references Sprint(idSprint)
 );
 INSERT INTO Projeto (projeto, cliente, projectOwner) VALUES ('Scrum','Robson','Giovanni');

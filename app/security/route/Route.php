@@ -29,8 +29,25 @@ $router->map('GET','/projeto', function(){
     return (new ProjetoController())->list();
 });
 
-$router->map('GET','/projeto/editar/[i:projeto]/[i:cliente]/[i:productOwner]', function($projeto){
-    return (new ProjetoController())->edit($projeto);
+$router->map('GET','/projeto/editar/[i:projeto]', function($projeto){
+    return (new ProjetoController())->editProjeto($projeto,null);
+});
+
+$router->map('POST','/projeto/editar/[i:projeto]', function($projeto){
+    return (new ProjetoController())->update($projeto,$post);
+});
+
+$router->map('GET','/pessoa/editar/[i:ra]', function($ra){
+    return (new ProjetoController())->editPessoa($ra,null);
+});
+
+$router->map('POST','/pessoa/editar/[i:ra]', function($ra){
+    return (new ProjetoController())->updatePessoa($ra,$_POST);
+});
+
+$router->map('GET','/pessoa/remove/[i:ra]',
+             function($ra){
+    return (new ProjetoController())->removePessoas($ra);
 });
 
 $router->map('GET','/sprint', function(){

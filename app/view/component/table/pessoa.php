@@ -1,4 +1,7 @@
 
+<?php
+$configs = include(__DIR__ . '/../../../../config.php');
+?>
 
 <table class="table">
     <thead class="thead-light">
@@ -10,7 +13,7 @@
         <th scope="col"></th>
     </tr>
     </thead>
-    <tbody>
+    <body>
     <?php
     
     foreach ($pessoas as $pessoa) :
@@ -19,16 +22,16 @@
             <td><?= $pessoa['papel'] ?></td>
             <td><?= $pessoa['nome'] ?></td>
             <td><?= $pessoa['ra'] ?></td>
-            <td><a class="btn btn-primary" href="edit-pessoa.php?id=<?= $pessoa['ra'] ?>"><i class="fas fa-edit"></i></a></td>
+            <td a class="d-print-none"><a class="btn btn-primary" href="<?=$configs['document_root']?>/pessoa/editar/<?= $pessoa['ra']?>"><i class="fas fa-edit"></i></a></td>
             <td>
-                <form action="remove-pessoa.php" method="post">
-                    <input type="hidden" name="id" value="<?= $pessoa['ra'] ?>"/>
-                    <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
-                </form>
+          
+                    <input type="hidden" name="ra" href="<?= $pessoa['ra'] ?>"/>
+                   <td a class="d-print-none"><a class="btn btn-danger" href="<?=$configs['document_root']?>/pessoa/remove/<?= $pessoa['ra']?>"><i class="fas fa-trash"></i></a></td>
+                
             </td>
         </tr>
         <?php
     endforeach
     ?>
-    </tbody>
+    </body>
 </table>
