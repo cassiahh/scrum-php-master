@@ -13,7 +13,7 @@ CREATE TABLE Pessoa(
         senha varchar(191)
 );
 CREATE TABLE Sprint (
-        idSprint bigint(20) not null auto_increment primary key,
+        idSprint bigint(20) not null primary key,
         sprint varchar(191),
         semana timestamp 
 );
@@ -62,12 +62,12 @@ INSERT INTO Pessoa (ra,nome,papel,senha) VALUES
 ('666666', 'Joana', 'Project Owner', 'e10adc3949ba59abbe56e057f20f883e'),
 ('123456', 'Clientes', 'stakeholders', 'e10adc3949ba59abbe56e057f20f883e'),
 ('654321', 'Consultores', 'stakeholders', 'e10adc3949ba59abbe56e057f20f883e');
-INSERT INTO Sprint (sprint, semana) VALUES 
-('Sprint 1', '2019-01-01 10:00:00'),
-('Sprint 2', '2019-01-08 10:00:00'),
-('Sprint 3', '2019-01-15 10:00:00'),
-('Sprint 4', '2019-01-22 10:00:00'),
-('Sprint 5', '2019-01-29 10:00:00');
+INSERT INTO Sprint (idSprint,sprint, semana) VALUES 
+(1, 'Sprint 1', '2019-01-01 10:00:00'),
+(2,'Sprint 2', '2019-01-08 10:00:00'),
+(3,'Sprint 3', '2019-01-15 10:00:00'),
+(4,'Sprint 4', '2019-01-22 10:00:00'),
+(5,'Sprint 5', '2019-01-29 10:00:00');
 INSERT INTO Historia (gostaria, ra, objetivo) VALUES 
 ('gostaria 1', '111111', 'melhorar a visão dos clientes sobre seu estabelecimento'),
 ('gostaria 2', '222222', 'ampliar as vendas on-line dos produtos'),

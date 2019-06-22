@@ -1,6 +1,6 @@
 <?php
 
-require_once (__DIR__."/../domain/Sprint.php");
+require_once (__DIR__."/../domain/sprint.php");
 
 class SprintDao
 {
@@ -14,7 +14,18 @@ class SprintDao
     public function listaSprints()
     {
         $arrays = array();
-        $resultado = mysqli_query($this->conexao, "select * from sprint");
+        $resultado = mysqli_query($this->conexao, "select * from Sprint");
+        while ($array = mysqli_fetch_assoc($resultado)) {
+            array_push($arrays, $array);
+        }
+        return $arrays;
+    }
+
+    function countSprint()
+    {
+        $arrays = array();
+        $resultado = mysqli_query($this->conexao, "select idSprint, COUNT(*) as total
+                from Sprint group by idSprint");
         while ($array = mysqli_fetch_assoc($resultado)) {
             array_push($arrays, $array);
         }
@@ -23,8 +34,8 @@ class SprintDao
 
     public function insereSprint(Sprint $sprint)
     {
-        $query = "insert into sprint (sprint, semana)
-            values ('{$sprint->getSprint}', {$sprint->getSemana()}')";
+        $query = "insert into Sprint (idSprint, sprint, semana)
+            values ('{$sprint->getIdSprint()}', '{$sprint->getSprint()}', '{$sprint->getSemana()}')";
         return mysqli_query($this->conexao, $query);
     }
 

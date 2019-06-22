@@ -68,6 +68,27 @@ $router->map('POST','/sprint/editar/[i:idHistoria]/[i:idFuncionalidade]/[i:idTar
     return (new SprintController())->update($idHistoria, $idFuncionalidade, $idTarefa, $_POST);
 });
 
+$router->map('GET','/sprint/adicionar', function(){
+    return (new SprintController())->insere();
+});
+$router->map('POST','/sprint/adicionar/sprint/', function(){
+    return (new SprintController())->adicionar($_POST);
+});  
+
+$router->map('POST','/sprint-filtro/filtrar', function(){
+    return (new SprintController())->filtroFiltrar($_POST);
+});  
+$router->map('POST','/sprint-filtro/adicionar', function(){
+    return (new SprintController())->filtroAdicionar($_POST);
+}); 
+
+$router->map('POST','/sprint-filtro/editar', function(){
+    return (new SprintController())->filtroEditar($_POST);
+}); 
+
+$router->map('POST','/sprint-filtro/deletar', function(){
+    return (new SprintController())->filtroDeletar($_POST);
+});
 
 $router->map('GET','/product-backlog', function(){
     return (new ProductBacklogController())->list();

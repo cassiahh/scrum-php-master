@@ -26,6 +26,22 @@ class TarefaDao
         }
         return $arrays;
     }
+    function listaTarefasFiltro($idSprint)
+    {
+        $arrays = array();
+        $resultado = mysqli_query($this->conexao,
+            "select distinct concat(t.idHistoria,'.',t.idFuncionalidade,'.',t.idTarefa) as cod_tar, t.*,p.nome, p.papel, f.funcionalidade
+                        from Tarefa as t 
+                        join Pessoa as p on t.ra=p.ra 
+                        join Funcionalidade as f on t.idFuncionalidade=f.idFuncionalidade 
+                        where t.idSprint = ".$idSprint."
+                        group by cod_tar
+                        order by t.idHistoria, t.idFuncionalidade, t.idTarefa");
+        while ($array = mysqli_fetch_assoc($resultado)) {
+            array_push($arrays, $array);
+        }
+        return $arrays;
+    }
     function listaProductBacklog()
     {
         $arrays = array();
