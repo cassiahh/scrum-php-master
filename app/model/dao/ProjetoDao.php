@@ -36,19 +36,19 @@ class ProjetoDao
             {$projeto->getProjectOwner()}";
         return mysqli_query($this->conexao, $query);
     }
-
+    
     function alteraProjeto(Projeto $projeto)
     {
         $query = "update Projeto set projeto = '{$projeto->getProjeto()}',
-            cliente = '{$projeto->getCliente()}', projectOwner= '{$projeto->getProjectOwner()}'
-            where projeto = '{$projeto->getProjeto()}'";
+            cliente = '{$projeto->getCliente()}', projectOwner= '{$projeto->getProductOwner()}'
+            where projeto = '{$projeto->getProjeto($projeto)}'";
         return mysqli_query($this->conexao, $query);
     }
 
     function buscaProjeto($projeto)
     {
-        $array=array();
-        $query = "select * from Projeto where projeto = {$projeto}";
+        $array=array($projeto);
+        $query = "select * from Projeto";
         $resultado = mysqli_query($this->conexao, $query);
         $array = mysqli_fetch_assoc($resultado);
         return $array;

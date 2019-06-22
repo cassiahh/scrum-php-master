@@ -13,12 +13,12 @@ $configs = include(__DIR__ . '/../../../../config.php');
     <tbody>
     <?php
     foreach ($projetos as $projeto) :
-        ?>
+		?>
         <tr>
-            <td><?= $projeto->getProjeto() ?></td>
-            <td><?= $projeto->getCliente() ?></td>
-            <td><?= $projeto->getProductOwner() ?></td>
-        <td><a class="btn btn-primary" href="<?=$configs['document_root']?>/projeto/editar/<?= $projeto->getProjeto() ?>"><i class="fas fa-edit"></i></a></td>
+            <td><?= $projeto->getProjeto('projeto') ?></td>
+            <td><?= $projeto->getCliente('cliente') ?></td>
+            <td><?= $projeto->getProductOwner('projectOwner') ?></td>
+        <td><a class="btn btn-primary" href="<?=$configs['document_root']?>/projeto/editar"><i class="fas fa-edit"></i></a></td>
        
         
         </tr>

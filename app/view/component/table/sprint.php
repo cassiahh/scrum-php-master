@@ -6,7 +6,7 @@ $configs = include(__DIR__ . '/../../../../config.php');
 <table class="table">
     <thead class="thead-light">
     <tr>
-        <th scope="col">Cod_tar</th>
+        <th scope="col">Código tarefa</th>
         <th scope="col">Tarefa</th>
         <th scope="col">Duração</th>
         <th scope="col">Nº Sprints</th>

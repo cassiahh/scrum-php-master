@@ -2,7 +2,6 @@
 
 class Projeto
 {
-
     private $projeto;
     private $cliente;
     private $productOwner;
@@ -15,9 +14,7 @@ class Projeto
         $this->projeto = $projeto;
         $this->cliente = $cliente;
         $this->productOwner = $productOwner;
-        
     }
-
     /**
      * @return mixed
      */
@@ -25,7 +22,6 @@ class Projeto
     {
         return $this->projeto;
     }
-
     /**
      * @param mixed $projeto
      */
@@ -33,7 +29,6 @@ class Projeto
     {
         $this->projeto = $projeto;
     }
-
     /**
      * @return mixed
      */
@@ -41,7 +36,6 @@ class Projeto
     {
         return $this->cliente;
     }
-
     /**
      * @param mixed $cliente
      */
@@ -49,8 +43,6 @@ class Projeto
     {
         $this->cliente = $cliente;
     }
-    
-
     /**
      * @return mixed
      */
@@ -58,7 +50,6 @@ class Projeto
     {
         return $this->productOwner;
     }
-
     /**
      * @param mixed $productOwner
      */
@@ -66,5 +57,4 @@ class Projeto
     {
         $this->productOwner = $productOwner;
     }
-
 }

@@ -32,12 +32,12 @@ $router->map('GET','/projeto', function(){
     return (new ProjetoController())->list();
 });
 
-$router->map('GET','/projeto/editar/[i:projeto]', function($projeto){
-    return (new ProjetoController())->editProjeto($projeto,null);
+$router->map('GET','/projeto/editar', function(){
+    return (new ProjetoController())->editProjeto(null,null);
 });
 
-$router->map('POST','/projeto/editar/[i:projeto]', function($projeto){
-    return (new ProjetoController())->update($projeto,$post);
+$router->map('POST','/projeto/editar', function(){
+    return (new ProjetoController())->updateProjeto(null,$_POST);
 });
 
 $router->map('GET','/pessoa/editar/[i:ra]', function($ra){
@@ -52,6 +52,14 @@ $router->map('GET','/pessoa/remove/[i:ra]',
              function($ra){
     return (new ProjetoController())->removePessoas($ra);
 });
+
+$router->map('GET','/pessoa/insere/[i:ra]', function(){
+    return (new ProjetoController())->insere();
+});
+$router->map('POST','/pessoa/adicionar', function(){
+    return (new ProjetoController())->adicionar($_POST);
+});  
+
 
 
 $router->map('GET','/sprint', function(){
