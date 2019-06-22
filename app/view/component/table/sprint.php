@@ -12,6 +12,7 @@ $configs = include(__DIR__ . '/../../../../config.php');
         <th scope="col">Nº Sprints</th>
         <th scope="col">Responsável</th>
         <th scope="col">Status</th>
+        <th scope="col" colspan="2" class="d-print-none"><a class="btn btn-danger" href="<?=$configs['document_root']?>/sprint/adicionar">Adicionar Sprint <i class="fas fa-plus"></i></a></th>
         <th scope="col"></th>
         <th scope="col"></th>
     </tr>

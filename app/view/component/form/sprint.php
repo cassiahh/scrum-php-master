@@ -10,7 +10,7 @@ $configs = include(__DIR__ . '/../../../../config.php');
         <div class="form-group col-md-2">
             <label for="inputidTarefa">Cód Tarefa: </label>
             <input type="text" class="form-control" id="inputidTarefa" aria-describedby="inputidTarefa"
-                   placeholder="idTarefa" name="idTarefa" value="<?=$tarefa['idTarefa']?>">
+                   placeholder="idTarefa" name="idTarefa" value="<?=$tarefa['idHistoria']?>.<?=$tarefa['idFuncionalidade']?>.<?=$tarefa['idTarefa']?>" readonly="readonly">
         </div>
         <div class="form-group col-md-2">
             <label for="inputTarefa">Tarefa: </label>

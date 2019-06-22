@@ -9,6 +9,8 @@
 require_once(__DIR__ . "/../model/database/Connection.php");
 require_once(__DIR__ . "/../model/dao/TarefaDao.php");
 require_once(__DIR__ . "/../model/builder/TarefaBuilder.php");
+require_once(__DIR__ . "/../model/dao/SprintDao.php");
+require_once(__DIR__ . "/../model/builder/SprintBuilder.php");
 class SprintController
 {
     /**
@@ -20,8 +22,11 @@ class SprintController
     }
     public function list()
     {
-        $tarefaDao = new TarefaDao(Connection::getConnection());
+        $conexao = Connection::getConnection();
+        $tarefaDao = new TarefaDao($conexao);
         $tarefas = $tarefaDao->listaTarefas();
+        $sprintDao = new SprintDao($conexao);
+        $sprints = $sprintDao->listaSprints();
         include __DIR__ . '/../view/page/list/sprint.php';
     }
     public function edit($idHistoria,$idfuncionalidade,$idtarefa)
@@ -52,5 +57,43 @@ class SprintController
         $tarefaDao = new TarefaDao(Connection::getConnection());
         $removed = $tarefaDao->removeTarefa($cod_tar,$idSprint,$ra);
         include __DIR__ . '/../view/page/remove/sprint.php';
+    }
+    public function insere()
+    {
+        $conexao = Connection::getConnection();
+        $sprintDao = new SprintDao($conexao);
+        include __DIR__ . '/../view/page/insere/sprintForm.php';
+    }    
+    public function adicionar($post)
+    {
+        $conexao = Connection::getConnection();
+        $sprintDao = new SprintDao($conexao);
+        $sprintModel = (new SprintBuilder($post))->build();
+
+        $updated = $sprintDao->insereSprint($sprintModel);
+        include __DIR__ . '/../view/page/insere/sprint.php';
+    }
+    public function filtroFiltrar($post)
+    {
+        $conexao = Connection::getConnection();
+        $tarefaDao = new TarefaDao($conexao);
+        $tarefas = $tarefaDao->listaTarefasFiltro($post['idSprint']);
+        $sprintDao = new SprintDao($conexao);
+        $sprints = $sprintDao->listaSprints();
+        include __DIR__ . '/../view/page/list/sprint.php';
+    }
+    public function filtroAdicionar()
+    {
+        $conexao = Connection::getConnection();
+        $sprintDao = new SprintDao($conexao);
+        include __DIR__ . '/../view/page/insere/sprintForm.php'; 
+    }
+    public function filtroEditar($post)
+    {
+        
+    }
+    public function filtroDeletar($post)
+    {
+        
     }
 }
