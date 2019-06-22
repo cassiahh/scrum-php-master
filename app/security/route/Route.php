@@ -33,11 +33,11 @@ $router->map('GET','/projeto', function(){
 });
 
 $router->map('GET','/projeto/editar', function(){
-    return (new ProjetoController())->editProjeto(null,null);
+    return (new ProjetoController())->editProjeto();
 });
 
 $router->map('POST','/projeto/editar', function(){
-    return (new ProjetoController())->updateProjeto(null,$_POST);
+    return (new ProjetoController())->updateProjeto($_POST);
 });
 
 $router->map('GET','/pessoa/editar/[i:ra]', function($ra){

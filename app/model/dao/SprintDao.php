@@ -1,6 +1,6 @@
 <?php
 
-require_once (__DIR__."/../domain/sprint.php");
+require_once (__DIR__."/../domain/Sprint.php");
 
 class SprintDao
 {
@@ -41,7 +41,7 @@ class SprintDao
 
     public function alteraSprint(Sprint $sprint)
     {
-        $query = "update sprint set idSprint = '{$sprint->getSprint()}',
+        $query = "update Sprint set idSprint = '{$sprint->getSprint()}',
             sprint = {$sprint->getSprint()}, semana = '{$sprint->getSemana()}',
             where idSprint = '{$sprint->getIdSprint()}'"; 
         return mysqli_query($this->conexao, $query);
@@ -49,7 +49,7 @@ class SprintDao
 
     public function buscaSprint($idSprint)
     {
-        $query = "select * from sprint where idSprint = {$idSprint}";
+        $query = "select * from Sprint where idSprint = {$idSprint}";
         $resultado = mysqli_query($this->conexao, $query);
         $array = mysqli_fetch_assoc($resultado);
         return  new Sprint(
@@ -61,7 +61,7 @@ class SprintDao
 
     function removeSprint($idSprint)
     {
-        $query = "delete from sprint where idSprint = {$idSprint}";
+        $query = "delete from Sprint where idSprint = {$idSprint}";
         return mysqli_query($this->conexao, $query);
     }
 }

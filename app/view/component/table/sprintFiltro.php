@@ -1,7 +1,7 @@
 <?php
 $configs = include(__DIR__ . '/../../../../config.php');
 ?>
-<form id="sprintForm" action="<?= $configs['document_root'] ?>/sprint/editar/<?php $sprint['idSprint']?>" method="post">
+<form id="sprintForm" action="" method="post">
     <div class="input-group mb-3">
         <div class="input-group-prepend">
             <label class="input-group-text" for="sprint">Sprint</label>
@@ -19,7 +19,7 @@ $configs = include(__DIR__ . '/../../../../config.php');
     </div>
     <button type="submit" class="btn btn-primary" onclick="filtrar()">Filtrar</button>
     <button type="submit" class="btn btn-primary" onclick="adicionar()">Adicionar</button>
-    <button type="submit" class="btn btn-primary" onclick="editar()">Editar</button>
+<!--    <button type="submit" class="btn btn-primary" onclick="editar()">Editar</button>-->
     <button type="submit" class="btn btn-primary" onclick="deletar()">Deletar</button>
     <script>
         var form = document.getElementById('sprintForm');

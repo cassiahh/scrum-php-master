@@ -6,7 +6,7 @@
  * Time: 06:30
  */
 require_once(__DIR__ . "/../model/dao/ProjetoDao.php");
-require_once(__DIR__ . "/../model/builder/projetoBuilder.php");
+require_once(__DIR__ . "/../model/builder/ProjetoBuilder.php");
 require_once(__DIR__ . "/../model/domain/Projeto.php");
 require_once(__DIR__ . "/../model/database/Connection.php");
 require_once(__DIR__ . "/../model/dao/PessoaDao.php");
@@ -24,18 +24,20 @@ class ProjetoController
     }
     public function list()
     {
-        $projetoDao = new ProjetoDao(Connection::getConnection());
+        $conexao = Connection::getConnection();
+        $projetoDao = new ProjetoDao($conexao);
         $projetos = $projetoDao->listaProjeto();
 
-        $pessoaDao = new PessoaDao(Connection::getConnection());
+        $pessoaDao = new PessoaDao($conexao);
         $pessoas = $pessoaDao->listaPessoas();
 
         include __DIR__ . '/../view/page/list/projeto.php';
     }
-   public function editProjeto($projeto,$post)
+   public function editProjeto()
     {
-        $projetoDao = new ProjetoDao(Connection::getConnection());
-        $projetos = $projetoDao->buscaProjeto($projeto);
+        $conexao = Connection::getConnection();
+        $projetoDao = new ProjetoDao($conexao);
+        $projetos = $projetoDao->listaProjeto();
         include __DIR__ . '/../view/page/edit/projeto.php';
     }
     public function editPessoa($ra,$post)
@@ -44,21 +46,21 @@ class ProjetoController
         $pessoas = $pessoaDao->buscaPessoa($ra);
         include __DIR__ . '/../view/page/edit/pessoa.php';
     }
-   public function updateProjeto($projeto,$post)
+   public function updateProjeto($post)
     {
         $conexao = Connection::getConnection();
         $projetoDao = new ProjetoDao($conexao);
-        $projeto = $projetoDao->buscaProjeto($projeto);
+        $projeto = $projetoDao->listaProjeto();
         $projetoModel = (new ProjetoBuilder($projeto))->build();
         $projetoModel->setProjeto($post['projeto']);
         $projetoModel->setCliente($post['cliente']);
         $projetoModel->setProductOwner($post['projectOwner']);
         
-        $updated = $projetoDao->alteraProjeto($projetoModel, $projeto);
-        $projetoDao = new ProjetoDao(Connection::getConnection());
+        $updated = $projetoDao->alteraProjeto($projetoModel, (new ProjetoBuilder($projeto))->build());
+        $projetoDao = new ProjetoDao($conexao);
         $projetos = $projetoDao->listaProjeto();
 
-        $pessoaDao = new PessoaDao(Connection::getConnection());
+        $pessoaDao = new PessoaDao($conexao);
         $pessoas = $pessoaDao->listaPessoas();
 
         include __DIR__ . '/../view/page/edit/projeto.php';

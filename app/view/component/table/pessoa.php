@@ -3,20 +3,16 @@
 <?php
 $configs = include(__DIR__ . '/../../../../config.php');
 ?>
-<table class="table">
-    <tr>
-    <td a class="d-print-none"><a class="btn btn-info" href="<?=$configs['document_root']?>/pessoa/pessoaAdd"?>Adicionar Pessoa</a></td>
-    </tr>   
-</table>
 <table class="table">  
     <thead class="thead-light">
     <tr>
         <th scope="col">papel</th>
         <th scope="col">nome</th>
         <th scope="col">ra</th>
-        <th scope="col"></th>
-        <th scope="col"></th>
-    </tr>        
+        <th scope="col" colspan="2">
+<!--            <a class="btn btn-info" href="--><?//=$configs['document_root']?><!--/pessoa/pessoaAdd"?>Adicionar Pessoa</a>-->
+        </th>
+    </tr>
     </thead>
     <body>
     <?php        

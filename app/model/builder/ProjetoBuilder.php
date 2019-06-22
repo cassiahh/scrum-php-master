@@ -8,7 +8,7 @@
 
 require_once(__DIR__.'/../domain/Projeto.php');
 
-class projetoBuilder
+class ProjetoBuilder
 {
     private $projeto;
     public function __construct($array)

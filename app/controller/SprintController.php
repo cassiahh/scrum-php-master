@@ -94,6 +94,9 @@ class SprintController
     }
     public function filtroDeletar($post)
     {
-        
+        $conexao = Connection::getConnection();
+        $sprintDao = new SprintDao($conexao);
+        $removed = $sprintDao->removeSprint($post['idSprint']);
+        include __DIR__ . '/../view/page/remove/sprint.php';
     }
 }
