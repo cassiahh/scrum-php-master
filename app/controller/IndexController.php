@@ -30,8 +30,8 @@ class IndexController
     public function login($ra, $senha)
     {
         $pessoaDao = new PessoaDao(Connection::getConnection());
-//        $usuario = $pessoaDao->buscaUsuario($ra, $senha);
-        $usuario = $pessoaDao->buscaUsuario('111111','123456');
+        $usuario = $pessoaDao->buscaUsuario($ra, $senha);
+//        $usuario = $pessoaDao->buscaUsuario('111111','123456');
         (new Login($usuario))->login();
     }
 
