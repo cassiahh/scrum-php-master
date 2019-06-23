@@ -50,7 +50,10 @@ class FuncionalidadeController
 		
         $updated = $funcionalidadeDao->alteraFuncionalidade($idHistoria, $idFuncionalidade, $funcionalidadeModel);
         $funcionalidade = $funcionalidadeDao->buscaFuncionalidade($idHistoria, $idFuncionalidade);
-
+		
+        $funcionalidades = $funcionalidadeDao->listaFuncionalidades();
+        $countFunc = $funcionalidadeDao->countFunc();
+		
         include __DIR__ . '/../view/page/edit/funcionalidade.php';
     }
     public function remove($idHistoria, $idFuncionalidade)
@@ -88,7 +91,10 @@ class FuncionalidadeController
 		
         $updated = $funcionalidadeDao->insereFuncionalidade($idHistoria, $idFuncionalidade, $funcionalidadeModel);
         $funcionalidade = $funcionalidadeDao->buscaFuncionalidade($idHistoria, $idFuncionalidade);
-
+		
+        $funcionalidades = $funcionalidadeDao->listaFuncionalidades();
+        $countFunc = $funcionalidadeDao->countFunc();
+		
         include __DIR__ . '/../view/page/insere/funcionalidade.php';
     }
 }

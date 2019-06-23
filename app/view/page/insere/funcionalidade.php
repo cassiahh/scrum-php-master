@@ -14,7 +14,10 @@ Session::redirectIfNotLogged();
 if($post != null) {
     if($updated) { ?>
         <p class="alert alert-success" role="alert">Funcionalidade adicionada com sucesso!</p>
-    <?php } else {
+        <?php 
+	    require_once(__DIR__ . "/../../component/table/funcionalidade.php");
+	
+	} else {
         $msg = mysqli_error($conexao);
         ?>
         <p class="alert alert-danger" role="alert">Funcionalidade não foi adicionada: <?= $msg ?></p>
