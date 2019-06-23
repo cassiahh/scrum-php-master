@@ -27,6 +27,13 @@ $router->map('GET','/logout', function(){
     return (new IndexController())->logout();
 });
 
+$router->map('GET','/alteraSenha/[i:ra]', function($ra){
+    return (new IndexController())->alteraSenha($ra, null);
+});
+
+$router->map('POST','/alteraSenha/[i:ra]', function($ra){
+    return (new IndexController())->updateSenha($ra, $_POST);
+});
 
 $router->map('GET','/projeto', function(){
     return (new ProjetoController())->list();

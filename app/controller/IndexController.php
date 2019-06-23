@@ -9,6 +9,8 @@
 require_once(__DIR__ . "/../model/database/Connection.php");
 require_once (__DIR__ . '/../security/session/Login.php');
 require_once (__DIR__ . '/../security/session/Logout.php');
+require_once(__DIR__ . "/../model/builder/usuarioBuilder.php");
+require_once(__DIR__ . "/../model/domain/Usuario.php");
 
 class IndexController
 {
@@ -39,4 +41,25 @@ class IndexController
     {
         (new Logout())->logout();
     }
+	
+    public function alteraSenha($ra, $post)
+    {
+        $pessoaDao = new PessoaDao(Connection::getConnection());
+        $usuario = $pessoaDao->buscaPessoa($ra);
+        include __DIR__ . '/../view/page/edit/usuario.php';
+    }
+	
+    public function updateSenha($ra, $post)
+    {
+		$conexao = Connection::getConnection();
+        $pessoaDao = new PessoaDao($conexao);
+        $usuario = $pessoaDao->buscaPessoa($ra);
+		$usuarioModel = (new usuarioBuilder($usuario))->build();
+		$usuarioModel->setSenha($post['Senha']);
+		
+		$updated = $pessoaDao->alterarSenha($usuarioModel,$ra);
+		
+        include __DIR__ . '/../view/page/edit/usuario.php';
+    }
+
 }

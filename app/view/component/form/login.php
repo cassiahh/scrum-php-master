@@ -8,6 +8,9 @@ $configs = include(__DIR__ . '/../../../../config.php');
 if (Session::isLogged()) { ?>
     <p class="text-success">Você está logado como <?= Session::getSessionRa() ?>. <a
             href="<?=$configs['document_root']?>/logout">Deslogar</a></p>
+    <p class="text-success"> 
+            <a href="<?=$configs['document_root']?>/alteraSenha/<?= Session::getSessionRa() ?>">Deseja alterar sua senha?</a>
+    </p>
 <?php } else { ?>
     <div class="login">
     <h2>Login</h2>
