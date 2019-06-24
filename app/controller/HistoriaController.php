@@ -69,6 +69,7 @@ class HistoriaController
         $historiaDao = new HistoriaDao($conexao);
         $historia = $post;
         $historiaModel = (new HistoriaBuilder($historia))->build();
+        $historiaModel->setIdHistoria($post['idHistoria']);
         $historiaModel->setgostariaHistoria($post['gostaria']);
         $historiaModel->setidEpico($post['ra']);
         $historiaModel->setObjetivoHistoria($post['objetivo']);
