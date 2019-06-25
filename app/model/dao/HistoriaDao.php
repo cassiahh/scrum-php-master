@@ -34,10 +34,7 @@ class HistoriaDao
 
     function insereHistoria(Historia $historia)
     {
-        $query = "insert into Historia (gostariaHistoria, idEpico, objetivoHistoria)
-            values ({$historia->getgostariaHistoria()},
-            '{$historia->getidEpico()}',
-            {$historia->getobjetivoHistoria()},";   
+        $query = "insert into Historia (idHistoria, gostaria, ra, objetivo)values ('{$historia->getIdHistoria()}', '{$historia->getgostariaHistoria()}', '{$historia->getIdEpico()}', '{$historia->getobjetivoHistoria()}')";   
         return mysqli_query($this->conexao, $query);
     }
 
