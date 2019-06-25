@@ -17,10 +17,10 @@ $configs = include(__DIR__ . '/../../../../config.php');
         endforeach; ?>
         </select>
     </div>
-    <button type="submit" class="btn btn-primary" onclick="filtrar()">Filtrar</button>
-    <button type="submit" class="btn btn-primary" onclick="adicionar()">Adicionar</button>
+    <button type="submit" class="d-print-none btn btn-primary" onclick="filtrar()">Filtrar</button>
+    <button type="submit" class="d-print-none btn btn-primary" onclick="adicionar()">Adicionar</button>
 <!--    <button type="submit" class="btn btn-primary" onclick="editar()">Editar</button>-->
-    <button type="submit" class="btn btn-primary" onclick="deletar()">Deletar</button>
+    <button type="submit" class="d-print-none btn btn-primary" onclick="deletar()">Deletar</button>
     <script>
         var form = document.getElementById('sprintForm');
         function filtrar() {

@@ -7,7 +7,7 @@ $configs = include(__DIR__ . '/../../../../config.php');
         <th scope="col">Projeto</th>
         <th scope="col">Cliente</th>
         <th scope="col">Product Owner</th>
-        <th scope="col"></th>
+        <th scope="col" class="d-print-none"></th>
     </tr>
     </thead>
     <tbody>
@@ -15,7 +15,7 @@ $configs = include(__DIR__ . '/../../../../config.php');
             <td><?= $projetos['projeto'] ?></td>
             <td><?= $projetos['cliente'] ?></td>
             <td><?= $projetos['projectOwner'] ?></td>
-        <td><a class="btn btn-primary" href="<?=$configs['document_root']?>/projeto/editar"><i class="fas fa-edit"></i></a></td>
+        <td class="d-print-none"><a class="btn btn-primary" href="<?=$configs['document_root']?>/projeto/editar"><i class="fas fa-edit"></i></a></td>
         </tr>
     </tbody>
 </table>

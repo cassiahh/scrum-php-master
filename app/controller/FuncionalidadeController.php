@@ -27,7 +27,10 @@ class FuncionalidadeController
 
     public function listaFuncionalidades()
     {
-        $funcionalidadeDao = new FuncionalidadeDao(Connection::getConnection());
+        $conexao = Connection::getConnection();
+        $projetoDao = new ProjetoDao($conexao);
+        $projetos = $projetoDao->listaProjeto();
+        $funcionalidadeDao = new FuncionalidadeDao($conexao);
         $funcionalidades = $funcionalidadeDao->listaFuncionalidades();
 		$countFunc = $funcionalidadeDao->countFunc();
         include __DIR__ . '/../view/page/list/Funcionalidade.php'; 

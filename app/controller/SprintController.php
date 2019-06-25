@@ -23,6 +23,8 @@ class SprintController
     public function list()
     {
         $conexao = Connection::getConnection();
+        $projetoDao = new ProjetoDao($conexao);
+        $projetos = $projetoDao->listaProjeto();
         $tarefaDao = new TarefaDao($conexao);
         $tarefas = $tarefaDao->listaTarefas();
         $sprintDao = new SprintDao($conexao);

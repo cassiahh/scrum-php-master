@@ -23,7 +23,10 @@ class CronogramaController
     }
     public function list()
     {
-        $tarefaDao = new TarefaDao(Connection::getConnection());
+        $conexao = Connection::getConnection();
+        $projetoDao = new ProjetoDao($conexao);
+        $projetos = $projetoDao->listaProjeto();
+        $tarefaDao = new TarefaDao($conexao);
         $tarefas = $tarefaDao->listaTarefas();
         include __DIR__ . '/../view/page/list/cronograma.php';
     }
