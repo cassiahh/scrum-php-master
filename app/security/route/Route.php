@@ -53,11 +53,11 @@ $router->map('GET','/pessoa/remove/[i:ra]',
     return (new ProjetoController())->removePessoas($ra);
 });
 
-$router->map('GET','/pessoa/insere/[i:ra]', function(){
-    return (new ProjetoController())->insere();
+$router->map('GET','/pessoa/insere/[i:ra]', function($ra){
+    return (new ProjetoController())->inserePessoas($ra);
 });
-$router->map('POST','/pessoa/adicionar', function(){
-    return (new ProjetoController())->adicionar($_POST);
+$router->map('POST','/pessoa/insere/[i:ra]', function($ra){
+    return (new ProjetoController())->inserePessoas($ra);
 });  
 
 

@@ -99,26 +99,28 @@ class ProjetoController
         include __DIR__ . '/../view/page/remove/pessoa.php';
     }
     
-     public function insere()
-    {
+    public function inserePessoas()
+   {
         $conexao = Connection::getConnection();
-        $PessoaDao = new PessoaDao($conexao);
+      $PessoaDao = new PessoaDao($conexao);
         include __DIR__ . '/../view/page/insere/pessoa.php';
     }
-    public function adicionar($post)
+    public function adicionar($ra)
     {
+        var_dump();
         $conexao = Connection::getConnection();
-        $PessoaDao = new PessoaDao($conexao);
-        $pessoa = $post;
-        $pessoaModel = (new pessoaBuilder($pessoa))->build();
-        $pessoaModel->setPapel($post['papel']);
-        $pessoaModel->setNome($post['nome']);
-        $pessoaModel->setRa($post['ra']);
+      $PessoaDao = new PessoaDao($conexao);
+      $pessoa = $post;
+      $pessoaModel = (new pessoaBuilder($pessoa))->build();
+      $pessoaModel->setPapel($post['papel']);
+      $pessoaModel->setNome($post['nome']);
+      $pessoaModel->setRa($post['ra']);
 
-        $updated = $PessoaDao->inserePessoa($pessoaModel);
-        include __DIR__ . '/../view/page/adicionar/pessoa.php';
-    }
-    
+      $updated = $PessoaDao->inserePessoas($pessoaModel,$pessoa);
+      $pessoaDao = new PessoaDao(Connection::getConnection());
+      $pessoas = $pessoaDao->listaPessoas();
+      include __DIR__ . '/../view/page/insere/pessoa.php';
+    }    
     
     
     

@@ -19,10 +19,10 @@ if($post != null) {
         ?>
         <p class="alert alert-danger" role="alert">Pessoa não foi adicionada: <?= $msg ?></p>
         <?php
-        require_once(__DIR__ . "/../../component/form/pessoa.php");
+        require_once(__DIR__ . "/../../component/form/pessoaAdd.php");
     }
 }else{
-    require_once(__DIR__ . "/../../component/form/pessoa.php");
+    require_once(__DIR__ . "/../../component/form/pessoaAdd.php");
 }
 
 

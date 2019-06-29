@@ -5,7 +5,7 @@ $configs = include(__DIR__ . '/../../../../config.php');
 ?>
 <table class="table">
     <tr>
-    <td a class="d-print-none"><a class="btn btn-info" href="<?=$configs['document_root']?>/pessoa/pessoaAdd"?>Adicionar Pessoa</a></td>
+    <td a class="d-print-none"><a class="btn btn-info" href="<?=$configs['document_root']?>/pessoa/inserePessoas/"?>Adicionar Pessoa</a></td>
     </tr>   
 </table>
 <table class="table">  

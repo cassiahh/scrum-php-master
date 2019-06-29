@@ -22,7 +22,7 @@ class PessoaDao
     }
 
    
-    function inserePessoa(Pessoa $pessoa)
+    function inserePessoas()
     {
         $query = "insert into Pessoa (ra, nome,papel)
             values ('{$pessoa->getRa()}',
@@ -31,7 +31,7 @@ class PessoaDao
         return mysqli_query($this->conexao, $query);
     }
 
-    function alteraPessoa(Pessoa $pessoa, $ra)
+    function alteraPessoa()
     {
         $query = "update Pessoa set ra = '{$pessoa->getRa()}',
             nome = '{$pessoa->getNome()}', papel= '{$pessoa->getPapel()}'

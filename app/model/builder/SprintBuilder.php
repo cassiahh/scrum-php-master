@@ -16,8 +16,9 @@ class SprintBuilder
         $this->sprint = new Sprint(
             $array['idSprint'],
             $array['sprint'],
-            $array['semana'],
-        );
+            $array['semana']
+            );
+        
         //return $this;
     }
 

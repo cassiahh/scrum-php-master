@@ -2,7 +2,7 @@
 <?php
 $configs = include(__DIR__ . '/../../../../config.php');
 ?>
-<form action="<?=$configs['document_root']?>/pessoa/adicionar" method="post">
+<form action="<?=$configs['document_root']?>/pessoa/inserePessoas/" method="post">
     <div class="form-row">
         <div class="form-group col-md-2">
             <label for="inputpapel">Papel: </label>
