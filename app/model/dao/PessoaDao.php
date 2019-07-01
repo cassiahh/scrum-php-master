@@ -25,11 +25,12 @@ class PessoaDao
    
     function inserePessoas(Pessoa $pessoa)
     {
+        $md5=md5($pessoa->getSenha());
         $query = "insert into Pessoa (papel,nome,ra,senha)
             values ('{$pessoa->getPapel()}',
             '{$pessoa->getNome()}',
             '{$pessoa->getRa()}',
-            '{$pessoa->getSenha()}')";
+            '{$md5}')";
         return mysqli_query($this->conexao, $query);
     }
 
