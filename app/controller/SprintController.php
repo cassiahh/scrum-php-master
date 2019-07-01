@@ -79,6 +79,8 @@ class SprintController
     {
         $conexao = Connection::getConnection();
         $tarefaDao = new TarefaDao($conexao);
+        $projetoDao = new ProjetoDao($conexao);
+        $projetos = $projetoDao->listaProjeto();
         $tarefas = $tarefaDao->listaTarefasFiltro($post['idSprint']);
         $sprintDao = new SprintDao($conexao);
         $sprints = $sprintDao->listaSprints();

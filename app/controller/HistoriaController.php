@@ -43,8 +43,8 @@ class HistoriaController {
 		$historiaModel = (new HistoriaBuilder($historia))->build();
 		$historiaModel->setIdHistoria($post['idHistoria']);
 		$historiaModel->setGostariaHistoria($post['gostariaHistoria']);
-		$historiaModel->setIdEpico($post['ra']);
-		$historiaModel->setObjetivoHistoria($post['objetivoHistoria']);
+		$historiaModel->setRa($post['ra']);
+		$historiaModel->setObjetivoHistoria($post['objetivo']);
 
 		$updated = $historiaDao->alteraHistoria($idHistoria, $historiaModel);
 		$historia = $historiaDao->buscaHistoria($idHistoria);
@@ -72,7 +72,7 @@ class HistoriaController {
 		$historiaModel = (new HistoriaBuilder($historia))->build();
 		$historiaModel->setIdHistoria($post['idHistoria']);
 		$historiaModel->setgostariaHistoria($post['gostaria']);
-		$historiaModel->setidEpico($post['ra']);
+		$historiaModel->setRa($post['ra']);
 		$historiaModel->setObjetivoHistoria($post['objetivo']);
 
 		$updated = $historiaDao->insereHistoria($historiaModel);

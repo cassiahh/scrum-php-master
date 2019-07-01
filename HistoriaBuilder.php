@@ -7,7 +7,7 @@ class HistoriaBuilder
         return new Historia(
             $array['idHistoria'],
             $array['gostariaHistoria'],
-            $array['idEpico'],
+            $array['Ra'],
             $array['objetivoHistoria']
         );
     }

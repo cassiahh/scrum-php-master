@@ -34,7 +34,7 @@ endforeach
     <div class="form-group">
         <label for="inputFuncionalidade">Objetivo Historia: </label>
         <input type="text" class="form-control" id="inputobjetivoHistoria" aria-describedby="inputobjetivoHistoria"
-               placeholder="Objetivo da Historia" name="objetivoHistoria" value="<?=$historia['objetivo']?>">
+               placeholder="Objetivo da Historia" name="objetivo" value="<?=$historia['objetivo']?>">
     </div>
     </div>
     <button type="submit" class="btn btn-primary">Enviar</button>
