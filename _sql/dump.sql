@@ -38,7 +38,7 @@ CREATE TABLE Tarefa (
         idTarefa bigint(20) not null,
 
         tarefa varchar(191),
-        idSprint bigint(20) not null,
+        idSprint bigint(20),
         ra varchar (191),
         status varchar(191),
         inicio timestamp,

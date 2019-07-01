@@ -1,23 +1,23 @@
 <?php
-$configs = include(__DIR__ . '/../../../../config.php');
+$configs = include __DIR__ . '/../../../../config.php';
 ?>
-<form action="<?= $configs['document_root'] ?>/product-backlog/adicionar"
+<form action="<?=$configs['document_root']?>/product-backlog/adicionar"
       method="post">
     <div class="form-row">
         <div class="form-group col-md-2">
             <label for="inputIdHistoria">idHistoria: </label>
             <input type="text" class="form-control" id="inputIdHistoria" aria-describedby="inputIdHistoria"
-                   placeholder="idHistoria" name="idHistoria" value="<?= $tarefa['idHistoria'] ?>" readonly="readonly">
+                   placeholder="idHistoria" name="idHistoria" value="<?=$tarefa['idHistoria']?>" readonly="readonly">
         </div>
         <div class="form-group col-md-2">
             <label for="inputIdFuncionalidade">idFuncionalidade: </label>
             <input type="text" class="form-control" id="inputIdFuncionalidade" aria-describedby="inputIdFuncionalidade"
-                   placeholder="idFuncionalidade" name="idFuncionalidade" value="<?= $tarefa['idFuncionalidade'] ?>" readonly="readonly">
+                   placeholder="idFuncionalidade" name="idFuncionalidade" value="<?=$tarefa['idFuncionalidade']?>" readonly="readonly">
         </div>
         <div class="form-group col-md-2">
             <label for="inputIdTarefa">idTarefa: </label>
             <input type="text" class="form-control" id="inputIdTarefa" aria-describedby="inputIdTarefa"
-                   placeholder="idTarefa" name="idTarefa" value="<?= $tarefa['idTarefa'] ?>" readonly="readonly">
+                   placeholder="idTarefa" name="idTarefa" value="<?=$tarefa['idTarefa']?>" readonly="readonly">
         </div>
         <div class="form-group col-md-2">
             <label for="inputIdSprint">idSprint: </label>
@@ -38,12 +38,12 @@ $configs = include(__DIR__ . '/../../../../config.php');
                 </div>
                 <select class="custom-select" id="inputGroupSelect01" name="ra">
                     <?php
-                    foreach ($pessoas as $pessoa) :
-                        ?>
-                        <option value="<?= $pessoa['ra'] ?>"><?= $pessoa['nome'] ?></option>
+foreach ($pessoas as $pessoa):
+?>
+                        <option value="<?=$pessoa['ra']?>"><?=$pessoa['nome']?></option>
                     <?php
-                    endforeach
-                    ?>
+endforeach
+?>
                 </select>
             </div>
         </div>
@@ -85,28 +85,5 @@ $configs = include(__DIR__ . '/../../../../config.php');
         </div>
     </div>
 
-    <div class="form-row">
-        <div class="form-group col-md-4">
-            <div class="form-group">
-                <label for="inputInicio">Início</label>
-                <input type="text" class="form-control" id="inputInicio" aria-describedby="inputInicio"
-                       placeholder="Inicio" name="inicio">
-            </div>
-        </div>
-        <div class="form-group col-md-4">
-            <div class="form-group">
-                <label for="inputTermino">Término</label>
-                <input type="text" class="form-control" id="inputTermino" aria-describedby="inputTermino"
-                       placeholder="Termino" name="termino">
-            </div>
-        </div>
-        <div class="form-group col-md-4">
-            <div class="form-group">
-                <label for="inputTempo">Tempo</label>
-                <input type="text" class="form-control" id="inputTempo" aria-describedby="inputTempo"
-                       placeholder="Tempo" name="tempo">
-            </div>
-        </div>
-    </div>
     <button type="submit" class="btn btn-primary">Enviar</button>
 </form>
