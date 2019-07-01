@@ -21,12 +21,12 @@ class Login{
     {
         if($this->usuario == null) {
             $_SESSION["danger"] = "RA ou senha inválido.";
-            $configs = include(__DIR__ . '/../../config.php');
+            $configs = include(__DIR__ . '/../../../config.php');
             header("Location: ".$configs['document_root']);
         } else {
             $_SESSION["success"] = "Usuário logado com sucesso.";
-            Session::setSessionRa($this->usuario["ra"]);
-            $configs = include(__DIR__ . '/../../config.php');
+            (new Session())->setSessionRa($this->usuario["ra"]);
+            $configs = include(__DIR__ . '/../../../config.php');
             header("Location: ".$configs['document_root']);
         }
 

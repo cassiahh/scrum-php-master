@@ -15,9 +15,9 @@ $configs = include(__DIR__ . '/../../../../config.php');
         </div>
     </div>
     <div class="form-group">
-        <label for="inputFuncionalidade">Código do Épico: </label>
+        <label for="inputFuncionalidade">RA: </label>
         <input type="text" class="form-control" id="inputidEpico" aria-describedby="inputidEpicolidade"
-               placeholder="Código do Épico" name="idEpico" value="<?=$historia['ra']?>">
+               placeholder="RA" name="idEpico" value="<?=$historia['ra']?>">
     </div>
     <div class="form-group">
         <label for="inputFuncionalidade">Objetivo Historia: </label>

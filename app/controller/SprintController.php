@@ -23,6 +23,8 @@ class SprintController
     public function list()
     {
         $conexao = Connection::getConnection();
+        $projetoDao = new ProjetoDao($conexao);
+        $projetos = $projetoDao->listaProjeto();
         $tarefaDao = new TarefaDao($conexao);
         $tarefas = $tarefaDao->listaTarefas();
         $sprintDao = new SprintDao($conexao);
@@ -94,6 +96,9 @@ class SprintController
     }
     public function filtroDeletar($post)
     {
-        
+        $conexao = Connection::getConnection();
+        $sprintDao = new SprintDao($conexao);
+        $removed = $sprintDao->removeSprint($post['idSprint']);
+        include __DIR__ . '/../view/page/remove/sprint.php';
     }
 }

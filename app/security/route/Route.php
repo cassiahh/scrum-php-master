@@ -27,17 +27,24 @@ $router->map('GET','/logout', function(){
     return (new IndexController())->logout();
 });
 
+$router->map('GET','/alteraSenha/[i:ra]', function($ra){
+    return (new IndexController())->alteraSenha($ra, null);
+});
+
+$router->map('POST','/alteraSenha/[i:ra]', function($ra){
+    return (new IndexController())->updateSenha($ra, $_POST);
+});
 
 $router->map('GET','/projeto', function(){
     return (new ProjetoController())->list();
 });
 
 $router->map('GET','/projeto/editar', function(){
-    return (new ProjetoController())->editProjeto(null,null);
+    return (new ProjetoController())->editProjeto();
 });
 
 $router->map('POST','/projeto/editar', function(){
-    return (new ProjetoController())->updateProjeto(null,$_POST);
+    return (new ProjetoController())->updateProjeto($_POST);
 });
 
 $router->map('GET','/pessoa/editar/[i:ra]', function($ra){
@@ -53,14 +60,13 @@ $router->map('GET','/pessoa/remove/[i:ra]',
     return (new ProjetoController())->removePessoas($ra);
 });
 
-$router->map('GET','/pessoa/insere/[i:ra]', function($ra){
-    return (new ProjetoController())->inserePessoas($ra);
+$router->map('GET','/pessoa/insere/', function(){
+    return (new ProjetoController())->insere();
 });
-$router->map('POST','/pessoa/insere/[i:ra]', function($ra){
-    return (new ProjetoController())->inserePessoas($ra);
-});  
 
-
+$router->map('POST','/pessoa/adicionar/',function(){
+    return (new ProjetoController())->adicionar($_POST);
+});
 
 $router->map('GET','/sprint', function(){
     return (new SprintController())->list();

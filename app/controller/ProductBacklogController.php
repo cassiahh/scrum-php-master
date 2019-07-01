@@ -28,9 +28,10 @@ class ProductBacklogController
 
     public function list()
     {
-        $projetoDao = new ProjetoDao(Connection::getConnection());
+        $conexao = Connection::getConnection();
+        $projetoDao = new ProjetoDao($conexao);
         $projetos = $projetoDao->listaProjeto();
-        $tarefaDao = new TarefaDao(Connection::getConnection());
+        $tarefaDao = new TarefaDao($conexao);
         $tarefas = $tarefaDao->listaProductBacklog();
         $funcionalidadeAttributes = $tarefaDao->funcionalidadeAttributes();
         include __DIR__ . '/../view/page/list/product-backlog.php';

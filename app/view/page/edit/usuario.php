@@ -1,8 +1,8 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: antonio
- * Date: 05/05/19
+ * User: Camilli
+ * Date: 24/05/19
  * Time: 01:00
  */
 
@@ -13,16 +13,17 @@ Session::redirectIfNotLogged();
 
 if($post != null) {
     if($updated) { ?>
-        <p class="alert alert-success" role="alert">Cronograma adicionado com sucesso!</p>
-    <?php } else {
+        <p class="alert alert-success" role="alert">Senha alterada com sucesso!</p>
+    <?php 
+	} else {
         $msg = mysqli_error($conexao);
         ?>
-        <p class="alert alert-danger" role="alert">Cronograma não foi adicionado: <?= $msg ?></p>
+        <p class="alert alert-danger" role="alert">Senha não foi alterada: <?= $msg ?></p>
         <?php
-        require_once(__DIR__ . "/../../component/form/cronograma.php");
+        require_once(__DIR__ . "/../../component/form/usuario.php");
     }
 }else{
-    require_once(__DIR__ . "/../../component/form/cronograma.php");
+    require_once(__DIR__ . "/../../component/form/usuario.php");
 }
 
 

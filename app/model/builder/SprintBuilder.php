@@ -6,7 +6,7 @@
  * Time: 17:00
  */
 
-require_once(__DIR__.'/../domain/sprint.php');
+require_once(__DIR__.'/../domain/Sprint.php');
 
 class SprintBuilder
 {
@@ -18,7 +18,7 @@ class SprintBuilder
             $array['sprint'],
             $array['semana']
             );
-        
+
         //return $this;
     }
 

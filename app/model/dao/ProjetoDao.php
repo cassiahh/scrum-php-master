@@ -12,47 +12,33 @@ class ProjetoDao
 
     function listaProjeto()
     {
-        $projetos = array();
-        $resultado = mysqli_query($this->conexao, "select * from Projeto");
-        while ($array = mysqli_fetch_assoc($resultado)) {
-            array_push(
-                $projetos, 
-                new Projeto(
-                    $array['projeto'],
-                    $array['cliente'],
-                    $array['projectOwner']
-                    )
-            );
-        }
-        return $projetos;
+        $array=array();
+        $query = "select * from Projeto";
+        $resultado = mysqli_query($this->conexao, $query);
+        $array = mysqli_fetch_assoc($resultado);
+        return $array;
     }
 
    
     function insereProjeto(Projeto $projeto)
     {
         $query = "insert into Projeto (projeto, cliente, projectOwner)
-            values ('{$projeto->getProjeto()},
-            {$projeto->getCliente()},
-            {$projeto->getProjectOwner()}";
+            values ('{$projeto->getProjeto()}',
+            ''{$projeto->getCliente()}',
+            '{$projeto->getProjectOwner()}'";
         return mysqli_query($this->conexao, $query);
     }
     
-    function alteraProjeto(Projeto $projeto)
+    function alteraProjeto(Projeto $projeto, Projeto $projetoAntigo)
     {
         $query = "update Projeto set projeto = '{$projeto->getProjeto()}',
             cliente = '{$projeto->getCliente()}', projectOwner= '{$projeto->getProductOwner()}'
-            where projeto = '{$projeto->getProjeto($projeto)}'";
+            where projeto = '{$projetoAntigo->getProjeto($projeto)}'";
         return mysqli_query($this->conexao, $query);
     }
 
-    function buscaProjeto($projeto)
+    function buscaProjeto()
     {
-        $array=array($projeto);
-        $query = "select * from Projeto";
-        $resultado = mysqli_query($this->conexao, $query);
-        $array = mysqli_fetch_assoc($resultado);
-        return $array;
-        
     }
 
     function removeProjeto($projeto)

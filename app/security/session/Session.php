@@ -1,15 +1,15 @@
 <?php
 
-abstract class Session{
+class Session{
     public function __construct()
     {
             session_start();
     }
-    public function isLogged() {
+    public static function isLogged() {
         return isset($_SESSION["ra"]);
     }
 
-    public function redirectIfNotLogged() {
+    public static function redirectIfNotLogged() {
         if(!self::isLogged()) {
             $_SESSION["danger"] = "Você não tem acesso a esta funcionalidade.";
             header("Location: index");
@@ -24,7 +24,7 @@ abstract class Session{
         $_SESSION["ra"] = $ra;
     }
 
-    public function logout() {
+    public static function logout() {
         session_destroy();
         session_start();
     }

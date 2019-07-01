@@ -1,6 +1,7 @@
 <?php
 
 require_once (__DIR__."/../domain/Pessoa.php");
+require_once (__DIR__."/../domain/Usuario.php");
 
 class PessoaDao
 {
@@ -22,12 +23,13 @@ class PessoaDao
     }
 
    
-    function inserePessoas()
+    function inserePessoas(Pessoa $pessoa)
     {
-        $query = "insert into Pessoa (ra, nome,papel)
-            values ('{$pessoa->getRa()}',
+        $query = "insert into Pessoa (papel,nome,ra,senha)
+            values ('{$pessoa->getPapel()}',
             '{$pessoa->getNome()}',
-            '{$pessoa->getPapel()}'";
+            '{$pessoa->getRa()}',
+            '{$pessoa->getSenha()}')";
         return mysqli_query($this->conexao, $query);
     }
 
@@ -50,6 +52,14 @@ class PessoaDao
     function removePessoas($ra)
     {
         $query = "delete from Pessoa where ra = '{$ra}'";
+        return mysqli_query($this->conexao, $query);
+    }
+	
+	    function alterarSenha(Usuario $usuario, $ra)
+    {
+		$senha = md5($usuario->getSenha());
+        $query = "update Pessoa set senha = '{$senha}'
+                   where ra = '{$ra}'";
         return mysqli_query($this->conexao, $query);
     }
 

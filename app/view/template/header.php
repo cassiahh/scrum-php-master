@@ -24,7 +24,7 @@ $configs = include(__DIR__ . '/../../../config.php');
     <div class="navbar navbar-inverse navbar-fixed-top bg-light">
         <div class="container">
             <div class="navbar-header">
-                <a href="../page/index.php" class="navbar-brand"><img src="<?=$configs['document_root']?>/public/img/ifsp_icon.png" /> Scrum</a>
+                <a href="<?=$configs['document_root']?>" class="navbar-brand"><img src="<?=$configs['document_root']?>/public/img/ifsp_icon.png" /> Scrum</a>
             </div>
             <div>
                 <nav class="nav">

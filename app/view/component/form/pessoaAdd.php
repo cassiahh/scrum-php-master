@@ -2,7 +2,7 @@
 <?php
 $configs = include(__DIR__ . '/../../../../config.php');
 ?>
-<form action="<?=$configs['document_root']?>/pessoa/inserePessoas/" method="post">
+<form action="<?=$configs['document_root']?>/pessoa/adicionar/" method="post">
     <div class="form-row">
         <div class="form-group col-md-2">
             <label for="inputpapel">Papel: </label>
@@ -20,7 +20,14 @@ $configs = include(__DIR__ . '/../../../../config.php');
         <input type="text" class="form-control" id="inputRa" aria-describedby="inputRa"
                placeholder="Ra" name="ra">
     </div>
-    
+
+        <div class="form-group">
+        <label for="senha">Senha: </label>
+        <input type="text" class="form-control" id="Senha" aria-describedby="Senha"
+               placeholder="Senha" name="senha">
+    </div>
+
+        
     </div>
     <button type="submit" class="btn btn-primary">Enviar</button>
 </form>

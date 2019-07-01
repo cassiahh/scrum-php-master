@@ -54,14 +54,12 @@ CREATE TABLE Tarefa (
 );
 INSERT INTO Projeto (projeto, cliente, projectOwner) VALUES ('Scrum','Robson','Giovanni');
 INSERT INTO Pessoa (ra,nome,papel,senha) VALUES 
-('111111', 'Maria', 'Scrum', 'e10adc3949ba59abbe56e057f20f883e'), -- a senha está em md5, é 123456
-('222222', 'João', 'Membro1', 'e10adc3949ba59abbe56e057f20f883e'),
-('333333', 'Paulo', 'Membro2', 'e10adc3949ba59abbe56e057f20f883e'),
-('444444', 'Marcia', 'Membro3', 'e10adc3949ba59abbe56e057f20f883e'),
-('555555', 'Renato', 'Membro4', 'e10adc3949ba59abbe56e057f20f883e'),
-('666666', 'Joana', 'Project Owner', 'e10adc3949ba59abbe56e057f20f883e'),
-('123456', 'Clientes', 'stakeholders', 'e10adc3949ba59abbe56e057f20f883e'),
-('654321', 'Consultores', 'stakeholders', 'e10adc3949ba59abbe56e057f20f883e');
+('111111', 'Integrante 1', 'Scrum Master', 'e10adc3949ba59abbe56e057f20f883e'), -- a senha está em md5, é 123456
+('222222', 'Integrante 2', 'Membro1', 'e10adc3949ba59abbe56e057f20f883e'),
+('333333', 'Integrante 3', 'Membro2', 'e10adc3949ba59abbe56e057f20f883e'),
+('444444', 'Integrante 4', 'Membro3', 'e10adc3949ba59abbe56e057f20f883e'),
+('555555', 'Integrante 5', 'Membro4', 'e10adc3949ba59abbe56e057f20f883e'),
+('666666', 'Integrante 6', 'Membro5', 'e10adc3949ba59abbe56e057f20f883e');
 INSERT INTO Sprint (idSprint,sprint, semana) VALUES 
 (1, 'Sprint 1', '2019-01-01 10:00:00'),
 (2,'Sprint 2', '2019-01-08 10:00:00'),

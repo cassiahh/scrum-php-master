@@ -14,7 +14,8 @@ class HistoriaDao
     function listaHistoria()
     {
         $arrays = array();
-        $resultado = mysqli_query($this->conexao, "select * from Historia");
+        $resultado = mysqli_query($this->conexao, 
+        "select h.*, p.nome as nome from Historia as h join Pessoa as p on p.ra=h.ra");
         while ($array = mysqli_fetch_assoc($resultado)) {
             array_push($arrays, $array);
         }
@@ -33,10 +34,7 @@ class HistoriaDao
 
     function insereHistoria(Historia $historia)
     {
-        $query = "insert into Historia (gostariaHistoria, idEpico, objetivoHistoria)
-            values ({$historia->getgostariaHistoria()},
-            '{$historia->getidEpico()}',
-            {$historia->getobjetivoHistoria()},";   
+        $query = "insert into Historia (idHistoria, gostaria, ra, objetivo)values ('{$historia->getIdHistoria()}', '{$historia->getgostariaHistoria()}', '{$historia->getIdEpico()}', '{$historia->getobjetivoHistoria()}')";   
         return mysqli_query($this->conexao, $query);
     }
 

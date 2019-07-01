@@ -6,24 +6,24 @@
  * Time: 00:47
  */
 
-require_once(__DIR__.'/../domain/Pessoa.php');
+require_once(__DIR__ . '/../domain/Usuario.php');
 
-class pessoaBuilder
+class usuarioBuilder
 {
     private $pessoa;
     public function __construct($array)
     {
-        $this->pessoa =  new Pessoa(
+        $this->usuario =  new Usuario(
             $array['ra'],
             $array['nome'],
             $array['papel'],
-            $array['senha']
+			$array['senha']
         );
         return $this;
     }
 
     public function build()
     {
-        return $this->pessoa;
+        return $this->usuario;
     }
 }

@@ -9,7 +9,7 @@
 require_once(__DIR__ . "/../../template/header.php");
 
 require_once(__DIR__ . "/../../../security/session/Session.php");
-//Session::redirectIfNotLogged();
+Session::redirectIfNotLogged();
 
 if($updated) { ?>
         <p class="alert alert-success" role="alert">História adicionada com sucesso!</p>

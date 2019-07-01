@@ -22,7 +22,10 @@ class HistoriaController
 
     public function listaHistoria()
     {
-        $historiaDao = new HistoriaDao(Connection::getConnection());
+        $conexao = Connection::getConnection();
+        $projetoDao = new ProjetoDao($conexao);
+        $projetos = $projetoDao->listaProjeto();
+        $historiaDao = new HistoriaDao($conexao);
         $historias = $historiaDao->listaHistoria();
 		$countHistoria = $historiaDao->countHistoria();
         include __DIR__ . '/../view/page/list/Historia.php'; 
@@ -69,6 +72,7 @@ class HistoriaController
         $historiaDao = new HistoriaDao($conexao);
         $historia = $post;
         $historiaModel = (new HistoriaBuilder($historia))->build();
+        $historiaModel->setIdHistoria($post['idHistoria']);
         $historiaModel->setgostariaHistoria($post['gostaria']);
         $historiaModel->setidEpico($post['ra']);
         $historiaModel->setObjetivoHistoria($post['objetivo']);
