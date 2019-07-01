@@ -34,7 +34,7 @@ class HistoriaDao
 
     function insereHistoria(Historia $historia)
     {
-        $query = "insert into Historia (idHistoria, gostaria, ra, objetivo)values ('{$historia->getIdHistoria()}', '{$historia->getgostariaHistoria()}', '{$historia->getIdEpico()}', '{$historia->getobjetivoHistoria()}')";   
+        $query = "insert into Historia (idHistoria, gostaria, ra, objetivo)values ('{$historia->getIdHistoria()}', '{$historia->getgostariaHistoria()}', '{$historia->getRa()}', '{$historia->getobjetivoHistoria()}')";   
         return mysqli_query($this->conexao, $query);
     }
 
@@ -42,7 +42,7 @@ class HistoriaDao
     {
         $query = "update Historia set idHistoria = '{$historia->getIdHistoria()}',
                   gostaria = '{$historia->getgostariaHistoria()}',
-                  ra = '{$historia->getIdEpico()}', 
+                  ra = '{$historia->getRa()}', 
                   objetivo = '{$historia->getobjetivoHistoria()}'
                   where idHistoria = '{$idHistoria}'";
         return mysqli_query($this->conexao, $query);

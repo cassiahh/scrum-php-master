@@ -4,18 +4,18 @@ class Historia
 {
     private $idHistoria;
     private $gostariaHistoria;
-    private $idEpico;
+    private $Ra;
     private $objetivoHistoria;
 
     public function __construct(
         $idHistoria,
         $gostariaHistoria,
-        $idEpico,
+        $Ra,
         $objetivoHistoria)
     {
         $this->idHistoria = $idHistoria;
         $this->gostariaHistoria = $gostariaHistoria;
-        $this->idEpico = $idEpico;
+        $this->Ra = $Ra;
         $this->objetivoHistoria = $objetivoHistoria;
     }
 
@@ -70,17 +70,17 @@ class Historia
     /**
      * @return mixed
      */
-    public function getIdEpico()
+    public function getRa()
     {
-        return $this->idEpico;
+        return $this->Ra;
     }
 
     /**
      * @param mixed $idHistoria
      */
-    public function setIdEpico($idEpico)
+    public function setRa($Ra)
     {
-        $this->idEpico = $idEpico;
+        $this->Ra = $Ra;
     }
 
     /**
@@ -96,7 +96,7 @@ class Historia
      */
     public function setobjetivoHistoria($objetivoHistoria)
     {
-        $this->ra = $objetivoHistoria;
+        $this->objetivoHistoria = $objetivoHistoria;
     }
 
 }
