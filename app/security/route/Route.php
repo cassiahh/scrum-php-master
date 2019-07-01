@@ -47,9 +47,11 @@ $router->map('POST','/projeto/editar', function(){
     return (new ProjetoController())->updateProjeto($_POST);
 });
 
+
 $router->map('GET','/pessoa/editar/[i:ra]', function($ra){
     return (new ProjetoController())->editPessoa($ra,null);
 });
+
 
 $router->map('POST','/pessoa/editar/[i:ra]', function($ra){
     return (new ProjetoController())->updatePessoa($ra,$_POST);

@@ -1,10 +1,10 @@
 <html>
     <?php
 $configs = include(__DIR__ . '/../../../../config.php');
-
+//var_dump($pessoa['ra']);
 ?>
 
-<form action = "<?=$configs['document_root']?>/pessoa<?=$pessoas['ra']?>" method = "post">
+<form action = "<?=$configs['document_root']?>/pessoa/editar/<?= $pessoas['ra']?>" method = "post">
     <div class="form-row">
      <div class="form-group col-md-2">         
     <label for="inputPapel">Papel: </label>

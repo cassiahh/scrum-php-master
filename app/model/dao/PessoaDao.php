@@ -33,7 +33,7 @@ class PessoaDao
         return mysqli_query($this->conexao, $query);
     }
 
-    function alteraPessoa()
+    function alteraPessoa(Pessoa $pessoa,$ra)
     {
         $query = "update Pessoa set ra = '{$pessoa->getRa()}',
             nome = '{$pessoa->getNome()}', papel= '{$pessoa->getPapel()}'

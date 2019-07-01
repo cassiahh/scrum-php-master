@@ -75,8 +75,7 @@ class ProjetoController
         $pessoaModel->setRa($post['inputRa']);
         $pessoaModel->setNome($post['inputNome']);
         $pessoaModel->setPapel($post['inputPapel']);	
-		$pessoaModel->setSenha($post['inputSenha']);
-       
+		       
         $updated = $pessoaDao->alteraPessoa($pessoaModel, $ra);
         $projetoDao = new ProjetoDao(Connection::getConnection());
         $projetos = $projetoDao->listaProjeto();
